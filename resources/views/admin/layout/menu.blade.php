@@ -131,9 +131,66 @@
                             <li><a href="admin/slide/danhsach">Danh sách Slide</a></li>
                             <li><a href="admin/slide/them">Thêm Slide</a></li>
                         </ul>
-
+                        {{-- Quang cao --}}
+                        <li><a href="javascript:void(0);" class="waves-effect"><i
+                            class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Quảng Cáo<span
+                                class="float-right menu-arrow"><i
+                                    class="mdi mdi-chevron-right"></i></span></span></a>
+                        <ul class="submenu">
+                        <li><a href="admin/quangcao/danhsach">Danh sách quảng cáo</a></li>
+                        <li><a href="admin/slide/them">Thêm Slide</a></li>
+                    </ul>
+                    {{-- Liên hệ --}}
+                    <li><a href="javascript:void(0);" class="waves-effect"><i
+                        class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Liên Hệ<span
+                            class="float-right menu-arrow"><i
+                                class="mdi mdi-chevron-right"></i></span></span></a>
+                    <ul class="submenu">
+                    <li><a href="admin/lienhe/danhsach">Danh sách liên hệ</a></li>
+                </ul>
                 </li>
-            </div><!-- Sidebar -->
+                {{-- Footer --}}
+                <li><a href="javascript:void(0);" class="waves-effect"><i
+                    class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Footer<span
+                        class="float-right menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></span></a>
+                <ul class="submenu">
+                <li><a href="admin/footer/danhsach">Danh sách Footer</a></li>
+                 
+                    
+            </ul>
+            </li>
+               {{-- Header --}}
+               <li><a href="javascript:void(0);" class="waves-effect"><i
+                class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Header<span
+                    class="float-right menu-arrow"><i
+                        class="mdi mdi-chevron-right"></i></span></span></a>
+            <ul class="submenu">
+            <li><a href="admin/header/danhsach">Danh sách header</a></li>
+        </ul>
+        </li>
+               {{-- Hinh ke slide --}}
+               <li><a href="javascript:void(0);" class="waves-effect"><i
+                class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Tin Tức Nổi Bật <span
+                    class="float-right menu-arrow"><i
+                        class="mdi mdi-chevron-right"></i></span></span></a>
+            <ul class="submenu">
+            <li><a href="admin/slide/danhsachnoibat">Danh sách tin tức nổi bật</a></li>
+        </ul>
+        </li>
+        {{--  --}}
+          
+            <li><a href="javascript:void(0);" class="waves-effect"><i
+                class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Tài Khoản<span
+                    class="float-right menu-arrow"><i
+                        class="mdi mdi-chevron-right"></i></span></span></a>
+            <ul class="submenu">
+            <li><a href="admin/user/danhsach">Danh sách Tài Khoản</a></li>
+            <li><a href="admin/user/them">them</a></li>
+        </ul>
+        </li>
+            </div>
+            <!-- Sidebar -->
             <div class="clearfix"></div>
         </div><!-- Sidebar -left -->
     </div>

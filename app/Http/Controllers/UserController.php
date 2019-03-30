@@ -25,12 +25,22 @@ class UserController extends Controller
     //POST Thêm
     public function postThem(Request $request)
     {
-
+      $validatedData = $request->validate([
+        'email' => 'required|unique:users,email|min:3|max:100',
+    ],
+    [
+      'email.required'=>'Bạn chưa nhập tên',
+      'email.unique'=>'Email đã tồn tại',
+      'email.min'=>'Tên thể loại phải có độ dài từ 3 đến 100 ký tự',
+      'email.max'=>'Tên thể loại không được quá 100 ký tự',
+      
+    ]);
     $user =new User;
     $user->name= $request->username;
     $user->email=$request->email;
     $user->password=bcrypt($request->matkhau);
-    $user->quyen=$request->quyen;
+    $user->quyen=1;
+    $user->sdt=$request->sdt;
     $user->save();
 
     return redirect('admin/user/them')->with('thongbao','Thêm Thành Công');
@@ -43,6 +53,15 @@ class UserController extends Controller
     }
     public function postSua(Request $request,$id)
     {
+
+      $validatedData = $request->validate([
+        'nhaplaimatkhau' => 'same:matkhau',
+    ],
+    [
+      'nhaplaimatkhau.same'=>'Nhập lại mật khẩu không đúng',
+      
+      
+    ]);
       $user=User::find($id);
       $user->name= $request->username;
       $user->email=$request->email;

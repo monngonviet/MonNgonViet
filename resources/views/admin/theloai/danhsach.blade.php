@@ -27,7 +27,6 @@
                                                 <th>Tên</th>
                                                 <th>Tên Không Dấu</th>
                                                 <th>Trạng thái</th>
-
                                                 <th>Cập nhật</th>
                                             </tr>
                                         </thead>
@@ -44,7 +43,8 @@
                                                         {{"Hiển thị"}}
                                                         @endif
                                                         </td>
-                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/theloai/sua/{{$tl->id}}">Sửa</a></td>
+                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/theloai/sua/{{$tl->id}}" style="
+                                                    color: blue;">Sửa</a></td>
                                                 <?php $i++; ?>
                                             </tr>
                                             @endforeach

@@ -29,8 +29,9 @@
                                                 <th>Thao tác</th>
                                                 <th>Ngày Đăng</th>
                                                 <th>Loại Tin</th>
+                                                <th>Trạng thái</th> 
                                                 <th>Thể Loại</th>
-                                                <th>Tóm Tắt</th>                                
+                                                <th>Ngày cập nhật</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -40,18 +41,27 @@
                                                 <td> <?php echo $i; ?></td>
                                                 <td>{{$tt->TieuDe}}</td>
                                                 <td><img src="upload/tintuc/{{$tt->Hinh}}" width="100px" height="70px" alt=""></td>
-                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/xem/{{$tt->id}}">Xem</a></td>
-                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$tt->id}}" style="
-                                                    color: blue;">Sửa </a>| <a href="admin/tintuc/xoa/{{$tt->id}}" style="
+                                                <td class="center"><i class="mdi mdi-eye"></i> <a href="admin/tintuc/xem/{{$tt->id}}">Xem</a></td>
+                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/tintuc/sua/{{$tt->id}}" style="
+                                                    color: blue;">Sửa </a>| <a  href="admin/tintuc/xoa/{{$tt->id}}" style="
                                                 color: red;
-                                                " onclick="return confirmAction()">Xóa</a></td>
+                                                " onclick="return confirmAction()" >Xóa</a></td>
                                                 <?php
                                                 $thoigian=$tt->NgayTao; 
                                                 $dateM=date("d-m-Y",strtotime($thoigian)); ?>
                                                 <td ><?php echo $dateM;?></td>     
                                                 <td>{{$tt->loaitin->Ten}}</td>
+                                                <td>@if($tt->HienThi==0)
+                                                {{"Ẩn"}}
+                                                @else
+                                                {{"Hiển thị"}}
+                                                @endif
+                                                </td>
                                                 <td>{{$tt->loaitin->theloai->Ten}}</td>
-                                                <td>{!!$tt->TomTat!!}</td>
+                                                <?php
+                                                $thoigian=$tt->NgaySua; 
+                                                $dateM=date("d-m-Y",strtotime($thoigian)); ?>
+                                                <td ><?php echo $dateM;?></td>    
                                                 <?php $i++; ?>
                                             </tr>
                                             @endforeach

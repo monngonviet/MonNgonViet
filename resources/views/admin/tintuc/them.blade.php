@@ -55,20 +55,20 @@
                                                 <label>Tóm tắt</label>
                                                 <textarea id="TomTat" class="form-control" rows="3" name="TomTat"></textarea>
                                             </div>
-                                            <script>CKEDITOR.replace('TomTat',{
-                                                 filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
-        filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
-        filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
-        filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
-        filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-        filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
-                                            });</script>
+                                            <script>CKEDITOR.replace('TomTat');</script>
 
                                             <div class="form-group">
                                                     <label>Nội Dung</label>
                                                     <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung"></textarea>
                                                 </div>
-                                                <script>CKEDITOR.replace('NoiDung');</script>
+                                                <script>CKEDITOR.replace('NoiDung',{
+                                                    filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
+                                                filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+                                                  filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+                                                   filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+                                                     filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+                                                 filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+                                                });</script>
                                        
                                                 <div class="form-group">
                                                         <label>Nổi Bật</label><br/>
@@ -94,7 +94,7 @@
                                                         class="">Ngày Tạo</label>
                                                     <div class=""><input class="form-control" type="date" name="NgayTao"
                                                             value="" id="today"></div>
-                                                </div>
+                                                     </div>
                                               
                                                     <div class="form-group"><label>Từ Khóa</label>
                                             <div><input data-parsley-type="alphanum" type="text" name="SEOTitle" class="form-control"

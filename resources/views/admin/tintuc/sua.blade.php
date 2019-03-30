@@ -17,32 +17,26 @@
                                       {{$err}}<br>
                                   @endforeach
                               @endif
-                
                               @if(session('thongbao'))
                                 <div class="alert alert-success">
                                   {{session('thongbao')}}
                               @endif
-                                <form class="" action="admin/tintuc/sua/{{$tintuc->id}}" method="POST">
+                                <form class="" action="admin/tintuc/sua/{{$tintuc->id}}" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                         <div class="form-group"><label>Tiêu Đề</label>
                                             <div><input data-parsley-type="alphanum" type="text" name="TieuDe" class="form-control"
                                                     required placeholder="Nhập tên tiêu đề" value="{{$tintuc->TieuDe}}"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Thể loại</label>
-                                            <select class="form-control" name="TheLoai" id="TheLoai">
-                                                @foreach($theloai as $tl)
-                                                <option
-                                                @if($tintuc->loaitin->theloai->id==$tl->id)
-                                                  {{"selected"}}
-                                                @endif
-                                                 value="{{$tl->id}}">{{$tl->Ten}}</option>
-                                                @endforeach
-                                            </select>
+                                            <label>Hình ảnh</label>
+                                            <p>
+                                            <img src="upload/tintuc/{{$tintuc->Hinh}}" width="90px" alt="">
+                                            </p>
+                                            <input type="file" name="Hinh">
                                         </div>
                                         <div class="form-group">
                                             <label>Loại Tin</label>
-                                            <select class="form-control" name="LoaiTin" id="LoaiTin">
+                                            <select class="form-control" name="LoaiTin" id="LoaiTin1">
                                                 @foreach($loaitin as $tl)
                                                 <option
                                                 @if($tintuc->loaitin->id==$tl->id)
@@ -52,6 +46,72 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="form-group">
+                                            <label>Tóm tắt</label>
+                                            <textarea id="TomTat"  class="form-control" rows="3" name="TomTat">{{$tintuc->TomTat}}</textarea>
+                                        </div>
+                                        <script>CKEDITOR.replace('TomTat');</script>
+
+                                        <div class="form-group">
+                                                <label>Nội Dung</label>
+                                                <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung">{{$tintuc->NoiDung}}</textarea>
+                                            </div>
+                                            <script>CKEDITOR.replace('NoiDung',{
+                                                filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+    filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+    filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+    filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+    filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+                                            });</script>
+                                   
+                                          
+
+                                                <div class="form-group">
+                                                <label>Trạng Thái</label><br/>
+                                                 <label class="radio-inline">
+                                                      <input name="HienThi" value="1"
+                                                        @if($tintuc->HienThi==1)
+                                                      {{"checked"}}
+                                                     @endif
+                                                      checked="" type="radio">Có
+                                                     </label><br/>
+                                                     <label class="radio-inline">
+                                               <input name="HienThi" value="0"
+                                                        @if($tintuc->HienThi==0)
+                                                 {{"checked"}}
+                                                  @endif
+                                                   type="radio">Không
+                                                </label>
+                                                        </div>
+
+                                                        <div class="form-group">
+                        <label>Nổi bật</label><br/>
+                        <label class="radio-inline">
+                            <input name="NoiBat" value="0"
+                            @if($tintuc->NoiBat==0)
+                              {{"checked"}}
+                            @endif
+                             checked="" type="radio">Không
+                        </label><br/>
+                        <label class="radio-inline">
+                            <input name="NoiBat" value="1"
+                            @if($tintuc->NoiBat==1)
+                              {{"checked"}}
+                            @endif
+                             type="radio">Có
+                        </label>
+                    </div>                                    
+                                                <div class="form-group"><label>Từ Khóa</label>
+                                                <div><input data-parsley-type="alphanum" type="text" value="{{$tintuc->SEOTitle}}" name="SEOTitle" class="form-control"
+                                                required placeholder="Nhập tên từ khóa"></div>
+                                    </div>
+
+                                    <div class="form-group"><label for="example-date-input"
+                                                        class="">Ngày Cập Nhật</label>
+                                                    <div class=""><input class="form-control" type="date" name="NgaySua"
+                                                            value="" id="today"></div>
+                                                     </div>
+
                                         <div class="form-group">
                                                 <div><button type="submit"
                                                         class="btn btn-primary waves-effect waves-light">Sửa</button>
@@ -66,6 +126,9 @@
                 </div><!-- end row -->
             </div><!-- container-fluid -->
         </div><!-- content -->
-        
     </div>
+    <script>
+    let today = new Date().toISOString().substr(0, 10);
+    document.querySelector("#today").value = today;
+  </script>
 @endsection

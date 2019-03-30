@@ -15,6 +15,14 @@ class SlideController extends Controller
     return view ('admin.slide.danhsach',['slide'=> $slide]
   );
   }
+
+  public function getDanhSachNoiBat()
+  {
+    $slide=Slide::where('NoiBat',1)->take(2)->latest()->get();
+    return view ('admin.slide.danhsachnoibat',['slide'=> $slide]
+  );
+  }
+
   public function getXem($id)
   {
     $slide=Slide::find($id);
@@ -35,6 +43,7 @@ class SlideController extends Controller
     $slide->TomTat=$request->TomTat;
     $slide->NoiDung=$request->NoiDung;
     $slide->Status=$request->HienThi;
+    $slide->NoiBat=$request->HienThi1;
     $slide->SoLuotXem=0;
     $slide->NgayTao=$request->NgayTao;
     $slide->SEONoiDung=$request->TomTat;
@@ -73,16 +82,19 @@ class SlideController extends Controller
   }
   public function postSua(Request $request,$id)
   {
-    $slide=new Slide;
+    $slide=Slide::find($id);
     $slide->Ten = $request->Ten;
     $slide->TenKhongDau=changeTitle($request->Ten);
-    $slide->SEOTitle=$request->Ten;
+    $slide->KeyWord=$request->KeyWord;
     $slide->TomTat=$request->TomTat;
     $slide->NoiDung=$request->NoiDung;
     $slide->Status=$request->HienThi;
+    $slide->NoiBat=$request->HienThi1;
+
     $slide->SoLuotXem=0;
-    $slide->NgayTao=$request->NgayTao;
+    
     $slide->SEONoiDung=$request->TomTat;
+
     if($request->hasFile('Hinh'))
     {
       $file=  $request->file('Hinh');
@@ -102,14 +114,14 @@ class SlideController extends Controller
         unlink("upload/slide/".$slide->Hinh);
         $slide->Hinh=$Hinh;
     }
-    $slide->save();
-   return redirect('admin/slide/sua/'.$id)->with('thongbao','Sửa Thành Công');
+      $slide->save();
+     return redirect('admin/slide/danhsach')->with('thongbao','Sửa Thành Công');
   }
 
   public function getXoa($id)
   {
-    $slide =Slide::find($id);
-    $slide->delete();
+    $slide =Slide::where('NoiBat','=',0)->where('id',$id)->delete();
+    // $slide->delete();
     return redirect('admin/slide/danhsach')->with('thongbao','Xóa Thành Công');
   }
 

@@ -19,7 +19,7 @@ use App\TinTuc;
     Route::get('dangxuatuser','PageController@getdangxuatuser');
     Route::post('dangkiuser','PageController@postdangkiuser');
     // Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
-    Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
     Route::group(['prefix'=>'theloai'],function(){
       //admin/theloai/danhsach
       Route::get('danhsach','TheLoaiController@getDanhSach');
@@ -44,6 +44,23 @@ use App\TinTuc;
       Route::get('them','LoaiTinController@getThem');
       Route::post('them','LoaiTinController@postThem');
       Route::get('xoa/{id}','LoaiTinController@getXoa');
+    });
+    //Footer
+    Route::group(['prefix'=>'footer'],function(){
+      //admin/theloai/danhsach
+      Route::get('danhsach','FooterController@getDanhSach');
+      Route::get('sua/{id}','FooterController@getSua');
+      Route::post('sua/{id}','FooterController@postSua');
+      Route::get('them','FooterController@getThem');
+      Route::post('them','FooterController@postThem');
+      Route::get('xoa/{id}','FooterController@getXoa');
+    });
+    // Header
+     Route::group(['prefix'=>'header'],function(){
+      //admin/theloai/danhsach
+      Route::get('danhsach','HeaderController@getDanhSach');
+      Route::get('sua/{id}','HeaderController@getSua');
+      Route::post('sua/{id}','HeaderController@postSua');
     });
     //Tin tức
       Route::group(['prefix'=>'tintuc'],function(){
@@ -70,6 +87,8 @@ use App\TinTuc;
       Route::group(['prefix'=>'slide'],function(){
       //admin/slide/danhsach
       Route::get('danhsach','SlideController@getDanhSach');
+      Route::get('danhsachnoibat','SlideController@getDanhSachNoiBat');
+      Route::get('xem/{id}','SlideController@getXem');
       Route::get('sua/{id}','SlideController@getSua');
       Route::post('sua/{id}','SlideController@postSua');
       Route::get('them','SlideController@getThem');
@@ -120,8 +139,4 @@ use App\TinTuc;
     Route::get('dangnhap','PageController@getDangNhap');
     Route::post('dangnhap','PageController@postDangNhap');
        Route::post('timkiem','PageController@timkiem');
-    Route::any('{all}', function($uri){
-      return View::make('page.errors');
-      })->where('all', '.*');
-
- 
+  

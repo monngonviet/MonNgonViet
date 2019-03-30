@@ -32,11 +32,11 @@
                                         </thead>
                                         <tbody>
                                              
-                                            <tr>
+                                            <tr >
                                                 <td>{{$tintuc->TieuDe}}</td>
                                                 <td><img src="upload/tintuc/{{$tintuc->Hinh}}" width="100px" height="70px" alt=""></td>
-                                                <td>{!!$tintuc->TomTat!!}</td>
-                                                <td>{!!$tintuc->NoiDung!!}</td>
+                                                <td style="white-space: normal;">{!!$tintuc->TomTat!!}</td>
+                                                <td style="white-space: normal;">{!!$tintuc->NoiDung!!}</td>
                                                 <?php
                                                 $thoigian=$tintuc->NgayTao; 
                                                 $dateM=date("d-m-Y",strtotime($thoigian)); ?>

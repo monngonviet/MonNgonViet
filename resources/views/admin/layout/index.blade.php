@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,8 +35,6 @@
 <!-- ============================================================== -->
 </div><!-- END wrapper -->
 <!-- jQuery  -->
-
-
 <script src="Admin_MonNgonViet/assets/js/jquery.min.js"></script>
 <script src="Admin_MonNgonViet/assets/js/bootstrap.bundle.min.js"></script>
 <script src="Admin_MonNgonViet/assets/js/metisMenu.min.js"></script>
@@ -61,5 +58,4 @@
 {{--  --}}
 @yield('script')
 </body>
-
 </html>

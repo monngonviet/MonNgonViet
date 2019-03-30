@@ -15,7 +15,7 @@ class AjaxController extends Controller
     $loaitin = LoaiTin::where('idTheLoai',$idTheLoai)->get();
     foreach($loaitin as $lt)
     {
-      echo "<option value=".$lt->id.">".$lt->Ten."</option>";
+      echo "<option value='".$lt->id."'>".$lt->Ten."</option>";
     }
   }
 }

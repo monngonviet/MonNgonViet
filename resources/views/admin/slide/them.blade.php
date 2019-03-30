@@ -32,16 +32,16 @@
                                         </div>
                                         <div class="form-group">
                                                 <label>Hình ảnh</label>
-                                                <input type="file" name="Hinh">
+                                                <input type="file" name="Hinh"  required>
                                             </div>
                                         <div class="form-group">
                                                 <label>Tóm tắt</label>
-                                                <textarea id="TomTat" class="form-control" rows="3" name="TomTat"></textarea>
+                                                <textarea id="TomTat" class="form-control" rows="3" name="TomTat" required></textarea>
                                             </div>
                                             <script>CKEDITOR.replace('TomTat'  );</script>
                                             <div class="form-group">
                                                     <label>Nội Dung</label>
-                                                    <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung"></textarea>
+                                                    <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung"required></textarea>
                                                 </div>
                                                 <script>CKEDITOR.replace('NoiDung',{
                                                     filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
@@ -57,7 +57,24 @@
                                                     <div class=""><input class="form-control" type="date" name="NgayTao"
                                                             value="" id="today"></div>
                                                 </div>
-
+                                                <div class="form-group">
+                                                            <label>Hiển thị</label><br/>
+                                                            <label class="radio-inline">
+                                                                <input name="HienThi" value="1" checked="" type="radio">Có
+                                                            </label><br/>
+                                                            <label class="radio-inline">
+                                                                <input name="HienThi" value="0" type="radio">Không
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Nổi bật</label><br/>
+                                                            <label class="radio-inline">
+                                                                <input name="HienThi1" value="0" checked="" type="radio">Không
+                                                            </label><br/>
+                                                            <label class="radio-inline">
+                                                                <input name="HienThi1" value="1" type="radio">Có
+                                                            </label>
+                                                        </div>
                                                 <div class="form-group"><label>Từ Khóa</label>
                                              <div><input data-parsley-type="alphanum" type="text" name="KeyWord" class="form-control"
                                                     required placeholder="Nhập tên từ khóa"></div>

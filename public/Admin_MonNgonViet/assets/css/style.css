@@ -54,7 +54,7 @@ a:focus{
 }
 #wrapper{
     height:100%;
-    overflow:hidden;
+    overflow:scroll;
     width:100%
 }
 .slimScrollDiv{

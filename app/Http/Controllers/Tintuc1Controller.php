@@ -31,6 +31,14 @@ class TinTuc1Controller extends Controller
   //POST Thêm
   public function postThem(Request $request)
   {
+    $validatedData = $request->validate([
+      'TieuDe' => 'required|min:3|max:100',
+  ],
+  [
+    'TieuDe.require'=>'Bạn chưa nhập tên',
+    'TieuDe.min'=>'Tên tiêu đề phải có độ dài từ 3 đến 100 ký tự',
+    'TieuDe.max'=>'Tên tiêu đề không được quá 100 ký tự',
+  ]);
     $tintuc=new TinTuc;
     $tintuc->TieuDe = $request->TieuDe;
     $tintuc->TieuDeKhongDau=changeTitle($request->TieuDe);
@@ -42,6 +50,7 @@ class TinTuc1Controller extends Controller
     $tintuc->HienThi=$request->HienThi;
     $tintuc->SoLuotXem=0;
     $tintuc->NgayTao=$request->NgayTao;
+    $tintuc->NgaySua=$request->NgayTao;
     $tintuc->SEOTomTat=$request->TomTat;
     if($request->hasFile('Hinh'))
     {
@@ -77,6 +86,14 @@ class TinTuc1Controller extends Controller
   }
   public function postSua(Request $request,$id)
   {
+    $validatedData = $request->validate([
+      'TieuDe' => 'required|min:3|max:100',
+  ],
+  [
+    'TieuDe.require'=>'Bạn chưa nhập tên',
+    'TieuDe.min'=>'Tên tiêu đề phải có độ dài từ 3 đến 100 ký tự',
+    'TieuDe.max'=>'Tên tiêu đề không được quá 100 ký tự',
+  ]);
     $tintuc=TinTuc::find($id);
     $tintuc->TieuDe = $request->TieuDe;
     $tintuc->TieuDeKhongDau=changeTitle($request->TieuDe);
@@ -87,7 +104,7 @@ class TinTuc1Controller extends Controller
     $tintuc->NoiBat=$request->NoiBat;
     $tintuc->HienThi=$request->HienThi;
     $tintuc->SoLuotXem=0;
-    $tintuc->NgayTao=$request->NgayTao;
+    $tintuc->NgaySua=$request->NgaySua;
     $tintuc->SEOTomTat=$request->TomTat;
     if($request->hasFile('Hinh'))
     {
@@ -110,7 +127,7 @@ class TinTuc1Controller extends Controller
     }
 
     $tintuc->save();
-   return redirect('admin/tintuc/sua/'.$id)->with('thongbao','Sửa Thành Công');
+   return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa Thành Công');
   }
 
   public function getXoa($id)

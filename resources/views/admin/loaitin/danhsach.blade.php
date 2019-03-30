@@ -44,7 +44,8 @@
                                                 @endif
                                                 </td>
 
-                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaitin/sua/{{$tl->id}}">Sửa</a></td>
+                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/loaitin/sua/{{$tl->id}}"  style="
+                                                    color: blue;">Sửa</a></td>
                                                 <?php $i++; ?>
                                             </tr>
                                             @endforeach
