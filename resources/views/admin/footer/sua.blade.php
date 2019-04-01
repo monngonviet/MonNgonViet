@@ -50,7 +50,7 @@
                                       
                                          <div class="form-group"><label>Link Trang FaceBook</label>
                                                 <div><input data-parsley-type="alphanum" type="text" name="LinkFb" class="form-control"
-                                                        required placeholder="Nhập tên tiêu đề" value="{{$footer->LinkFb}}"></div>
+                                                        required placeholder="Nhập tên đường dẫn Page FaceBook" value="{{$footer->LinkFB}}"></div>
                                         </div>
 
                                         <div class="form-group">

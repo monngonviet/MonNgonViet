@@ -31,13 +31,21 @@
                                             <p>
                                             <img src="upload/footer/{{$header->Hinh}}" width="90px" alt="">
                                             </p>
-                                            <input type="file" name="Hinh">
+                                            <input type="file" name="Hinh" required>
                                         </div>
                                       
                                          <div class="form-group"><label>Đường dẫn trang</label>
                                                 <div><input data-parsley-type="alphanum" type="text" name="Link" class="form-control"
-                                                        required placeholder="Nhập tên tiêu đề" value="{{$header->Link}}"></div>
+                                                        required placeholder="Nhập tên đường dẫn" value="{{$header->Link}}"></div>
                                         </div>
+                                        <div class="form-group"><label>Số điện thoại</label>
+                                            <div><input data-parsley-type="alphanum" type="text" name="sdt" class="form-control"
+                                                    required placeholder="Nhập tên số điện thoại" value="{{$header->sdt}}"></div>
+                                    </div>
+                                    <div class="form-group"><label>Email</label>
+                                        <div><input data-parsley-type="alphanum" type="text" name="email" class="form-control"
+                                                required placeholder="Nhập tên email" value="{{$header->email}}"></div>
+                                </div>
 
                                         <div class="form-group">
                                                 <div><button type="submit"

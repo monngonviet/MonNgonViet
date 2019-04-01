@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="form-group" style="
                                     display: none;
-                                " >
+                                  " >
                                         <label>Quyền</label><br/>
                                         <label class="radio-inline">
                                             <input

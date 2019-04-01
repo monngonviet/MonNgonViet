@@ -41,6 +41,10 @@ class HeaderController extends Controller
   ]);
     $header=Header::find($id);
     $header->Link=$request->Link;
+    $header->sdt=$request->sdt;
+    $header->email=$request->email;
+
+
     if($request->hasFile('Hinh'))
     {
       $file=  $request->file('Hinh');

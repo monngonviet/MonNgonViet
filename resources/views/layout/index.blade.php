@@ -1,205 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Page Title -->
+	<title>Món ngon việt</title>
+
+	<meta name="keywords" content="real estate, responsive, retina ready, modern html5 template, bootstrap, css3" />
+	<meta name="description" content="Cozy - Responsive Real Estate HTML5 Template" />
+	<meta name="author" content="Wisely Themes - www.wiselythemes.com" />
+
+	<!-- Mobile Meta Tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="assets/assets/images/fav_touch_icons/favicon.ico" /> -->
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/fav_touch_icons/favicon.ico" />
+	<link rel="apple-touch-icon" href="assets/images/fav_touch_icons/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/images/fav_touch_icons/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/images/fav_touch_icons/apple-touch-icon-114x114.png" />
+
+	<!-- IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> 
+	<![endif]-->
+
+	<!-- Google Web Font -->
+	<link href="http://fonts.googleapis.com/css?family=Raleway:300,500,900%7COpen+Sans:400,700,400italic"
+		rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Template CSS -->
+	<link href="assets/css/style.css" rel="stylesheet" />
+
+	<!-- Modernizr -->
+	<script src="assets/js/modernizr-2.8.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="jquery.shorten.1.0.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+	<style>
+		.carousel-inner>.item>img,
+		.carousel-inner>.item>a>img {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<!-- BEGIN WRAPPER -->
+		<!-- END HEADER -->
 @include('layout.header')
-<div id="columns" class="columns-container">
-  
-  <div class="section section-bannertext">
-  <h4 class="title_block">Bài viết được xem nhiều nhất</h4>
-        @foreach($tinnoibat as $tt)
-            <div class="container">
-                <div class="bannertext bannertext-1 block">
-                    <div class="box-homehtml">
-                        <div class="block-html block">
-                            <h6 class="title_block">{{$tt->TieuDe}}</h6>
-                             <p class="block-htmldes">{!!$tt->TomTat!!}</p>
-                            <a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html" class="btn-more" title="{{$tt->TieuDe}}"><i class="fa fa-angle-right"></i>Đọc thêm</a>
-                        </div><!--end block-html -->
-                    </div>
-                    <div class="box-homehtml box-image">
-                        <div class="banner-item">
-                            <a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"><img class="img-responsive" src="upload/tintuc/{{$tt->Hinh}}" alt="{{$tt->TieuDe}}"></a>
-                        </div><!--end banner-item-->
-                    </div>
-                </div>
-            </div><!-- end container -->
-          @endforeach
-        </div><!-- end section-bannertext -->
-
-    <div class="section section-featured">
-    <div class="container">
-      <div class="tiva-featured">
-        <div class="tiva-featured-title">
-          <h4 class="title_block">Những bài viết mới nhất</h4>
-          <div class="des-text">
-            <p class="cl-default">Hãy chọn nơi du lịch phù hợp với bạn nhe</p>
-          </div>
-        </div>
-        <div class="block_content">
-          <div class="featured-owlcaousel owl-carousel">
-            @foreach($tintucslide as $tts)
-            <div class="item">
-              <div class="featured-container">
-                <div class="featured-image">
-                  <a href="tin-tuc/{{$tts->id}}/{{$tts->TieuDeKhongDau}}.html" title="">
-                    <img src="upload/tintuc/{{$tts->Hinh}}" alt="{{$tts->TieuDe}}" class="img-responsive" width="370" height="480">
-                  </a>
-                </div>
-                <div class="featured-content">
-                  <div class="featured-contentmeta">
-                  <a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"> <span class="yellow label-activity">{{$tts->TieuDe}}</span> </a>
-                    <h4 style="color: ghostwhite;">{{$tts->created_at}}</h4>
-                  </div><!-- end featured-contentmeta -->
-                </div><!-- end featured-content -->
-              </div><!-- end featured-container -->
-            </div><!-- end item -->
-          @endforeach
-          </div><!-- end featured-owlcaousel -->
-        </div><!-- end bock_content -->
-      </div><!-- end tiva-featured -->
-    </div><!-- end container -->
-  </div><!-- end section-featured -->
-
-  <div class="container">
-    <div class="tiva-featured">
-      <div class="tiva-featured-title">
-        <h2 class="title_block">Top địa điểm</h2>
-        <div class="des-text">
-          <p class="cl-default">Hãy nơi được yêu thích nhất năm</p>
-        </div>
-      </div>
-      <div class="block_content">
-        <div class="featured-owlcaousel owl-carousel">
-          @foreach($loaitin as $tts)
-          <div class="item">
-            <div class="featured-container">
-              <div class="featured-image">
-                <a href="loaitin/{{$tts->id}}/{{$tts->TenKhongDau}}.html" title="">
-                  <img src="upload/hinhloaitin/{{$tts->Hinh1}}" alt="{{$tts->TieuDe}}" class="img-responsive" width="370" height="480">
-                </a>
-              </div>
-              <div class="featured-content">
-                <div class="featured-contentmeta">
-                <a href="loaitin/{{$tts->id}}/{{$tts->TenKhongDau}}.html"> <span class="yellow label-activity">{{$tts->TieuDe}}</span> </a>
-                  <h4 style="color: ghostwhite;">{{$tts->created_at}}</h4>
-                </div><!-- end featured-contentmeta -->
-              </div><!-- end featured-content -->
-            </div><!-- end featured-container -->
-          </div><!-- end item -->
-        @endforeach
-        </div><!-- end featured-owlcaousel -->
-      </div><!-- end bock_content -->
-    </div><!-- end tiva-featured -->
-  </div><!-- end container -->
-  {{-- <div class="section section-prolist">
-            <div class="container">
-                <div class="tiva-topsight">
-                    <h4 class="title_block">Top địa điểm</h4>
-                    <div class="des-text">
-                        <p class="cl-default">Khám phá ngay thôi</p>
-                    </div>
-                    <div class="block_content">
-                        <div class="topsight-owl owl-carousel">
-                          @foreach($loaitin as $lt)
-                            <div class="item">
-
-                                <div class="product-container">
-                                    <div class="left-block">
-                                        <div class="product-image-container">
-                                            <a class="product_img_link" href="loaitin/{{$lt->id}}/{{$lt->TenKhongDau}}.html" title="{{$lt->Ten}}">
-                                                <img src="upload/hinhloaitin/{{$lt->Hinh}}" alt="Around Alaska - the Ice land" class="img-responsive image-effect" width="480" height="319">
-                                            </a>
-                                        </div>
-                                    </div><!--end left block -->
-                                    <div class="right-block">
-                                        <div class="product-box">
-                                      <h5 class="name">
-                                              <a class="product-name" href="loaitin/{{$lt->id}}/{{$lt->TenKhongDau}}.html" title="{{$lt->Ten}}">
-                                                {{$lt->Ten}}
-                                              </a>
-                                          </h5>
-                                            <div class="tour-active">Top 2019</div>
-                                        </div>
-                                    </div><!-- end right block -->
-                                </div><!-- end product-container-->
-
-                            </div>
-
-                          @endforeach
-
-                        </div><!-- end topsight-owl -->
-                    </div><!-- end bock_content -->
-                </div><!-- end tiva-topsight -->
-            </div><!-- end container -->
-        </div> --}}
-
-
-
-        <!-- end section-prolist -->
-
-        {{-- <div class="section section-banner">
-            <div class="container">
-                <div class="html-parallax">
-                      <p class="txt1">greatest view you can explore</p>
-                      <p class="txt2">The picture of nature</p>
-                      <p class="txt3">So we are going to enjoy our breakfast.<br> Major key, don’t fall for the trap, stay focused. It’s the ones closest to <br>you that want to see you fail.</p>
-                      <a href="#" class="btn btn-default" title="Discover now">Discover now</a>
-                  </div>
-            </div><!-- end container -->
-        </div><!-- end section-banner --> --}}
-
-        
-
-  <div class="section section-contacttour">
-            <div class="container">
-                <div class="contacttour">
-                    <div class="contacttour-lf">
-                        <div class="media">
-            <div class="media-left">
-              <span class="icon-airplane-flight"></span>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Đặt vé máy bay để khám phá nào</h4>
-              <p>Khám phá những nơi bạn muốn đến</p>
-            </div>
-          </div>
-                    </div>
-                    <div class="contacttour-rg">
-                        <a href="https://www.traveloka.com/vi-vn/?id=6988541158078679749&adloc=vi-vn&kw=6988541158078679749_traveloka&gmt=e&gn=g&gd=c&gdm=&gcid=120960454098&gdp=&gdt=&gap=1t1&pc=2&cp=6988541158078679749_TB-COM-D-s_6988541158078679749_EM&aid=24326433378&wid=kwd-51659214310&fid=&gid=1028581&gclid=CjwKCAjwm-fkBRBBEiwA966fZKqn2qutu2123L_8426olsxENvbiQ2FYjanXCCrCRcEAlAVXenI6PhoCOIIQAvD_BwE"  target="_blank" class="btn btn-default" title="Book on agoda">Book on Traveloka</a>
-                    </div>
-                </div><!-- end contacttour -->
-            </div><!-- end container -->
-        </div><!-- end section-contacttour -->
-
-  <div class="section section-instagram">
-            <div class="container">
-                <div class="block-instagram">
-                    <h4 class="title_block">Hình ảnh từ Instagram</h4>
-                    <div class="des-text">
-                        <p class="cl-default">hashtag #neverlandtravel</p>
-                    </div>
-                    <div class="block_content">
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 col-sp-6">
-                                <a href="#" title=""><img class="img-responsive" src="img/instagram/insta1.jpg" alt=""></a>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 col-sp-6">
-                                <a href="#" title=""><img class="img-responsive" src="img/instagram/insta2.jpg" alt=""></a>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 col-sp-6">
-                                <a href="#" title=""><img class="img-responsive" src="img/instagram/insta3.jpg" alt=""></a>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 col-sp-6">
-                                <a href="#" title=""><img class="img-responsive" src="img/instagram/insta4.jpg" alt=""></a>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 col-sp-6">
-                                <a href="#" title=""><img class="img-responsive" src="img/instagram/insta5.jpg" alt=""></a>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 col-sp-6">
-                                <a href="#" title=""><img class="img-responsive" src="img/instagram/insta6.jpg" alt=""></a>
-                            </div>
-                        </div>
-                        <p class="text-center"><a href="#" title="More on instagram"><i class="fa fa-angle-right"></i>Xem thêm </a></p>
-                    </div>
-                </div><!-- end block-instagram -->
-            </div><!-- end container -->
-        </div><!-- end section-instagram -->
-</div><!--end columns -->
+@include('layout.slide')
+@yield('content')
 @include('layout.footer')
+        
+		<!-- END FOOTER -->
+
+	</div>
+	<!-- END WRAPPER -->
+
+
+	<!-- Libs -->
+	<script src="assets/js/common.js"></script>
+	<script src="assets/js/jquery.prettyPhoto.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/chosen.jquery.min.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	<script src="assets/js/infobox.min.js"></script>
+
+	<!-- Template Scripts -->
+	<script src="assets/js/variables.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
+	<!-- Agencies list -->
+	<script src="assets/js/agencies.js"></script>
+
+	<!-- <script type="text/javascript">
+		(function($){
+			"use strict";
+			
+			$(document).ready(function(){
+				//Create agencies map with markers and populate dropdown agencies list.
+				Cozy.agencyMap(agencies, "map_agency");
+			});
+		})(jQuery);
+	</script> -->
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2"></script>
+@yield('script')
+
+</body>
+
+</html>

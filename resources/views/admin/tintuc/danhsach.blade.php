@@ -28,9 +28,10 @@
                                                 <th>Xem</th>
                                                 <th>Thao tác</th>
                                                 <th>Ngày Đăng</th>
+                                                <th>Nổi bật</th>
                                                 <th>Loại Tin</th>
-                                                <th>Trạng thái</th> 
                                                 <th>Thể Loại</th>
+                                                <th>Trạng thái</th> 
                                                 <th>Ngày cập nhật</th>
                                             </tr>
                                         </thead>
@@ -49,15 +50,22 @@
                                                 <?php
                                                 $thoigian=$tt->NgayTao; 
                                                 $dateM=date("d-m-Y",strtotime($thoigian)); ?>
-                                                <td ><?php echo $dateM;?></td>     
+                                                <td ><?php echo $dateM;?></td>  
+                                                <td>@if($tt->NoiBat==0)
+                                                    {{"Ẩn"}}
+                                                    @else
+                                                    {{"Hiển thị"}}
+                                                    @endif
+                                                    </td>   
                                                 <td>{{$tt->loaitin->Ten}}</td>
-                                                <td>@if($tt->HienThi==0)
-                                                {{"Ẩn"}}
-                                                @else
-                                                {{"Hiển thị"}}
-                                                @endif
-                                                </td>
+                                              
                                                 <td>{{$tt->loaitin->theloai->Ten}}</td>
+                                                <td>@if($tt->HienThi==0)
+                                                    {{"Ẩn"}}
+                                                    @else
+                                                    {{"Hiển thị"}}
+                                                    @endif
+                                                    </td>
                                                 <?php
                                                 $thoigian=$tt->NgaySua; 
                                                 $dateM=date("d-m-Y",strtotime($thoigian)); ?>

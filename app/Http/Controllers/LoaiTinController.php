@@ -38,10 +38,10 @@ class LoaiTinController extends Controller
     $loaitin->TenKhongDau= changeTitle($request->Ten);
     $loaitin->idTheLoai=$request->TheLoai;
     $loaitin->SEOTitle= $request->Ten;
-
+    $loaitin->Status=1;
     $loaitin->save();
 
-    return redirect('admin/loaitin/danhsach')->with('thongbao','Thêm Thành Công');
+    return redirect('admin/loaitin/them')->with('thongbao','Thêm Thành Công');
     }
 
     public function getSua($id)

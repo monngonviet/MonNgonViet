@@ -20,14 +20,19 @@
     <script type="text/javascript" src="admin_asset/ckeditor/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
 </head>
 
 <body>
 {{-- thanhotren --}}
 <div id="wrapper">
+
 @include('admin.layout.menu')
 @yield('content')
 </div>
+
 <footer class="footer">© 2019 Món Ngon Việt - <span class="d-none d-sm-inline-block">Crafted with <i
     class="mdi mdi-heart text-danger"></i> by Món Ngon Việt</span>.</footer>
 </div><!-- ============================================================== -->

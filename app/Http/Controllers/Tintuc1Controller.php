@@ -32,10 +32,11 @@ class TinTuc1Controller extends Controller
   public function postThem(Request $request)
   {
     $validatedData = $request->validate([
-      'TieuDe' => 'required|min:3|max:100',
+      'TieuDe' => 'required|unique:TinTuc,TieuDe|min:3|max:100',
   ],
   [
     'TieuDe.require'=>'Bạn chưa nhập tên',
+    'TieuDe.unique'=>"Tên Tiêu Đề đã tồn tại",
     'TieuDe.min'=>'Tên tiêu đề phải có độ dài từ 3 đến 100 ký tự',
     'TieuDe.max'=>'Tên tiêu đề không được quá 100 ký tự',
   ]);

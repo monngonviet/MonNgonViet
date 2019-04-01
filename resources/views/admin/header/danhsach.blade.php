@@ -25,6 +25,8 @@
                                                 <th>STT</th>
                                                 <th>Hình LoGo</th>
                                                 <th>Đường dẫn</th>
+                                                <th>Số điện thoại</th>
+                                                <th>Email</th>
                                                 <th>Thao tác</th>
                                             </tr> 
                                         </thead>
@@ -36,6 +38,10 @@
                                                 <td><img src="upload/footer/{{$tt->Hinh}}" alt="" width="150px"></td>
                                               
                                                <td>{{$tt->Link}}</td>
+                                               <td>{{$tt->sdt}}</td>
+
+                                               <td>{{$tt->email}}</td>
+
                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/header/sua/{{$tt->id}}" style="
                                                 color: blue;">Sửa</a></td>
                                                 <?php $i++; ?>

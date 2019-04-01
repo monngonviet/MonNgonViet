@@ -60,14 +60,14 @@
                                                         @if($slide->Status==1)
                                                       {{"checked"}}
                                                      @endif
-                                                      checked="" type="radio">Có
+                                                      checked="" type="radio">Hiển thị
                                                      </label><br/>
                                                      <label class="radio-inline">
                                                <input name="HienThi" value="0"
                                                         @if($slide->Status==0)
                                                  {{"checked"}}
                                                   @endif
-                                                   type="radio">Không
+                                                   type="radio">Ẩn
                                                 </label>
                                                         </div>
                                                         <div class="form-group">
@@ -77,14 +77,14 @@
                                                         @if($slide->NoiBat==1)
                                                       {{"checked"}}
                                                      @endif
-                                                      checked="" type="radio">Có
+                                                      checked="" type="radio">Hiển thị
                                                      </label><br/>
                                                      <label class="radio-inline">
                                                <input name="HienThi1" value="0"
                                                         @if($slide->NoiBat==0)
                                                  {{"checked"}}
                                                   @endif
-                                                   type="radio">Không
+                                                   type="radio">Ẩn
                                                 </label>
                                                         </div>
                                          <div class="form-group"><label>Từ khóa</label>

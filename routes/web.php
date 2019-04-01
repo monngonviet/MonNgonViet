@@ -138,5 +138,5 @@ use App\TinTuc;
     Route::get('an-uong/{id}/{TieuDeKhongDau}','PageController@anuong');
     Route::get('dangnhap','PageController@getDangNhap');
     Route::post('dangnhap','PageController@postDangNhap');
-       Route::post('timkiem','PageController@timkiem');
+    Route::post('timkiem','PageController@timkiem');
   

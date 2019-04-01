@@ -28,10 +28,9 @@
                                                 <th>Số lượt xem</th>
                                                 <th>Thao tác</th>
                                                 <th>Xem</th>
-
                                                 <th>Ngày Đăng</th>
                                                 <th>Nổi bật</th> 
-                                                <th>Tóm Tắt</th> 
+                                                <th>Hiển thị</th> 
                                                                         
                                             </tr>
                                         </thead>
@@ -58,7 +57,13 @@
                                                     {{"Hiển thị"}}
                                                     @endif
                                                     </td>  
-                                                <td style="white-space: normal;">{!!$tt->TomTat!!}</td>
+                                                    <td>@if($tt->Status==0)
+                                                            {{"Ẩn"}}
+                                                            @else
+                                                            {{"Hiển thị"}}
+                                                            @endif
+                                                            </td> 
+                                            
                                                 
                                                 <?php $i++; ?>
                                             </tr>
