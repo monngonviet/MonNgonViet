@@ -130,13 +130,20 @@ use App\TinTuc;
     Route::get('lien-he.html','PageController@lienhe');
     Route::post('lien-he.html','PageController@postlienhe');
     Route::get('tin-tuc/{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
+    Route::get('the-loai/{id}/{TenKhongDau}.html','PageController@danhsachtheloai');
+    Route::get('loai-tin/{id}/{TenKhongDau}.html','PageController@danhsachloaitin');
+
+    // Route::get('/test','PageController@danhsachtheloai1');
+
+
     Route::get('trang-chu.html','PageController@trangchu');
     Route::get('loaitin/{id}/{TenKhongDau}.html','PageController@danhsachdiadiemdulich');
-    Route::get('{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
+    // Route::get('{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
 
     Route::get('dia-diem-an-uong/{TenKhongDau}/{id}.html','PageController@danhsachdiadiemanuong');
     Route::get('an-uong/{id}/{TieuDeKhongDau}','PageController@anuong');
     Route::get('dangnhap','PageController@getDangNhap');
     Route::post('dangnhap','PageController@postDangNhap');
     Route::post('timkiem','PageController@timkiem');
-  
+    // test
+   

@@ -9407,7 +9407,9 @@ body.td-animation-stack-type0 .td-animation-stack .entry-thumb, body.td-animatio
 a.td-post-category {
   font-size: 13px;
 }
-
+.td-post-content img {
+  width: 100%;
+}
 @media (max-width: 767px){
 .td-pb-row [class*="td-pb-span"] {
     padding-right: 0;
@@ -9475,53 +9477,3 @@ a.td-post-category {
 .td-big-grid-post .entry-thumb {
     width: 100%;
 }
-
-/* -- end header danhmuc 1-- */
-/* 
-header .td-module-meta-info {
-  margin-bottom: 16px;
-}
-header .td-post-author-name {
-  font-weight: 400;
-  color: #444;
-  float: left;
-}
-.td-post-author-name div {
-  display: inline;
-  margin-right: 2px;
-}
-header .td-post-author-name a {
-  font-weight: 700;
-  margin-right: 3px;
-}
-.td-post-author-name div {
-  display: inline;
-  margin-right: 2px;
-}
-header .td-post-date {
-  margin-left: 4px;
-  color: #444;
-  float: left;
-}
-.td-post-template-default .td-post-title .td-post-comments {
-  margin-left: 22px;
-}
-header .td-post-comments a {
-  color: #444;
-}
-header .td-post-comments i {
-  vertical-align: middle;
-}
-.td-post-template-default .td-post-title div.td-post-views {
-  margin-right: 0;
-}
-header .td-icon-views {
-  position: relative;
-  line-height: 17px;
-  font-size: 14px;
-  margin-right: 5px;
-}
-header .td-post-views span {
-  line-height: 15px;
-  vertical-align: top;
-} */

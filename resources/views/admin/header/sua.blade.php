@@ -26,8 +26,11 @@
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                         
                                         
+                                            
+                                 
+
                                         <div class="form-group">
-                                            <label>Hình ảnh</label>
+                                            <label>Hình ảnh banner</label>
                                             <p>
                                             <img src="upload/footer/{{$header->Hinh}}" width="90px" alt="">
                                             </p>

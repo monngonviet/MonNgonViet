@@ -64,6 +64,8 @@ class HeaderController extends Controller
         unlink("upload/footer/".$header->Hinh);
         $header->Hinh=$Hinh;
     }
+
+   
       $header->save();
      return redirect('admin/header/danhsach')->with('thongbao','Sửa Thành Công');
   }

@@ -5,7 +5,6 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
-
 <head>
 	<meta charset="utf-8" />
 
@@ -19,6 +18,7 @@
 	<!-- Mobile Meta Tag -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <base href="{{asset('')}}">
+	
 	<!-- <link rel="shortcut icon" type="image/x-icon" href="assets/assets/images/fav_touch_icons/favicon.ico" /> -->
 	<!-- Fav and touch icons -->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/fav_touch_icons/favicon.ico" />
@@ -45,7 +45,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="jquery.shorten.1.0.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
 	<style>
@@ -59,7 +58,6 @@
 	<!-- BEGIN WRAPPER -->
 		<!-- END HEADER -->
 @include('layout.header')
-@include('layout.slide')
 @yield('content')
 @include('layout.footer')
         

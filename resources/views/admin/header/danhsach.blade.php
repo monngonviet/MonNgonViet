@@ -23,7 +23,9 @@
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
-                                                <th>Hình LoGo</th>
+                                        
+
+                                                <th>Hình Banner LoGo</th>
                                                 <th>Đường dẫn</th>
                                                 <th>Số điện thoại</th>
                                                 <th>Email</th>
@@ -35,6 +37,7 @@
                                                 @foreach($header as $tt)
                                                 <tr>
                                                <td><?php echo $i?></td>
+
                                                 <td><img src="upload/footer/{{$tt->Hinh}}" alt="" width="150px"></td>
                                               
                                                <td>{{$tt->Link}}</td>

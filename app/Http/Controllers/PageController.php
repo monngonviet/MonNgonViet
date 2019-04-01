@@ -25,7 +25,7 @@ class PageController extends Controller
     $theloaivanhoaamthuc1=TheLoai::where('id',8)->get();
     $theloaidiachi=TheLoai::where('id',4)->get();
     $theloainghebep=TheLoai::where('id',5)->get();
-    $theloailangnghe=TheLoai::where('id',6)->get();
+    $theloailangnghe=TheLoai::where('id',6)->take(1)->latest()->get();
     $theloaihoatdong=TheLoai::where('id',7)->get();
     $theloaitintuc=LoaiTin::where('idTheLoai',9)->get();
     $header=Header::all();
@@ -33,6 +33,12 @@ class PageController extends Controller
     $slide1=Slide::where('Status',1)->get();
     $slideNoiBat=Slide::where('NoiBat',1)->take(2)->latest()->get();
     $tatcatintuc=TinTuc::where('HienThi',1)->latest()->paginate(3);
+    // $tintuclangnghe =DB::table('TinTuc')
+    // ->join('LoaiTin', 'TinTuc.idLoaiTin', '=',24)
+    // ->join('TheLoai', 'LoaiTin.idTheLoai', '=', 6)
+    // ->select('TinTuc.idLoaiTin','TinTuc.TieuDe','TinTuc.Hinh','TinTuc.TomTat',)
+    // ->get();
+
 
      $theloai=TheLoai::all();
      $loaitin=LoaiTin::all();
@@ -63,7 +69,7 @@ class PageController extends Controller
        view()->share('tintuc',$tintuc);
        view()->share('tatcatintuc',$tatcatintuc);
 
-  
+
         view()->share('danhsachloaitin',$danhsachloaitin);
           view()->share('quangcao',$quangcao);
             view()->share('user',$user);
@@ -84,33 +90,62 @@ class PageController extends Controller
    $loaitin=LoaiTin::find($id);
    $tintuc=TinTuc::orderBy('id','DESC')->get();
    $tintuc=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(3);
-   return view('page.danhsach',['loaitin'=>$loaitin,'tintuc'=>$tintuc]);
+   $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
+   return view('page.danhsach',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat]);
  }
 
-//  function danhsachdiadiemanuong($id)
+
+
+function danhsachloaitin($id)
+{
+  $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
+  $loaitin=LoaiTin::find($id);
+  $loaitin1=LoaiTin::where('id',$id);
+  $tintuc=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(7);
+  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+  return view('page.loaitin',['loaitin'=>$loaitin,'loaitin1'=>$loaitin1,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
+}
+
+//  function chitiettintuc($id)
 //  {
-//    $danhmucanuong=DanhMucAnUong::find($id);
-//    $anuong=DiaDiemAnUong::orderBy('id','ASC')->get();
-//    $anuong=DiaDiemAnUong::where('idDanhMuc',$id)->orderBy('id','ASC')->paginate(20);
-//    return view('page.anuong',['anuong'=>$anuong,'danhmucanuong'=>$danhmucanuong]);
+//    $tintuc=TinTuc::find($id);
+//    $tinnoibat=TinTuc::where('NoiBat',1)->take(1)->get();
+//    $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(4)->get();
+//    $theloai=TheLoai::all();
+//    $tinhluotxem=TinTuc::where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
+//    return view('page.chitiettintuc',['tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai,'tinhluotxem'=>$tinhluotxem]);
 //  }
 
  function chitiettintuc($id)
  {
    $tintuc=TinTuc::find($id);
-   $tinnoibat=TinTuc::where('NoiBat',1)->take(1)->get();
-   $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(4)->get();
    $theloai=TheLoai::all();
-   $tinhluotxem=TinTuc::where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
-   return view('page.chitiettintuc',['tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai,'tinhluotxem'=>$tinhluotxem]);
- }
+   $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(3)->get();
+  //  
 
-// function anuong($id)
-// {
-//   $anuong=DiaDiemAnUong::find($id);
-  
-//    return view('page.chitiettintuc',['anuong'=>$anuong]);
-// }
+   return view('page.chitiettintuc',['tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai]);
+ }
+//  function danhsachtheloai($id)
+//  {
+//     $theloai=TheLoai::find($id);
+//     $theloaids =
+//    DB::table('TinTuc','TheLoai','LoaiTin')
+//    ->join('LoaiTin','LoaiTin.id','idLoaiTin')
+//    ->join('TheLoai','TheLoai.id','idTheLoai')
+//    ->select('TinTuc.*','TheLoai.Ten')
+//    ->where('idTheLoai',$theloai->id)
+//    ->get();
+//    return  view('page.danhsachtheloai',['theloaids'=>$theloaids]);
+//  }
+function danhsachtheloai($id)
+{
+  $theloai=TheLoai::find($id);
+  // $loaitin=LoaiTin::where('idTheLoai')
+  $loaitin=LoaiTin::where('idTheLoai',$theloai->id)->get();
+  $tintuc=TinTuc::where('idLoaiTin',$loaitin->idTheLoai)->get();
+  return  view('page.danhsachtheloai',['theloai'=>$theloai,'tintuc'=>$tintuc,'loaitin'=>$loaitin]);
+}
+
 
  public function lienhe()
  {
