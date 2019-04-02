@@ -73,6 +73,17 @@ use App\TinTuc;
       Route::post('them','TinTuc1Controller@postThem');
       Route::get('xoa/{id}','TinTuc1Controller@getXoa');
     });
+        //Video
+        Route::group(['prefix'=>'video'],function(){
+          //admin/tintuc/danhsach
+          Route::get('danhsach','VideoController@getDanhSach');
+          Route::get('sua/{id}','VideoController@getSua');
+          Route::get('xem/{id}','VideoController@getXem');
+          Route::post('sua/{id}','VideoController@postSua');
+          Route::get('them','VideoController@getThem');
+          Route::post('them','VideoController@postThem');
+          Route::get('xoa/{id}','VideoController@getXoa');
+        });
     //Người dùng
       Route::group(['prefix'=>'user'],function(){
     //admin/user/danhsach

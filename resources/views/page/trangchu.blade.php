@@ -33,151 +33,43 @@
                                         {!!$tatcatintuc->links();!!}
                                 </div>
                             </ul>
-                            <div class="sidebar sidebar-mnv">
-                                <h2 class="title-news culinary-culture">Văn hoá ẩm thực</h2>
-                                <ul class="latest-news sidebar-mnv-li">
 
+                            {{-- Van Hoa Am Thuc --}}
+                            <?php $i=0;  ?>
+                            @foreach($theloaitc1 as $tt)
+                            <?php 
+                            $data=$tt->tintuc->where('HienThi',1)->sortbyDesc('createa_at')->take(3);
+                            ?>
+                            <div class="sidebar sidebar-mnv">
+                            <h2
+                            @if($i==0) 
+                            class="title-news culinary-culture"
+                            @else
+                            class="title-news community"
+                            @endif
+                            >{{$tt->Ten}}</h2>
+                                <ul class="latest-news sidebar-mnv-li">
+                                        @foreach($data as $ttt)
                                     <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">How to get your dream property for the best
-                                                price?</a>
+                                    <h3><a href="blog-detail.html">{{$ttt->TieuDe}}</a>
                                         </h3>
                                         <div class="image">
                                             <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="" />
+                                            <img src="upload/tintuc/{{$ttt->Hinh}}" alt="" />
                                         </div>
-
                                         <ul class="top-info">
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                                                    dignissimos facilis ea debitis. Odio labore facilis totam eaque
-                                                    nam.
-                                                    Accusamus quisquam earum nobis sequi suscipit amet inventore
-                                                    quaerat
-                                                    iusto saepe.</p>
-                                            </li>
+                                            <div class="des" data-maxlength="100">
+                                                <p>{!!$ttt->TomTat!!}</p>
+                                            </div>
                                         </ul>
-
-
                                     </li>
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-
-                                        <div class="image">
-                                            <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="" />
-                                        </div>
-
-                                        <ul class="top-info">
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-                                                    illum?
-                                                    Iste asperiores maxime molestiae distinctio at doloremque in,
-                                                    eum
-                                                    hic
-                                                    deleniti ea quas culpa optio quidem amet sed suscipit
-                                                    repudiandae!
-                                                </p>
-                                            </li>
-                                        </ul>
-
-                                    </li>
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">House, location or price: What's the most
-                                                important
-                                                factor?</a></h3>
-                                        <div class="image">
-                                            <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="" />
-                                        </div>
-
-                                        <ul class="top-info">
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quae
-                                                    autem
-                                                    exercitationem dolor cumque laudantium, ratione eum dolorem?
-                                                    Quaerat, a
-                                                    voluptas. Pariatur atque voluptas cum numquam magni qui
-                                                    repellendus
-                                                    quisquam.</p>
-                                            </li>
-                                        </ul>
-
-
-                                    </li>
+                                     @endforeach
                                 </ul>
                             </div>
-                            <div class="sidebar sidebar-mnv">
-                                <h2 class="title-news community">Hoạt động cộng đồng</h2>
-                                <ul class="latest-news sidebar-mnv-li">
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">How to get your dream property for the best
-                                                price?</a>
-                                        </h3>
-                                        <div class="image">
-                                            <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="" />
-                                        </div>
-
-                                        <ul class="top-info">
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                                                    dignissimos facilis ea debitis. Odio labore facilis totam eaque
-                                                    nam.
-                                                    Accusamus quisquam earum nobis sequi suscipit amet inventore
-                                                    quaerat
-                                                    iusto saepe.</p>
-                                            </li>
-                                        </ul>
-
-
-                                    </li>
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-
-                                        <div class="image">
-                                            <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="" />
-                                        </div>
-
-                                        <ul class="top-info">
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-                                                    illum?
-                                                    Iste asperiores maxime molestiae distinctio at doloremque in,
-                                                    eum
-                                                    hic
-                                                    deleniti ea quas culpa optio quidem amet sed suscipit
-                                                    repudiandae!
-                                                </p>
-                                            </li>
-                                        </ul>
-
-                                    </li>
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">House, location or price: What's the most
-                                                important
-                                                factor?</a></h3>
-                                        <div class="image">
-                                            <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="" />
-                                        </div>
-
-                                        <ul class="top-info">
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quae
-                                                    autem
-                                                    exercitationem dolor cumque laudantium, ratione eum dolorem?
-                                                    Quaerat, a
-                                                    voluptas. Pariatur atque voluptas cum numquam magni qui
-                                                    repellendus
-                                                    quisquam.</p>
-                                            </li>
-                                        </ul>
-
-
-                                    </li>
-                                </ul>
-                            </div>
+                            <?php $i++;?>
+                            @endforeach
+                            
+                            {{-- video --}}
                             <div class="sidebar sidebar-mnv">
                                 <h2 class="title-news video">video</h2>
                                 <div class="card">
@@ -307,12 +199,21 @@
                             </ul>
                         </div>
 
+                        <?php $i=0;  ?>
+                        @foreach($theloaitc as $tt)
+                        <?php 
+                        $data=$tt->tintuc->where('HienThi',1)->sortbyDesc('createa_at')->take(3);
+                        ?>
                         <div class="sidebar sidebar-mnv">
-                            @foreach($theloailangnghe as $tt)
-                        <h2 class="title-news villages">{{$tt->Ten}}</h2>
+                        <h2
+                        @if($i==0) 
+                        class="title-news villages"
+                        @else
+                        class="title-news times"
+                        @endif
+                        >{{$tt->Ten}}</h2>
                             <ul class="latest-news sidebar-mnv-li">
-                                    @foreach($tt->loaitin as $lt)
-                                    @foreach($lt->tintuc as $ttt)
+                                    @foreach($data as $ttt)
                                 <li class="col-md-12">
                                 <h3><a href="blog-detail.html">{{$ttt->TieuDe}}</a>
                                     </h3>
@@ -325,84 +226,14 @@
                                             <p>{!!$ttt->TomTat!!}</p>
                                         </div>
                                     </ul>
-                                    @endforeach
                                 </li>
                                  @endforeach
-                               
                             </ul>
-                            @endforeach
-                       
                         </div>
-
-
+                        <?php $i++;?>
+                        @endforeach
                         
-                        <div class="sidebar sidebar-mnv">
-                            <h2 class="title-news times">ẩm thực xưa và nay</h2>
-                            <ul class="latest-news sidebar-mnv-li">
-
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">How to get your dream property for the best
-                                            price?</a>
-                                    </h3>
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                                                dignissimos facilis ea debitis. Odio labore facilis totam eaque nam.
-                                                Accusamus quisquam earum nobis sequi suscipit amet inventore quaerat
-                                                iusto saepe.</p>
-                                        </li>
-                                    </ul>
-
-
-                                </li>
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, illum?
-                                                Iste asperiores maxime molestiae distinctio at doloremque in, eum
-                                                hic
-                                                deleniti ea quas culpa optio quidem amet sed suscipit repudiandae!
-                                            </p>
-                                        </li>
-                                    </ul>
-
-                                </li>
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">House, location or price: What's the most
-                                            important
-                                            factor?</a></h3>
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quae
-                                                autem
-                                                exercitationem dolor cumque laudantium, ratione eum dolorem?
-                                                Quaerat, a
-                                                voluptas. Pariatur atque voluptas cum numquam magni qui repellendus
-                                                quisquam.</p>
-                                        </li>
-                                    </ul>
-
-
-                                </li>
-                            </ul>
-                        </div>
+                        
                         <div class="sidebar sidebar-mnv">
                             <h2 class="title-news events">tin tức sự kiện</h2>
                             <ul class="latest-news sidebar-mnv-li">
@@ -538,7 +369,7 @@
                         <img src="assets/images/qc3.jpg" alt="">
                     </div>
                 </div>
-
+                
                 <div class="col-md-2">
                     <img src="assets/images/qc1.jpg" alt="">
                     <img src="assets/images/qc2.jpg" alt="">

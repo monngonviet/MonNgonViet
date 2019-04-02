@@ -25,7 +25,11 @@ class PageController extends Controller
     $theloaivanhoaamthuc1=TheLoai::where('id',8)->get();
     $theloaidiachi=TheLoai::where('id',4)->get();
     $theloainghebep=TheLoai::where('id',5)->get();
-    $theloailangnghe=TheLoai::where('id',6)->take(1)->latest()->get();
+    $theloailangnghe=TheLoai::where('id',6)->get();
+
+    $theloaitc=TheLoai::where('id','=',6)->orwhere('id','=',5)->orderBy('id','DESC')->get();
+    $theloaitc1=TheLoai::where('id','=',3)->orwhere('id','=',7)->orderBy('id','asc')->get();
+
     $theloaihoatdong=TheLoai::where('id',7)->get();
     $theloaitintuc=LoaiTin::where('idTheLoai',9)->get();
     $header=Header::all();
@@ -68,6 +72,8 @@ class PageController extends Controller
       view()->share('loaitin',$loaitin);
        view()->share('tintuc',$tintuc);
        view()->share('tatcatintuc',$tatcatintuc);
+       view()->share('theloaitc',$theloaitc);
+       view()->share('theloaitc1',$theloaitc1);
 
 
         view()->share('danhsachloaitin',$danhsachloaitin);
@@ -101,10 +107,10 @@ function danhsachloaitin($id, $idTheLoai)
   $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
   $loaitin=LoaiTin::find($id);
   $theloai1=TheLoai::where( 'TenKhongDau',$idTheLoai)->get();
-  $tintuc=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(7);
+  $tintucds=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(7);
   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
-  $tintucslide=TinTuc::inRandomOrder()->take(5)->get();
-  return view('page.loaitin',['tintucslide'=>$tintucslide,'loaitin'=>$loaitin,'theloai1'=>$theloai1,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
+  $tintucslide=TinTuc::where('idLoaiTin',$id)->inRandomOrder()->take(5)->get();
+  return view('page.loaitin',['tintucslide'=>$tintucslide,'loaitin'=>$loaitin,'theloai1'=>$theloai1,'tintucds'=>$tintucds,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
 }
 
 //  function chitiettintuc($id)
@@ -122,9 +128,10 @@ function danhsachloaitin($id, $idTheLoai)
    $tintuc=TinTuc::find($id);
    $theloai=TheLoai::all();
    $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(3)->get();
+   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
   //  
 
-   return view('page.chitiettintuc',['tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai]);
+   return view('page.chitiettintuc',['tintucmoinhat'=>$tintucmoinhat,'tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai]);
  }
 //  function danhsachtheloai($id)
 //  {

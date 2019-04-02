@@ -36,14 +36,34 @@
                                 </header>
                           
                                 <ul class="td-category">
+                                    <?php $i=0; ?>
                                     @foreach($theloai1 as $tl)
                                     @foreach($tl->loaitin as $ttt)
-                                    <li class="entry-category cate-community">
+                                    <li 
+                               
+                                    @if($i==0)
+                                    class="entry-category cate-community"
+                                    @elseif ($i==1)
+                                    class="entry-category cate-world-cuisine"
+                                    @elseif($i==2)
+                                    class="entry-category cate-classified"
+                                    @elseif($i==3)
+                                    class="entry-category cate-culinary-address"
+                                    @elseif($i==4)
+                                    class="entry-category cate-focus"
+                                    @elseif($i==5)
+                                    class="entry-category cate-community"
+                                    @else
+                                    class="entry-category cate-news-event"
+                                    @endif
+                                    >
                                         <a href="loai-tin/{{$ttt->id}}/{{$ttt->theloai->TenKhongDau}}/{{$ttt->TenKhongDau}}.html">
                                             {{$ttt->Ten}}
                                         </a>
                                     </li>
+                                    <?php $i++;?>
                                      @endforeach
+                                     
                                      @endforeach
                                 </ul>
                               
@@ -58,7 +78,7 @@
                         <div id="td_uid_9_5c9e1575a521e" class="td_block_inner">
                                
                                 <?php $i=0;?>
-                                @foreach($tintuc as $tt)
+                                @foreach($tintucslide as $tt)
                                 @if($i==0) 
                             <div
                             class="td-big-grid-wrapper">
@@ -94,41 +114,42 @@
                                     </div>
                                 </div>
                                 </div>
-                            </div>
-                            <div class="td-big-grid-scroll">
-                            @else
-                            
-                                    <div
-                                        class="td_module_mx6 td-animation-stack td-big-grid-post-1 td-big-grid-post td-small-thumb">
-                                        <div class="td-module-thumb"><a
-                                                href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"
-                                                rel="bookmark" class="td-image-wrap"
-                                                title="Cà ri chay – loanh quanh nhiều chuyện"><img width="265"
-                                                    height="198" class="entry-thumb td-animation-stack-type0-2"
-                                                    src=""
-                                                    srcset="upload/tintuc/{{$tt->Hinh}}"
-                                                    sizes="(max-width: 265px) 100vw, 265px" alt=""
-                                                    title="Cà ri chay – loanh quanh nhiều chuyện"></a></div>
-
-                                        <div class="td-meta-info-container">
-                                            <div class="td-meta-align">
-                                                <div class="td-big-grid-meta">
-                                                    <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
-                                                        class="td-post-category">{{$tt->loaitin->Ten}}</a>
-                                                    <h3 class="entry-title td-module-title"><a
-                                                            href="https://monngonviet.com.vn/2018/08/01/ca-ri-chay-loanh-quanh-nhieu-chuyen/"
-                                                            rel="bookmark"
-                                                            title="Cà ri chay – loanh quanh nhiều chuyện">{{$tt->TieuDe}}</a></h3>
+                                <div class="td-big-grid-scroll">
+                                        @else
+                                        
+                                                <div
+                                                    class="td_module_mx6 td-animation-stack td-big-grid-post-1 td-big-grid-post td-small-thumb">
+                                                    <div class="td-module-thumb"><a
+                                                            href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"
+                                                            rel="bookmark" class="td-image-wrap"
+                                                            title="Cà ri chay – loanh quanh nhiều chuyện"><img width="265"
+                                                                height="198" class="entry-thumb td-animation-stack-type0-2"
+                                                                src=""
+                                                                srcset="upload/tintuc/{{$tt->Hinh}}"
+                                                                sizes="(max-width: 265px) 100vw, 265px" alt=""
+                                                                title="Cà ri chay – loanh quanh nhiều chuyện"></a></div>
+            
+                                                    <div class="td-meta-info-container">
+                                                        <div class="td-meta-align">
+                                                            <div class="td-big-grid-meta">
+                                                                <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
+                                                                    class="td-post-category">{{$tt->loaitin->Ten}}</a>
+                                                                <h3 class="entry-title td-module-title"><a
+                                                                        href="https://monngonviet.com.vn/2018/08/01/ca-ri-chay-loanh-quanh-nhieu-chuyen/"
+                                                                        rel="bookmark"
+                                                                        title="Cà ri chay – loanh quanh nhiều chuyện">{{$tt->TieuDe}}</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                        
+                                        
+                                        @endif
+                                        <?php $i++;?>
+                                        @endforeach
                                         </div>
-                                    </div>
-                            
-                            
-                            @endif
-                            <?php $i++;?>
-                            @endforeach
                             </div>
+                            
                             
                             <div class="clearfix"></div>
                         </div>
@@ -141,7 +162,7 @@
                     <!-- BEGIN PROPERTY LISTING -->
                     <div id="blog-listing" class="list-style clearfix">
                         <div class="row">
-                            @foreach($tintuc as $tt)
+                            @foreach($tintucds as $tt)
                             <div class="item col-md-6">
                                 <!-- Set width to 4 columns for grid view mode only -->
                                 <div class="image">
@@ -169,139 +190,13 @@
                                 </div>
                             </div>
                             @endforeach
-                            {{-- <div class="item col-md-6">
-                                <!-- Set width to 4 columns for grid view mode only -->
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-                                    </a>
-                                    <img src="http://placehold.it/766x515" alt="">
-                                </div>
-                                <div class="tag"><i class="fa fa-film"></i></div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 24, 2014</li>
-                                        <li><i class="fa fa-comments-o"></i> 4</li>
-                                        <li><i class="fa fa-tags"></i> Tips, Mortgage</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">7 tips to get the best mortgage.</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla
-                                        felis, sed molestie libero porttitor in.</p>
-                                </div>
-                            </div> --}}
+                         
                         </div>
-
-                        {{-- <div class="row">
-                            <div class="item col-md-6">
-                                <!-- Set width to 4 columns for grid view mode only -->
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-                                    </a>
-                                    <img src="http://placehold.it/766x515" alt="">
-                                </div>
-                                <div class="tag"><i class="fa fa-file-text"></i></div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 05, 2014</li>
-                                        <li><i class="fa fa-comments-o"></i> 1</li>
-                                        <li><i class="fa fa-tags"></i> Location, Price, House</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">House, location or price: What's the most
-                                            important factor?</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla
-                                        felis, sed molestie libero porttitor in.</p>
-                                </div>
-                            </div>
-
-                            <div class="item col-md-6">
-                                <!-- Set width to 4 columns for grid view mode only -->
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-                                    </a>
-                                    <img src="http://placehold.it/766x515" alt="">
-                                </div>
-                                <div class="tag"><i class="fa fa-file-text"></i></div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> June 27, 2014</li>
-                                        <li><i class="fa fa-comments-o"></i> 3</li>
-                                        <li><i class="fa fa-tags"></i> Sell, Best Price, Real Estate</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">Selling your home for the best price.</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla
-                                        felis, sed molestie libero porttitor in.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="item col-md-6">
-                                <!-- Set width to 4 columns for grid view mode only -->
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-                                    </a>
-                                    <img src="http://placehold.it/766x515" alt="">
-                                </div>
-                                <div class="tag"><i class="fa fa-film"></i></div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> June 22, 2014</li>
-                                        <li><i class="fa fa-comments-o"></i> 1</li>
-                                        <li><i class="fa fa-tags"></i> Rent, Property</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">So you've decided to rent out your home?</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla
-                                        felis, sed molestie libero porttitor in.</p>
-                                </div>
-                            </div>
-
-                            <div class="item col-md-6">
-                                <!-- Set width to 4 columns for grid view mode only -->
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-                                    </a>
-                                    <img src="http://placehold.it/766x515" alt="">
-                                </div>
-                                <div class="tag"><i class="fa fa-file-text"></i></div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> June 16, 2014</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Market, Deals, New York</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">On the market: Best deals in New York.</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla
-                                        felis, sed molestie libero porttitor in.</p>
-                                </div>
-                            </div>
-                        </div> --}}
-
                     </div>
                     <!-- END PROPERTY LISTING -->
-
-
                     <!-- BEGIN PAGINATION -->
                     <div >
-                            {!!$tatcatintuc->links();!!}
+                            {!!$tintucds->links();!!}
                     </div>
                     <!-- END PAGINATION -->
 

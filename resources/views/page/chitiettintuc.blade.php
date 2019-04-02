@@ -222,61 +222,21 @@
                         </ul>
                     </div>
                     <div class="details-news-read">
-                        <h2 class="section-title">Bài Viết Mới Nhât</h2>
+                        <h2 class="section-title">Bài Viết Mới Nhất</h2>
                         <ul class="latest-news">
-                            <li class="col-md-12">
-                                <h3><a href="blog-detail.html">How to get your dream property for the best
-                                        price?</a></h3>
-                                <ul class="top-info">
-                                    <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                    <div class="td-module-comments"><a href="">0</a></div>
-                                </ul>
-                            </li>
-                            <li class="col-md-12">
-
-                                <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-
-                                <ul class="top-info">
-                                    <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                    <div class="td-module-comments"><a href="">0</a></div>
-                                </ul>
-
-                            </li>
-                            <li class="col-md-12">
-                                <h3><a href="blog-detail.html">House, location or price: What's the most important
-                                        factor?</a></h3>
-                                <ul class="top-info">
-                                    <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                    <div class="td-module-comments"><a href="">0</a></div>
-                                </ul>
-                            </li>
-                            <li class="col-md-12">
-                                <h3><a href="blog-detail.html">How to get your dream property for the best
-                                        price?</a></h3>
-                                <ul class="top-info">
-                                    <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                    <div class="td-module-comments"><a href="">0</a></div>
-                                </ul>
-                            </li>
-                            <li class="col-md-12">
-
-                                <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-
-                                <ul class="top-info">
-                                    <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                    <div class="td-module-comments"><a href="">0</a></div>
-                                </ul>
-
-                            </li>
-                            <li class="col-md-12">
-                                <h3><a href="blog-detail.html">House, location or price: What's the most important
-                                        factor?</a></h3>
-                                <ul class="top-info">
-                                    <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                    <div class="td-module-comments"><a href="">0</a></div>
-                                </ul>
-                            </li>
-                        </ul>
+                                @foreach($tintucmoinhat as $tt)
+                                <li class="col-md-12">
+                                <h3><a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">{{$tt->TieuDe}}</a></h3>
+                                    <ul class="top-info">
+                                            <?php
+                                            $thoigian=$tt->NgayTao; 
+                                            $dateM=date("d-m-Y",strtotime($thoigian)); ?>
+                                        <li><strong>admin </strong> - <i class="fa fa-calendar"></i> {{$dateM}}</li>
+                                        <div class="td-module-comments"><a href="">0</a></div>
+                                    </ul>
+                                </li>
+                                @endforeach
+                            </ul>
                     </div>
                 </div>
             </div>

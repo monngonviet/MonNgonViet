@@ -189,6 +189,17 @@
             <li><a href="admin/user/them">them</a></li>
         </ul>
         </li>
+        {{-- Video --}}
+          
+        <li><a href="javascript:void(0);" class="waves-effect"><i
+            class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Video<span
+                class="float-right menu-arrow"><i
+                    class="mdi mdi-chevron-right"></i></span></span></a>
+        <ul class="submenu">
+        <li><a href="admin/video/danhsach">Danh sách Video</a></li>
+        <li><a href="admin/video/them">Thêm Video</a></li>
+    </ul>
+    </li>
             </div>
             <!-- Sidebar -->
             <div class="clearfix"></div>

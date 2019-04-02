@@ -24,7 +24,7 @@
                                 <form class="" action="admin/tintuc/sua/{{$tintuc->id}}" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                         <div class="form-group"><label>Tiêu Đề</label>
-                                            <div><input data-parsley-type="alphanum" type="text" name="TieuDe" class="form-control"
+                                            <div><input data-parsley-type="alphanum" type="text" name="TieuDe" id="TieuDe" class="form-control"
                                                     required placeholder="Nhập tên tiêu đề" value="{{$tintuc->TieuDe}}"></div>
                                         </div>
                                         <div class="form-group">
@@ -102,7 +102,7 @@
                         </label>
                     </div>                                    
                                                 <div class="form-group"><label>Từ Khóa</label>
-                                                <div><input data-parsley-type="alphanum" type="text" value="{{$tintuc->SEOTitle}}" name="SEOTitle" class="form-control"
+                                                <div><input data-parsley-type="alphanum" type="text" value="{{$tintuc->SEOTitle}}" name="SEOTitle" id="SEOTitle" class="form-control"
                                                 required placeholder="Nhập tên từ khóa"></div>
                                     </div>
 
@@ -131,4 +131,13 @@
     let today = new Date().toISOString().substr(0, 10);
     document.querySelector("#today").value = today;
   </script>
+  <script type="text/javascript">
+        $(function () {
+            $("#TieuDe").keyup(function () {
+                var text = $.trim($(this).val().toLowerCase());
+            $('#SEOTitle').val(text);
+            }).keyup();
+        });
+    </script>
+<script>
 @endsection
