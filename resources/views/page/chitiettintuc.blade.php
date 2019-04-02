@@ -222,7 +222,7 @@
                         </ul>
                     </div>
                     <div class="details-news-read">
-                        <h2 class="section-title">Must Read</h2>
+                        <h2 class="section-title">Bài Viết Mới Nhât</h2>
                         <ul class="latest-news">
                             <li class="col-md-12">
                                 <h3><a href="blog-detail.html">How to get your dream property for the best
