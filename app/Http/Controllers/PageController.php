@@ -103,7 +103,8 @@ function danhsachloaitin($id, $idTheLoai)
   $theloai1=TheLoai::where( 'TenKhongDau',$idTheLoai)->get();
   $tintuc=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(7);
   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
-  return view('page.loaitin',['loaitin'=>$loaitin,'theloai1'=>$theloai1,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
+  $tintucslide=TinTuc::inRandomOrder()->take(5)->get();
+  return view('page.loaitin',['tintucslide'=>$tintucslide,'loaitin'=>$loaitin,'theloai1'=>$theloai1,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
 }
 
 //  function chitiettintuc($id)
