@@ -96,14 +96,14 @@ class PageController extends Controller
 
 
 
-function danhsachloaitin($id)
+function danhsachloaitin($id, $idTheLoai)
 {
   $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
   $loaitin=LoaiTin::find($id);
-  $loaitin1=LoaiTin::where('id',$id);
+  $theloai1=TheLoai::where( 'TenKhongDau',$idTheLoai)->get();
   $tintuc=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(7);
   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
-  return view('page.loaitin',['loaitin'=>$loaitin,'loaitin1'=>$loaitin1,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
+  return view('page.loaitin',['loaitin'=>$loaitin,'theloai1'=>$theloai1,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
 }
 
 //  function chitiettintuc($id)

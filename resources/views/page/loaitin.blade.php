@@ -14,7 +14,11 @@
                             <i class="fa fa-angle-right"> </i>
                             <span>
                                 <a title="{{$loaitin->Ten}}" class="entry-crumb"
-                                    href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/">{{$loaitin->Ten}}</a></span>
+                                    href="">{{$loaitin->theloai->Ten}}</a></span>
+                                    <i class="fa fa-angle-right"> </i>
+                                    <span
+                                      title="{{$loaitin->Ten}}" class="entry-crumb">
+                                            {{$loaitin->Ten}}</span>
                             </span>
                         </div>
                         <div class="clearfix"></div>
@@ -26,33 +30,24 @@
                                     <div class="row">
                                         <div class="text-author">
                                             <div class="col-md-6">
-                                                
                                             </div>
-                                            <!-- <div class="col-md-6">
-                                                <div class="author-right">
-                                                    <span><i class="fas fa-eye"></i>100</span>
-                                                    <span><i class="fas fa-comments"></i>100</span>
-                                                </div>
-                                            </div> -->
                                         </div>
                                     </div>
                                 </header>
-                                {{-- @foreach($tintuc as $tl)
+                          
                                 <ul class="td-category">
-                                    
+                                    @foreach($theloai1 as $tl)
                                     @foreach($tl->loaitin as $ttt)
                                     <li class="entry-category cate-community">
-                                        <a href="#">
+                                        <a href="loai-tin/{{$ttt->id}}/{{$ttt->theloai->TenKhongDau}}/{{$ttt->TenKhongDau}}.html">
                                             {{$ttt->Ten}}
                                         </a>
                                     </li>
                                      @endforeach
-                                    
+                                     @endforeach
                                 </ul>
-                                @endforeach --}}
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit deleniti ducimus
-                                    esse, doloremque repudiandae praesentium debitis ab vel velit recusandae atque
-                                    ipsam, eos aut repellat quia porro, ut labore iure.</p>
+                              
+                                
                             </div>
                         </article>
                     </div>
@@ -61,55 +56,60 @@
                     <div class="td_block_wrap td_block_big_grid_1 td_uid_9_5c9e1575a521e_rand td-grid-style-5 td-hover-1 td-big-grids td-pb-border-top td_block_template_1"
                         data-td-block-uid="td_uid_9_5c9e1575a521e">
                         <div id="td_uid_9_5c9e1575a521e" class="td_block_inner">
-                            <div class="td-big-grid-wrapper">
+                                <?php $i=0;?>
+                                @foreach($tintuc as $tt)
+                                @if($i==0) 
+                            <div
+                            class="td-big-grid-wrapper">
                                 <div
-                                    class="td_module_mx5 td-animation-stack td-big-grid-post-0 td-big-grid-post td-big-thumb">
-                                    <div class="td-module-thumb"><a
-                                            href="https://monngonviet.com.vn/2018/08/06/mua-chay-sap-den-tan-huong-thuc-don-duong-sinh-lanh-ngon-cua-kfc-nhe/"
-                                            rel="bookmark" class="td-image-wrap"
-                                            title="Mùa Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của KFC nhé"><img
-                                                width="534" height="448"
-                                                class="entry-thumb td-animation-stack-type0-2"
-                                                src="https://monngonviet.com.vn/wp-content/uploads/2018/08/1-534x448.png"
-                                                alt=""
-                                                title="Mùa Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của KFC nhé"></a>
-                                    </div>
-                                    <div class="td-meta-info-container">
-                                        <div class="td-meta-align">
-                                            <div class="td-big-grid-meta">
-                                                <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
-                                                    class="td-post-category">Hoạt động &amp; Cộng đồng</a>
-                                                <h3 class="entry-title td-module-title"><a
-                                                        href="https://monngonviet.com.vn/2018/08/06/mua-chay-sap-den-tan-huong-thuc-don-duong-sinh-lanh-ngon-cua-kfc-nhe/"
-                                                        rel="bookmark"
-                                                        title="Mùa Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của KFC nhé">Mùa
-                                                        Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của
-                                                        KFC nhé</a></h3>
-                                            </div>
-                                            <div class="td-module-meta-info">
-                                                <span class="td-post-author-name"><a
-                                                        href="https://monngonviet.com.vn/author/mnadmin/">mnadmin</a>
-                                                    <span>-</span> </span> <span class="td-post-date"><time
-                                                        class="entry-date updated td-module-date"
-                                                        datetime="2018-08-06T04:05:46+00:00">6 Tháng Tám,
-                                                        2018</time></span> </div>
+                                class="td_module_mx5 td-animation-stack td-big-grid-post-0 td-big-grid-post td-big-thumb">
+                                <div class="td-module-thumb"><a
+                                        href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"
+                                        rel="bookmark" class="td-image-wrap"
+                                        title="Mùa Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của KFC nhé"><img
+                                            width="534" height="448"
+                                            class="entry-thumb td-animation-stack-type0-2"
+                                            src="upload/tintuc/{{$tt->Hinh}}"
+                                            alt=""
+                                            title=""></a>
+                                </div>
+                                <div class="td-meta-info-container">
+                                    <div class="td-meta-align">
+                                        <div class="td-big-grid-meta">
+                                            <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
+                                                class="td-post-category">Hoạt động &amp; Cộng đồng</a>
+                                            <h3 class="entry-title td-module-title"><a
+                                                    href="https://monngonviet.com.vn/2018/08/06/mua-chay-sap-den-tan-huong-thuc-don-duong-sinh-lanh-ngon-cua-kfc-nhe/"
+                                                    rel="bookmark"
+                                                    title="Mùa Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của KFC nhé">Mùa
+                                                    Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của
+                                                    KFC nhé</a></h3>
                                         </div>
+                                        <div class="td-module-meta-info">
+                                            <span class="td-post-author-name"><a
+                                                    href="https://monngonviet.com.vn/author/mnadmin/">mnadmin</a>
+                                                <span>-</span> </span> <span class="td-post-date"><time
+                                                    class="entry-date updated td-module-date"
+                                                    datetime="2018-08-06T04:05:46+00:00">6 Tháng Tám,
+                                                    2018</time></span> </div>
                                     </div>
-
                                 </div>
 
-                                <div class="td-big-grid-scroll">
+                            </div>
+                            @else
+                            <div class="td-big-grid-scroll">
                                     <div
                                         class="td_module_mx6 td-animation-stack td-big-grid-post-1 td-big-grid-post td-small-thumb">
                                         <div class="td-module-thumb"><a
-                                                href="https://monngonviet.com.vn/2018/08/01/ca-ri-chay-loanh-quanh-nhieu-chuyen/"
+                                                href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"
                                                 rel="bookmark" class="td-image-wrap"
                                                 title="Cà ri chay – loanh quanh nhiều chuyện"><img width="265"
                                                     height="198" class="entry-thumb td-animation-stack-type0-2"
-                                                    src="https://monngonviet.com.vn/wp-content/uploads/2018/08/20597240_836370036514978_778655349813624032_n-265x198.jpg"
-                                                    srcset="https://monngonviet.com.vn/wp-content/uploads/2018/08/20597240_836370036514978_778655349813624032_n-265x198.jpg 265w, https://monngonviet.com.vn/wp-content/uploads/2018/08/20597240_836370036514978_778655349813624032_n-80x60.jpg 80w"
+                                                    src=""
+                                                    srcset="upload/tintuc/{{$tt->Hinh}}"
                                                     sizes="(max-width: 265px) 100vw, 265px" alt=""
                                                     title="Cà ri chay – loanh quanh nhiều chuyện"></a></div>
+
                                         <div class="td-meta-info-container">
                                             <div class="td-meta-align">
                                                 <div class="td-big-grid-meta">
@@ -119,113 +119,25 @@
                                                             href="https://monngonviet.com.vn/2018/08/01/ca-ri-chay-loanh-quanh-nhieu-chuyen/"
                                                             rel="bookmark"
                                                             title="Cà ri chay – loanh quanh nhiều chuyện">Cà ri chay
-                                                            – loanh quanh nhiều chuyện</a></h3>
+                                                            – loanh quanh nhiều chuyện 1</a></h3>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-
-
-
-                                    <div
-                                        class="td_module_mx6 td-animation-stack td-big-grid-post-2 td-big-grid-post td-small-thumb">
-                                        <div class="td-module-thumb"><a
-                                                href="https://monngonviet.com.vn/2018/07/06/bao-my-khen-cap-vo-chong-viet-ban-mon-banh-bao-ngon-nhat-o-orlando/"
-                                                rel="bookmark" class="td-image-wrap"
-                                                title="Báo Mỹ khen cặp vợ chồng Việt bán món bánh bao ngon nhất ở Orlando"><img
-                                                    width="265" height="198"
-                                                    class="entry-thumb td-animation-stack-type0-2"
-                                                    src="https://monngonviet.com.vn/wp-content/uploads/2018/07/36677479_1846460158750883_6183637103801270272_n-265x198.jpg"
-                                                    srcset="https://monngonviet.com.vn/wp-content/uploads/2018/07/36677479_1846460158750883_6183637103801270272_n-265x198.jpg 265w, https://monngonviet.com.vn/wp-content/uploads/2018/07/36677479_1846460158750883_6183637103801270272_n-80x60.jpg 80w, https://monngonviet.com.vn/wp-content/uploads/2018/07/36677479_1846460158750883_6183637103801270272_n-534x400.jpg 534w"
-                                                    sizes="(max-width: 265px) 100vw, 265px" alt=""
-                                                    title="Báo Mỹ khen cặp vợ chồng Việt bán món bánh bao ngon nhất ở Orlando"></a>
-                                        </div>
-                                        <div class="td-meta-info-container">
-                                            <div class="td-meta-align">
-                                                <div class="td-big-grid-meta">
-                                                    <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
-                                                        class="td-post-category">Hoạt động &amp; Cộng đồng</a>
-                                                    <h3 class="entry-title td-module-title"><a
-                                                            href="https://monngonviet.com.vn/2018/07/06/bao-my-khen-cap-vo-chong-viet-ban-mon-banh-bao-ngon-nhat-o-orlando/"
-                                                            rel="bookmark"
-                                                            title="Báo Mỹ khen cặp vợ chồng Việt bán món bánh bao ngon nhất ở Orlando">Báo
-                                                            Mỹ khen cặp vợ chồng Việt bán món bánh bao ngon nhất ở
-                                                            Orlando</a></h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-
-                                    <div
-                                        class="td_module_mx6 td-animation-stack td-big-grid-post-3 td-big-grid-post td-small-thumb">
-                                        <div class="td-module-thumb"><a
-                                                href="https://monngonviet.com.vn/2018/07/05/den-singapore-trai-nghiem-le-hoi-am-thuc/"
-                                                rel="bookmark" class="td-image-wrap"
-                                                title="Đến Singapore, trải nghiệm Lễ hội ẩm thực"><img width="265"
-                                                    height="198" class="entry-thumb td-animation-stack-type0-2"
-                                                    src="https://monngonviet.com.vn/wp-content/uploads/2018/07/Hinh-4-1sing-265x198.jpg"
-                                                    srcset="https://monngonviet.com.vn/wp-content/uploads/2018/07/Hinh-4-1sing-265x198.jpg 265w, https://monngonviet.com.vn/wp-content/uploads/2018/07/Hinh-4-1sing-80x60.jpg 80w"
-                                                    sizes="(max-width: 265px) 100vw, 265px" alt=""
-                                                    title="Đến Singapore, trải nghiệm Lễ hội ẩm thực"></a></div>
-                                        <div class="td-meta-info-container">
-                                            <div class="td-meta-align">
-                                                <div class="td-big-grid-meta">
-                                                    <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
-                                                        class="td-post-category">Hoạt động &amp; Cộng đồng</a>
-                                                    <h3 class="entry-title td-module-title"><a
-                                                            href="https://monngonviet.com.vn/2018/07/05/den-singapore-trai-nghiem-le-hoi-am-thuc/"
-                                                            rel="bookmark"
-                                                            title="Đến Singapore, trải nghiệm Lễ hội ẩm thực">Đến
-                                                            Singapore, trải nghiệm Lễ hội ẩm thực</a></h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-
-                                    <div
-                                        class="td_module_mx6 td-animation-stack td-big-grid-post-4 td-big-grid-post td-small-thumb">
-                                        <div class="td-module-thumb"><a
-                                                href="https://monngonviet.com.vn/2018/06/25/thoa-suc-ngam-he-cung-carlo-rino-va-vi-vu-dao-ngoc-phu-quoc/"
-                                                rel="bookmark" class="td-image-wrap"
-                                                title="Thỏa sức ngắm hè cùng Carlo Rino và vi vu Đảo Ngọc Phú Quốc"><img
-                                                    width="265" height="198"
-                                                    class="entry-thumb td-animation-stack-type0-2"
-                                                    src="https://monngonviet.com.vn/wp-content/themes/Newspaper/images/no-thumb/td_265x198.png"
-                                                    alt=""></a></div>
-                                        <div class="td-meta-info-container">
-                                            <div class="td-meta-align">
-                                                <div class="td-big-grid-meta">
-                                                    <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
-                                                        class="td-post-category">Hoạt động &amp; Cộng đồng</a>
-                                                    <h3 class="entry-title td-module-title"><a
-                                                            href="https://monngonviet.com.vn/2018/06/25/thoa-suc-ngam-he-cung-carlo-rino-va-vi-vu-dao-ngoc-phu-quoc/"
-                                                            rel="bookmark"
-                                                            title="Thỏa sức ngắm hè cùng Carlo Rino và vi vu Đảo Ngọc Phú Quốc">Thỏa
-                                                            sức ngắm hè cùng Carlo Rino và vi vu Đảo Ngọc Phú
-                                                            Quốc</a></h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
                                 </div>
+                              
+                              
                             </div>
+                            @endif
+                            <?php $i++;?>
+                            @endforeach
+
                             <div class="clearfix"></div>
                         </div>
                     </div> <!-- ./block -->
                 </div>
                 <div class="col-md-8">
                     <div id="listing-header" class="clearfix">
-
                     </div>
 
                     <!-- BEGIN PROPERTY LISTING -->

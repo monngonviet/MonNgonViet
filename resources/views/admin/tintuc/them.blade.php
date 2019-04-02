@@ -27,7 +27,7 @@
                                 <form class="" action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                         <div class="form-group"><label>Tiêu Đề</label>
-                                            <div><input data-parsley-type="alphanum" type="text" name="TieuDe" class="form-control"
+                                            <div><input data-parsley-type="alphanum" type="text" name="TieuDe" id="TieuDe" class="form-control"
                                                     required placeholder="Nhập tên tiêu đề"></div>
                                         </div>
                                         <div class="form-group">
@@ -97,7 +97,7 @@
                                                      </div>
                                               
                                                     <div class="form-group"><label>Từ Khóa</label>
-                                            <div><input data-parsley-type="alphanum" type="text" name="SEOTitle" class="form-control"
+                                            <div><input data-parsley-type="alphanum" type="text" name="SEOTitle" id="SEOTitle" class="form-control"
                                                     required placeholder="Nhập tên từ khóa"></div>
                                         </div>
                                         <div class="form-group">
@@ -116,16 +116,7 @@
         </div><!-- content -->
         
     </div>
-    <script type="text/javascript">
-        $(function () {
-            $(".TieuDe").keyup(function () {
-                var text = $.trim($(this).val().toLowerCase());
-                var text_create;
-                text_create = text.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a").replace(/\ /g, '-').replace(/đ/g, "d").replace(/đ/g, "d").replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y").replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u").replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ.+/g, "o").replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ.+/g, "e").replace(/ì|í|ị|ỉ|ĩ/g, "i");
-            $('.SEOTitle').val(text_create);
-            }).keyup();
-        });
-    </script>
+   
 @endsection
 @section('script')
 <script type="text/javascript">
@@ -138,6 +129,14 @@
         });
     });
 </script>
+<script type="text/javascript">
+        $(function () {
+            $("#TieuDe").keyup(function () {
+                var text = $.trim($(this).val().toLowerCase());
+            $('#SEOTitle').val(text);
+            }).keyup();
+        });
+    </script>
 <script>
     let today = new Date().toISOString().substr(0, 10);
     document.querySelector("#today").value = today;

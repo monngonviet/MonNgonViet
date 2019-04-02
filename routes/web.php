@@ -131,7 +131,8 @@ use App\TinTuc;
     Route::post('lien-he.html','PageController@postlienhe');
     Route::get('tin-tuc/{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
     Route::get('the-loai/{id}/{TenKhongDau}.html','PageController@danhsachtheloai');
-    Route::get('loai-tin/{id}/{TenKhongDau}.html','PageController@danhsachloaitin');
+    
+    Route::get('loai-tin/{id}/{idTheLoai}/{TenKhongDau}.html','PageController@danhsachloaitin');
 
     // Route::get('/test','PageController@danhsachtheloai1');
 

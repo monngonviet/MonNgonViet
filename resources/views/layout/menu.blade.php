@@ -9,7 +9,7 @@
                 <ul class="dropdown-menu">
                 @foreach($loaitintrangchu as $tc)
                     
-                    <li><a href="{{$tc->TenKhongDau}}">{{$tc->Ten}}</a></li>
+                    <li><a href="loai-tin/{{$tc->id}}/{{$tc->theloai->TenKhongDau}}/{{$tc->TenKhongDau}}.html">{{$tc->Ten}}</a></li>
                     @endforeach
 
                 </ul>
@@ -30,7 +30,7 @@
                 <ul class="dropdown-menu">
                 @foreach($tt->loaitin as $lt)
 
-                    <li><a href="loai-tin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
+                    <li><a href="loai-tin/{{$lt->id}}/{{$lt->theloai->TenKhongDau}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
                     @endforeach
                    
                     <li class="dropdown-submenu">
@@ -56,7 +56,7 @@
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
                 @foreach($tt->loaitin as $lt)
-                    <li><a href="loai-tin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
+                    <li><a href="loai-tin/{{$lt->id}}/{{$lt->theloai->TenKhongDau}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
                 @endforeach
                 </ul>
                 @endforeach
@@ -68,7 +68,7 @@
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
                 @foreach($tt->loaitin as $lt)
-                <li><a href="loai-tin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
+                <li><a href="loai-tin/{{$lt->id}}/{{$lt->theloai->TenKhongDau}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
                 @endforeach
             </ul>
                 @endforeach
@@ -80,7 +80,7 @@
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
                 @foreach($tt->loaitin as $lt)
-                    <li><a href="loai-tin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
+                    <li><a href="loai-tin/{{$lt->id}}/{{$lt->theloai->TenKhongDau}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
                 @endforeach
                  </ul>
                 @endforeach
@@ -92,7 +92,7 @@
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
                 @foreach($tt->loaitin as $lt)
-                <li><a href="loai-tin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
+                <li><a href="loai-tin/{{$lt->id}}/{{$lt->theloai->TenKhongDau}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
                 @endforeach
             </ul>
                 @endforeach
