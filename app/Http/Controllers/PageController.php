@@ -12,6 +12,8 @@ use App\LienHe;
 use App\User;
 use App\Header;
 use App\Footer;
+use App\Video;
+
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -29,6 +31,9 @@ class PageController extends Controller
 
     $theloaitc=TheLoai::where('id','=',6)->orwhere('id','=',5)->orderBy('id','DESC')->get();
     $theloaitc1=TheLoai::where('id','=',3)->orwhere('id','=',7)->orderBy('id','asc')->get();
+    $videonoibat=Video::where('NoiBat',1)->take(1)->latest()->get();
+    $video=Video::where('HienThi',1)->take(6)->latest()->get();
+
 
     $theloaihoatdong=TheLoai::where('id',7)->get();
     $theloaitintuc=LoaiTin::where('idTheLoai',9)->get();
@@ -42,12 +47,9 @@ class PageController extends Controller
     // ->join('TheLoai', 'LoaiTin.idTheLoai', '=', 6)
     // ->select('TinTuc.idLoaiTin','TinTuc.TieuDe','TinTuc.Hinh','TinTuc.TomTat',)
     // ->get();
-
-
      $theloai=TheLoai::all();
      $loaitin=LoaiTin::all();
      $tintuc=TinTuc::all();
-    
      $quangcao =QuangCao::all();
      $user = User::all();
      $soluotxem = DB::table('TinTuc')->max('SoLuotXem');
@@ -74,6 +76,10 @@ class PageController extends Controller
        view()->share('tatcatintuc',$tatcatintuc);
        view()->share('theloaitc',$theloaitc);
        view()->share('theloaitc1',$theloaitc1);
+       view()->share('videonoibat',$videonoibat);
+       view()->share('video',$video);
+
+
 
 
         view()->share('danhsachloaitin',$danhsachloaitin);
@@ -87,20 +93,8 @@ class PageController extends Controller
   }
  function trangchu()
  {
-  
    return view('page.trangchu');
  }
-
- function danhsachdiadiemdulich($id)
- {
-   $loaitin=LoaiTin::find($id);
-   $tintuc=TinTuc::orderBy('id','DESC')->get();
-   $tintuc=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(3);
-   $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
-   return view('page.danhsach',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'tintucnoibat'=>$tintucnoibat]);
- }
-
-
 
 function danhsachloaitin($id, $idTheLoai)
 {
@@ -130,8 +124,16 @@ function danhsachloaitin($id, $idTheLoai)
    $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(3)->get();
    $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
   //  
-
    return view('page.chitiettintuc',['tintucmoinhat'=>$tintucmoinhat,'tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai]);
+ }
+
+ function chitietvideo($id)
+ {
+   $video=Video::find($id);
+   $videomoinhat=Video::where('HienThi',1)->take(3)->latest()->get();
+   $theloai=TheLoai::all();
+
+   return view('page.chitietvideo',['video'=>$video,'videomoinhat'=>$videomoinhat,'theloai'=>$theloai]);
  }
 //  function danhsachtheloai($id)
 //  {
@@ -145,15 +147,24 @@ function danhsachloaitin($id, $idTheLoai)
 //    ->get();
 //    return  view('page.danhsachtheloai',['theloaids'=>$theloaids]);
 //  }
+
+// function danhsachtheloai($id)
+// {
+//   $theloai=TheLoai::find($id);
+//   // $loaitin=LoaiTin::where('idTheLoai')
+//   $loaitin=LoaiTin::where('idTheLoai',$theloai->id)->get();
+//   $tintuc=TinTuc::where('idLoaiTin',$loaitin->idTheLoai)->get();
+//   return  view('page.danhsachtheloai',['theloai'=>$theloai,'tintuc'=>$tintuc,'loaitin'=>$loaitin]);
+// }
+
 function danhsachtheloai($id)
 {
+  $theloaitc=TheLoai::where('id',$id)->orderBy('id','DESC')->get();
+  $theloaitc1=TheLoai::where('id',$id)->orderBy('id','DESC')->inRandomOrder()->take(5)->get();
   $theloai=TheLoai::find($id);
-  // $loaitin=LoaiTin::where('idTheLoai')
-  $loaitin=LoaiTin::where('idTheLoai',$theloai->id)->get();
-  $tintuc=TinTuc::where('idLoaiTin',$loaitin->idTheLoai)->get();
-  return  view('page.danhsachtheloai',['theloai'=>$theloai,'tintuc'=>$tintuc,'loaitin'=>$loaitin]);
+  $theloai1=TheLoai::all();
+  return view('page.danhsachtheloai',['theloai'=>$theloai,'theloai1'=>$theloai1,'theloaitc'=>$theloaitc]);
 }
-
 
  public function lienhe()
  {

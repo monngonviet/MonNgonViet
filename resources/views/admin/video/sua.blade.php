@@ -37,7 +37,7 @@
                                         <div class="form-group"><label>Link Youtube</label>
                                             <div><input data-parsley-type="alphanum" type="text" value="{{$video->LinkYoutube}}" name="LinkYoutube" class="form-control"
                                              placeholder="Nhập tên từ khóa"></div>
-                                </div>
+                                         </div>
                                    
                                         <div class="form-group">
                                             <label>Tóm tắt</label>

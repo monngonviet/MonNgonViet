@@ -71,103 +71,73 @@
                             
                             {{-- video --}}
                             <div class="sidebar sidebar-mnv">
-                                <h2 class="title-news video">video</h2>
-                                <div class="card">
-                                    <img class="card-img-top"
-                                        src="assets/images/nhung-mon-ngon-la-mieng-lam-tu-hoa-o-viet-nam-324x235.jpg"
-                                        alt="Card image cap">
-                                    <div class="card-body">
-                                        <h3><a href="blog-detail.html">How to get your dream property for the best
-                                                price?</a>
-                                        </h3>
-                                        <p class="card-text">Some quick example text to build on the card title and
-                                            make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel slide" data-ride="carousel" data-type="multi"
-                                    data-interval="3000" id="myCarousel1">
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/100x100" class="img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/100x100" class="img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/100x100" class="img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/100x100													class="
-                                                        img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="col-md-4 col-sm-6 col-xs-12"><a href="#">
-                                                    <img src="http://placehold.it/100x100" class="img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
-
-                                        </div>
-                                        <div class="item">
-                                            <div class="col-md-4 col-sm-6 col-xs-12"><a href="#">
-                                                    <img src="http://placehold.it/100x100" class="img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/100x100													class="
-                                                        img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/100x100" class="img-responsive">
-                                                </a>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                    elit.</a>
-                                            </div>
+                                    <h2 class="title-news video">video</h2>
+                                    <?php $i=0; ?>
+                                    @foreach($videonoibat as $vd)
+									<div class="card">
+                                            @if(isset($vd->LinkYoutube)) 
+                                    <iframe width="415" height="300" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                                            @else
+                                            <video width="200"controls>
+                                                    <source src="upload/video/{{$vd->Video}}" type="video/mp4">
+                                                  </video>
+                                            @endif
+										<div class="card-body">
+                                        <h3><a href="chi-tiet-video/{{$vd->id}}/{{$vd->TieuDeKhongDau}}.html">{{$vd->TieuDe}}</a>
+                                            </h3>
+                                            <div
+                                            class="des"
+                                            >	<p class="card-text"></p></div>
                                         </div>
                                     </div>
-                                    <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><i
-                                            class="glyphicon glyphicon-chevron-left"></i></a>
-                                    <a class="right carousel-control" href="#myCarousel1" data-slide="next"><i
-                                            class="glyphicon glyphicon-chevron-right"></i></a>
-                                </div>
+                                    <?php $i++; ?>
+                                    @endforeach
 
-                            </div>
+									<div class="carousel slide" data-ride="carousel" data-type="multi"
+										data-interval="3000" id="myCarousel1">
+										<div class="carousel-inner">
+                                            <?php $i=0;?> 
+                                            @foreach($video as $vd)
+                                            <div
+                                            @if($i==0)
+                                            class="item active"
+                                            @else
+                                            class="item"
+                                            @endif>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+                                                        @if(isset($vd->LinkYoutube))
+                                             <iframe width="150" height="150" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
+                                                        {{-- {!!$vd->LinkYoutube!!} --}}
+                                                      {{-- @else
+                                                      <video width="200" height="200" controls>
+                                                              <source src="upload/video/{{$vd->Video}}" type="video/mp4">
+                                                            </video> --}}
+                                                        @endif
+													<a href="chi-tiet-video/{{$vd->id}}/{{$vd->TieuDeKhongDau}}.html">{{$vd->TieuDe}}</a>
+												</div>
+                                            </div>
+                                            <?php $i++;?> 
+                                            @endforeach
+											{{-- <div class="item">
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<a href="#">
+														<img src="http://placehold.it/100x100" class="img-responsive">
+													</a>
+													<a href="">Lorem ipsum dolor sit amet consectetur adipisicing
+														elit.</a>
+												</div>
+											</div> --}}
+									
+										</div>
+										<a class="left carousel-control" href="#myCarousel1" data-slide="prev"><i
+												class="glyphicon glyphicon-chevron-left"></i></a>
+										<a class="right carousel-control" href="#myCarousel1" data-slide="next"><i
+												class="glyphicon glyphicon-chevron-right"></i></a>
+									</div>
+
+								</div>
+
                         </div>
                     </div>
                     <!-- list item left -->

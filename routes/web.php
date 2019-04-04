@@ -141,9 +141,14 @@ use App\TinTuc;
     Route::get('lien-he.html','PageController@lienhe');
     Route::post('lien-he.html','PageController@postlienhe');
     Route::get('tin-tuc/{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
+
+    // Route::get('the-loai/{id}/{TenKhongDau}.html','PageController@danhsachtheloai');
+
+    Route::get('loai-tin/{id}/{idTheLoai}/{TenKhongDau}.html','PageController@danhsachloaitin');
+
     Route::get('the-loai/{id}/{TenKhongDau}.html','PageController@danhsachtheloai');
     
-    Route::get('loai-tin/{id}/{idTheLoai}/{TenKhongDau}.html','PageController@danhsachloaitin');
+    Route::get('chi-tiet-video/{id}/{TieuDeKhongDau}.html','PageController@chitietvideo');
 
     // Route::get('/test','PageController@danhsachtheloai1');
 

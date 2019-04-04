@@ -40,7 +40,6 @@
                                     @foreach($theloai1 as $tl)
                                     @foreach($tl->loaitin as $ttt)
                                     <li 
-                               
                                     @if($i==0)
                                     class="entry-category cate-community"
                                     @elseif ($i==1)
@@ -66,8 +65,6 @@
                                      
                                      @endforeach
                                 </ul>
-                              
-                                
                             </div>
                         </article>
                     </div>
@@ -80,10 +77,8 @@
                                 <?php $i=0;?>
                                 @foreach($tintucslide as $tt)
                                 @if($i==0) 
-                            <div
-                            class="td-big-grid-wrapper">
-                                <div
-                                class="td_module_mx5 td-animation-stack td-big-grid-post-0 td-big-grid-post td-big-thumb">
+                                <div class="td-big-grid-wrapper">
+                                <div class="td_module_mx5 td-animation-stack td-big-grid-post-0 td-big-grid-post td-big-thumb">
                                 <div class="td-module-thumb"><a
                                         href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"
                                         rel="bookmark" class="td-image-wrap"
@@ -116,7 +111,6 @@
                                 </div>
                                 <div class="td-big-grid-scroll">
                                         @else
-                                        
                                                 <div
                                                     class="td_module_mx6 td-animation-stack td-big-grid-post-1 td-big-grid-post td-small-thumb">
                                                     <div class="td-module-thumb"><a
@@ -127,8 +121,7 @@
                                                                 src=""
                                                                 srcset="upload/tintuc/{{$tt->Hinh}}"
                                                                 sizes="(max-width: 265px) 100vw, 265px" alt=""
-                                                                title="Cà ri chay – loanh quanh nhiều chuyện"></a></div>
-            
+                                                                title="{{$tt->SEOTitle}}"></a></div>
                                                     <div class="td-meta-info-container">
                                                         <div class="td-meta-align">
                                                             <div class="td-big-grid-meta">
@@ -137,28 +130,25 @@
                                                                 <h3 class="entry-title td-module-title"><a
                                                                         href="https://monngonviet.com.vn/2018/08/01/ca-ri-chay-loanh-quanh-nhieu-chuyen/"
                                                                         rel="bookmark"
-                                                                        title="Cà ri chay – loanh quanh nhiều chuyện">{{$tt->TieuDe}}</a></h3>
+                                                                        title="{{$tt->SEOTitle}}">{{$tt->TieuDe}}</a></h3>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                        
-                                        
                                         @endif
                                         <?php $i++;?>
                                         @endforeach
                                         </div>
                             </div>
-                            
-                            
                             <div class="clearfix"></div>
                         </div>
                     </div> <!-- ./block -->
                 </div>
+
+
                 <div class="col-md-8">
                     <div id="listing-header" class="clearfix">
                     </div>
-
                     <!-- BEGIN PROPERTY LISTING -->
                     <div id="blog-listing" class="list-style clearfix">
                         <div class="row">
@@ -190,7 +180,6 @@
                                 </div>
                             </div>
                             @endforeach
-                         
                         </div>
                     </div>
                     <!-- END PROPERTY LISTING -->
@@ -199,9 +188,6 @@
                             {!!$tintucds->links();!!}
                     </div>
                     <!-- END PAGINATION -->
-
-
-
                 </div>
                 <div class="sidebar col-md-4">
                     <div class="details-left-img"><img src="assets/images/qc4.jpg" alt=""></div>
@@ -245,6 +231,7 @@
                         </ul>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

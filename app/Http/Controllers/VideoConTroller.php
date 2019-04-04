@@ -94,6 +94,7 @@ class VideoController extends Controller
     $video=video::find($id);
     $video->TieuDe = $request->TieuDe;
     $video->TieuDeKhongDau=changeTitle($request->TieuDe);
+    $video->LinkYoutube=convertyoutube($request->LinkYoutube);
     $video->SEOTitle=$request->SEOTitle;
     $video->TomTat=$request->TomTat;
     $video->NoiDung=$request->NoiDung;
@@ -104,11 +105,11 @@ class VideoController extends Controller
     if($request->hasFile('Video'))
     {
       $file=  $request->file('Video');
-      $duoi=$file->getClientOriginalExtension();
-      if($duoi != 'jpg' && $duoi !='png'&& $duoi !='jpeg' )
-      {
-        return redirect('admin/video/sua')->with('loi','Bạn chỉ được tải hình');
-      }
+      // $duoi=$file->getClientOriginalExtension();
+      // if($duoi != 'jpg' && $duoi !='png'&& $duoi !='jpeg' )
+      // {
+      //   return redirect('admin/video/sua')->with('loi','Bạn chỉ được tải hình');
+      // }
       $name=  $file->getClientOriginalName();
       $Video=  str_random(4)."_".$name;
       while (file_exists("upload/video/".$Video))
@@ -120,16 +121,16 @@ class VideoController extends Controller
         unlink("upload/video/".$video->Video);
         $video->Video=$Video;
     }
-
     $video->save();
    return redirect('admin/video/danhsach')->with('thongbao','Sửa Thành Công');
   }
 
   public function getXoa($id)
   {
-    $video =video:: find($id);
+    
+    $video =video::find($id);
     $video->delete();
-
+  
     return redirect('admin/video/danhsach')->with('thongbao','Xóa Thành Công');
   }
 

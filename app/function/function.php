@@ -13,8 +13,10 @@
 		$url = $link;
 		parse_str(parse_url($url, PHP_URL_QUERY), $youtube_array);
 		$videoid = $youtube_array['v']; 
-			$embed = "<iframe width='200' src='https://www.youtube.com/embed/".$videoid."' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-			return $embed;
+			$embed =$videoid;
+				// $embed = "<iframe width='100' src='https://www.youtube.com/embed/".$videoid."' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+			
+				return $embed;
 	}
 }
 function changeTitle($str,$strSymbol='-',$case=MB_CASE_LOWER){// MB_CASE_UPPER / MB_CASE_TITLE / MB_CASE_LOWER
