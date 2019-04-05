@@ -150,6 +150,8 @@ use App\TinTuc;
     
     Route::get('chi-tiet-video/{id}/{TieuDeKhongDau}.html','PageController@chitietvideo');
 
+    Route::get('chi-tiet-slide/{id}/{TenKhongDau}.html','PageController@chitietslide');
+
     // Route::get('/test','PageController@danhsachtheloai1');
 
 

@@ -1,8 +1,13 @@
 <div class="topbar">
         <!-- LOGO -->
-        <div class="topbar-left"><a href="index.html" class="logo"><span><img src="Admin_MonNgonViet/assets/images/logo-light.png"
-                        alt="" height="18"> </span><i><img src="Admin_MonNgonViet/assets/images/logo-sm.png" alt=""
-                        height="22"></i></a></div>
+        <div class="topbar-left"><a href="index.html" class="logo"><span>
+          
+        <img src="upload/footer/H8GT_logo-mon-ngon-viet (1).png"
+                        alt="" height="60">
+                     </span><i><img src="Admin_MonNgonViet/assets/images/logo-sm.png" alt=""
+                        height="50"></i></a>
+                    
+                    </div>
         <nav class="navbar-custom">
             <ul class="navbar-right d-flex list-inline float-right mb-0">
                 <li class="dropdown notification-list d-none d-sm-block">
@@ -138,7 +143,7 @@
                                     class="mdi mdi-chevron-right"></i></span></span></a>
                         <ul class="submenu">
                         <li><a href="admin/quangcao/danhsach">Danh sách quảng cáo</a></li>
-                        <li><a href="admin/slide/them">Thêm Slide</a></li>
+                        {{-- <li><a href="admin/slide/them">Thêm Slide</a></li> --}}
                     </ul>
                     {{-- Liên hệ --}}
                     <li><a href="javascript:void(0);" class="waves-effect"><i

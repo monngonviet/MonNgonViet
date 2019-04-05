@@ -17,20 +17,20 @@
                         <div class="col-12">
                             <div class="card m-b-20">
                                 <div class="card-body">
-                                    <h4 class="mt-0 header-title">Thể loại</h4>
+                                    <h4 class="mt-0 header-title">Danh sach quảng cáo</h4>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>Hình 1</th>
-                                                <th>Hình 2</th>
-                                                <th>Hình 3</th>
-                                                <th>Hình 4</th>
+                                                <th>Hình vị trí 1 </th>
+                                                <th>Hình vị trí 2 </th>
+                                                <th>Hình vị trí 3 </th>
+                                                <th>Hình vị trí 4 </th>
                                                 <th>Thao tác</th>
-                                                <th>Đường dẫn hình 1</th>
-                                                <th>Đường dẫn hình 2</th>
-                                                <th>Đường dẫn hình 3</th>
-                                                <th>Đường dẫn hình 4</th>
+                                                <th>Đường dẫn hình vị trí 1</th>
+                                                <th>Đường dẫn hình vị trí 2</th>
+                                                <th>Đường dẫn hình vị trí 3</th>
+                                                <th>Đường dẫn hình vị trí 4</th>
                                             </tr>
                                         </thead>
                                         <tbody>

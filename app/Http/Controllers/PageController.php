@@ -29,7 +29,8 @@ class PageController extends Controller
     $theloainghebep=TheLoai::where('id',5)->get();
     $theloailangnghe=TheLoai::where('id',6)->get();
 
-    $theloaitc=TheLoai::where('id','=',6)->orwhere('id','=',5)->orderBy('id','DESC')->get();
+    $theloaitc=TheLoai::where('id','=',6)->orwhere('id','=',5)->orwhere('id','=',9)->get();
+
     $theloaitc1=TheLoai::where('id','=',3)->orwhere('id','=',7)->orderBy('id','asc')->get();
     $videonoibat=Video::where('NoiBat',1)->take(1)->latest()->get();
     $video=Video::where('HienThi',1)->take(6)->latest()->get();
@@ -53,6 +54,8 @@ class PageController extends Controller
      $quangcao =QuangCao::all();
      $user = User::all();
      $soluotxem = DB::table('TinTuc')->max('SoLuotXem');
+     $phobien=TinTuc::where('SoLuotXem','=',$soluotxem)->take(3)->get();
+      $quangcao=QuangCao::all();
      $tinnoibat=TinTuc::where('NoiBat',1)->take(3)->latest()->get();
      $tintucslide=TinTuc::orderBy('id','DESC')->take(10)->get();
      $danhsachloaitin=LoaiTin::orderBy('id','DESC')->take(5)->get();
@@ -69,19 +72,18 @@ class PageController extends Controller
      view()->share('footer',$footer);
      view()->share('slide1',$slide1);
      view()->share('slideNoiBat',$slideNoiBat);
-    view()->share('tinnoibat',$tinnoibat);
+     view()->share('tinnoibat',$tinnoibat);
      view()->share('theloai',$theloai);
       view()->share('loaitin',$loaitin);
+
+      view()->share('quangcao',$quangcao);
        view()->share('tintuc',$tintuc);
        view()->share('tatcatintuc',$tatcatintuc);
        view()->share('theloaitc',$theloaitc);
        view()->share('theloaitc1',$theloaitc1);
        view()->share('videonoibat',$videonoibat);
        view()->share('video',$video);
-
-
-
-
+       view()->share('phobien',$phobien);
         view()->share('danhsachloaitin',$danhsachloaitin);
           view()->share('quangcao',$quangcao);
             view()->share('user',$user);
@@ -119,12 +121,14 @@ function danhsachloaitin($id, $idTheLoai)
 
  function chitiettintuc($id)
  {
+   $quangcao=QuangCao::all();
    $tintuc=TinTuc::find($id);
    $theloai=TheLoai::all();
    $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(3)->get();
    $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+   $tinhluotxem=TinTuc::where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
   //  
-   return view('page.chitiettintuc',['tintucmoinhat'=>$tintucmoinhat,'tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai]);
+   return view('page.chitiettintuc',['tintucmoinhat'=>$tintucmoinhat,'tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai,'tinhluotxem'=>$tinhluotxem,'quangcao'=>$quangcao]);
  }
 
  function chitietvideo($id)
@@ -132,8 +136,16 @@ function danhsachloaitin($id, $idTheLoai)
    $video=Video::find($id);
    $videomoinhat=Video::where('HienThi',1)->take(3)->latest()->get();
    $theloai=TheLoai::all();
-
    return view('page.chitietvideo',['video'=>$video,'videomoinhat'=>$videomoinhat,'theloai'=>$theloai]);
+ }
+
+ function chitietslide($id)
+ {
+  $theloai=TheLoai::all();
+  $quangcao=QuangCao::all();
+  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+  $slide=Slide::find($id);
+   return view ('page.chitietslide',['slide'=>$slide,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat]);
  }
 //  function danhsachtheloai($id)
 //  {
@@ -163,7 +175,9 @@ function danhsachtheloai($id)
   $theloaitc1=TheLoai::where('id',$id)->orderBy('id','DESC')->inRandomOrder()->take(5)->get();
   $theloai=TheLoai::find($id);
   $theloai1=TheLoai::all();
-  return view('page.danhsachtheloai',['theloai'=>$theloai,'theloai1'=>$theloai1,'theloaitc'=>$theloaitc]);
+  $soluotxem = DB::table('TinTuc')->max('SoLuotXem');
+  $tinnoibat=TinTuc::where('HienThi',1)->orderBy('SoLuotXem','DESC')->take(5)->get();
+  return view('page.danhsachtheloai',['theloai'=>$theloai,'theloai1'=>$theloai1,'theloaitc'=>$theloaitc,'tinnoibat'=>$tinnoibat]);
 }
 
  public function lienhe()

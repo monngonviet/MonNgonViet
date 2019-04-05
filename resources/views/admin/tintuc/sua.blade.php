@@ -50,7 +50,7 @@
                                             <label>Tóm tắt</label>
                                             <textarea id="TomTat"  class="form-control" rows="3" name="TomTat">{{$tintuc->TomTat}}</textarea>
                                         </div>
-                                        <script>CKEDITOR.replace('TomTat');</script>
+                                        {{-- <script>CKEDITOR.replace('TomTat');</script> --}}
 
                                         <div class="form-group">
                                                 <label>Nội Dung</label>

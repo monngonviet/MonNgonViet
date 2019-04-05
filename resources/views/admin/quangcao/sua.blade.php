@@ -26,7 +26,7 @@
                                 <form class="" action="admin/quangcao/sua/{{$quangcao->id}}" method="POST" enctype="multipart/form-data"  >
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                     <div class="form-group">
-                                        <label>Hình ảnh quảng cáo 1</label>
+                                        <label>Hình ảnh quảng cáo vị trí 1 (max_width=170,max_height=700)</label>
                                         <p>
                                         <img src="upload/quangcao/{{$quangcao->Hinh1}}" width="150px" alt="">
                                         </p>
@@ -37,7 +37,7 @@
                                                 required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link1}}"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Hình ảnh quảng cáo 2</label>
+                                        <label>Hình ảnh quảng cáo vị trí 2 (max_width=170,max_height=700)</label>
                                         <p>
                                         <img src="upload/quangcao/{{$quangcao->Hinh2}}" width="150px" alt="">
                                         </p>
@@ -48,7 +48,7 @@
                                                 required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link2}}"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Hình ảnh quảng cáo 3</label>
+                                        <label>Hình ảnh quảng cáo vị trí 3 (max_width=445,max_height=230)</label>
                                         <p>
                                         <img src="upload/quangcao/{{$quangcao->Hinh3}}" width="150px" alt="">
                                         </p>
@@ -59,7 +59,7 @@
                                                 required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link3}}"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Hình ảnh quảng cáo 4</label>
+                                        <label>Hình ảnh quảng cáo vị trí 4 (max_width=330,max_height=275</label>
                                         <p>
                                         <img src="upload/quangcao/{{$quangcao->Hinh4}}" width="150px" alt="">
                                         </p>

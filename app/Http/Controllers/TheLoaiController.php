@@ -55,7 +55,6 @@ class TheLoaiController extends Controller
      ],
      [
        'Ten.require'=>'Bạn chưa nhập tên',
-
        'Ten.min'=>'Tên thể loại phải có độ dài từ 3 đến 100 ký tự',
        'Ten.max'=>'Tên thể loại không được quá 100 ký tự',
      ]);

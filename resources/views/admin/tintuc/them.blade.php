@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="form-group">
                                                 <label>Hình ảnh</label>
-                                                <input type="file" name="Hinh">
+                                                <input type="file" name="Hinh" required>
                                             </div>
                                         <div class="form-group">
                                                 <label>Thể loại</label>
@@ -53,13 +53,13 @@
 
                                         <div class="form-group">
                                                 <label>Tóm tắt</label>
-                                                <textarea id="TomTat" class="form-control" rows="3" name="TomTat"></textarea>
+                                                <textarea id="TomTat" class="form-control" rows="3" name="TomTat" required></textarea>
                                             </div>
-                                            <script>CKEDITOR.replace('TomTat');</script>
+                                            {{-- <script>CKEDITOR.replace('TomTat');</script> --}}
 
                                             <div class="form-group">
                                                     <label>Nội Dung</label>
-                                                    <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung"></textarea>
+                                                    <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung" required></textarea>
                                                 </div>
                                                 <script>CKEDITOR.replace('NoiDung',{
                                                     filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
@@ -73,10 +73,10 @@
                                                 <div class="form-group">
                                                         <label>Nổi Bật</label><br/>
                                                         <label class="radio-inline">
-                                                            <input name="NoiBat" value="1" checked="" type="radio">Có
+                                                            <input name="NoiBat" value="0" checked="" type="radio">Không
                                                         </label><br/>
                                                         <label class="radio-inline">
-                                                            <input name="NoiBat" value="0" type="radio">Không
+                                                            <input name="NoiBat" value="1" type="radio">Có
                                                         </label>
                                                     </div>
 

@@ -27,7 +27,7 @@
                                 <form class="" action="admin/slide/them" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                         <div class="form-group"><label>Tiêu Đề</label>
-                                            <div><input data-parsley-type="alphanum" type="text" name="Ten" class="form-control"
+                                            <div><input data-parsley-type="alphanum" type="text" name="Ten" id="TieuDe" class="form-control"
                                                     required placeholder="Nhập tên tiêu đề"></div>
                                         </div>
                                         <div class="form-group">
@@ -38,7 +38,7 @@
                                                 <label>Tóm tắt</label>
                                                 <textarea id="TomTat" class="form-control" rows="3" name="TomTat" required></textarea>
                                             </div>
-                                            <script>CKEDITOR.replace('TomTat'  );</script>
+                                            {{-- <script>CKEDITOR.replace('TomTat'  );</script> --}}
                                             <div class="form-group">
                                                     <label>Nội Dung</label>
                                                     <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung"required></textarea>
@@ -76,7 +76,7 @@
                                                             </label>
                                                         </div>
                                                 <div class="form-group"><label>Từ Khóa</label>
-                                             <div><input data-parsley-type="alphanum" type="text" name="KeyWord" class="form-control"
+                                             <div><input data-parsley-type="alphanum" type="text" name="KeyWord" id="SEOTitle" class="form-control"
                                                     required placeholder="Nhập tên từ khóa"></div>
                                         </div>
                                                
@@ -94,8 +94,18 @@
                 </div><!-- end row -->
             </div><!-- container-fluid -->
         </div><!-- content -->
-        
     </div>
+
+</div>
+<script type="text/javascript">
+        $(function () {
+            $("#TieuDe").keyup(function () {
+                var text = $.trim($(this).val().toLowerCase());
+            $('#SEOTitle').val(text);
+            }).keyup();
+        });
+    </script>
+
 @endsection
 @section('script')
 <script type="text/javascript">

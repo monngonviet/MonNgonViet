@@ -31,7 +31,7 @@
                                             <p>
                                             <img src="upload/footer/{{$footer->HinhLoGo}}" width="90px" alt="">
                                             </p>
-                                            <input type="file" name="Hinh">
+                                            <input type="file" name="HinhLoGo">
                                         </div>
                                       
                                        

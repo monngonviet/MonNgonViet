@@ -40,7 +40,7 @@
                                             <label>Tóm tắt</label>
                                             <textarea id="TomTat"  class="form-control" rows="3" name="TomTat">{{$slide->TomTat}}</textarea>
                                         </div>
-                                        <script>CKEDITOR.replace('TomTat');</script>
+                                        {{-- <script>CKEDITOR.replace('TomTat');</script> --}}
                                         <div class="form-group">
                                                 <label>Nội Dung</label>
                                                 <textarea id="NoiDung" class="form-control" rows="3" name="NoiDung">{{$slide->NoiDung}}</textarea>

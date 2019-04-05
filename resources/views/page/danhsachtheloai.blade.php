@@ -159,9 +159,9 @@
                             <div id="blog-listing" class="grid-style1">
                                     @foreach($theloaitc as $tl)
                                     <?php 
-                                    $data=$tl->tintuc->where('HienThi',1)->sortbyDesc('createa_at')->take(6);
+                                    // $data=$tl->tintuc->where('HienThi',1)->sortbyDesc('created_at')->take(6);
+                                    $data=$tl->tintuc->where('HienThi',1)->sortbyDesc('created_at')
                                     ?>
-                                      
                                 <div class="row" style="opacity: 1;">
                                         @foreach($data as $ttt)
                                     <div class="item col-md-6">
@@ -170,7 +170,7 @@
                                             <a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">
                                                 <span class="btn btn-default"><i class="fa fa-file-o"></i>Xem thêm</span>
                                             </a>
-                                            <img src="upload/tintuc/{{ $ttt->Hinh}}" alt="">
+                                            <img src="upload/tintuc/{{$ttt->Hinh}}" alt="">
                                         </div>
                                         <div class="tag"><i class="fa fa-file-text"></i></div>
                                         <div class="info-blog">
@@ -183,7 +183,7 @@
                                                 {{-- <li><i class="fa fa-tags"></i> </li> --}}
                                             </ul>
                                             <h3>
-                                                <a href="blog-detail.html">{{$ttt->TieuDe}}</a>
+                                                <a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">{{$ttt->TieuDe}}</a>
                                             </h3>
                                             <div class="des"  data-maxlength="100">
                                                  <p>{!!$ttt->TomTat!!}</p>
@@ -193,134 +193,44 @@
                                     </div>
                                     @endforeach
                                 </div>
-                                
                                 @endforeach
-                             
                                 <!-- END PROPERTY LISTING -->
-    
-    
                                 <!-- BEGIN PAGINATION -->
                                 <div class="pagination">
-                                    <ul id="previous">
-                                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                                    </ul>
-                                    <ul>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                    </ul>
-                                    <ul id="next">
-                                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-                                    </ul>
+                                   
                                 </div>
                                 <!-- END PAGINATION -->
     
                             </div>
                             <!-- END PROPERTY LISTING -->
                         </div>
+
                         <div class="sidebar col-md-4">
                             <div class="details-left-img"><img src="assets/images/qc4.jpg" alt=""></div>
                             <div class="details-news-laster">
-                                <h2 class="section-title">Latest News</h2>
+                                <h2 class="section-title">Bài viết được xem nhiều nhất</h2>
                                 <ul class="latest-news">
+                                    @foreach($tinnoibat as $tnb)
                                     <li class="col-md-12">
                                         <div class="image">
                                             <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="">
+                                        <img src="upload/tintuc/{{$tnb->Hinh}}" alt="{{$tnb->TieuDe}}">
                                         </div>
     
                                         <ul class="top-info">
-                                            <li><i class="fa fa-calendar"></i> July 30, 2014</li>
+                                                <?php
+                                                $thoigian=$tnb->NgayTao; 
+                                                $dateM=date("d-m-Y",strtotime($thoigian)); ?>
+                                            <li><i class="fa fa-calendar"></i> {{$dateM}}</li>
                                         </ul>
     
-                                        <h3><a href="blog-detail.html">How to get your dream property for the best
-                                                price?</a></h3>
+                                        <h3><a href="tin-tuc/{{$tnb->id}}/{{$tnb->TieuDeKhongDau}}.html">{{$tnb->TieuDe}}</a></h3>
                                     </li>
-                                    <li class="col-md-12">
-                                        <div class="image">
-                                            <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="">
-                                        </div>
-    
-                                        <ul class="top-info">
-                                            <li><i class="fa fa-calendar"></i> July 24, 2014</li>
-                                        </ul>
-    
-                                        <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <div class="image">
-                                            <a href="blog-detail.html"></a>
-                                            <img src="http://placehold.it/100x100" alt="">
-                                        </div>
-    
-                                        <ul class="top-info">
-                                            <li><i class="fa fa-calendar"></i> July 05, 2014</li>
-                                        </ul>
-    
-                                        <h3><a href="blog-detail.html">House, location or price: What's the most important
-                                                factor?</a></h3>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
-                            <div class="details-news-read">
-                                <h2 class="section-title">Must Read</h2>
-                                <ul class="latest-news">
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">How to get your dream property for the best
-                                                price?</a></h3>
-                                        <ul class="top-info">
-                                            <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                            <div class="td-module-comments"><a href="">0</a></div>
-                                        </ul>
-                                    </li>
-                                    <li class="col-md-12">
-    
-                                        <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-    
-                                        <ul class="top-info">
-                                            <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                            <div class="td-module-comments"><a href="">0</a></div>
-                                        </ul>
-    
-                                    </li>
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">House, location or price: What's the most important
-                                                factor?</a></h3>
-                                        <ul class="top-info">
-                                            <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                            <div class="td-module-comments"><a href="">0</a></div>
-                                        </ul>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">How to get your dream property for the best
-                                                price?</a></h3>
-                                        <ul class="top-info">
-                                            <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                            <div class="td-module-comments"><a href="">0</a></div>
-                                        </ul>
-                                    </li>
-                                    <li class="col-md-12">
-    
-                                        <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-    
-                                        <ul class="top-info">
-                                            <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                            <div class="td-module-comments"><a href="">0</a></div>
-                                        </ul>
-    
-                                    </li>
-                                    <li class="col-md-12">
-                                        <h3><a href="blog-detail.html">House, location or price: What's the most important
-                                                factor?</a></h3>
-                                        <ul class="top-info">
-                                            <li><strong>admin </strong> - <i class="fa fa-calendar"></i> July 30, 2014</li>
-                                            <div class="td-module-comments"><a href="">0</a></div>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+                         
+
                         </div>
                     </div>
                 </div>

@@ -224,7 +224,7 @@
                                         $thoigian=$tt->NgayTao; 
                                         $dateM=date("d-m-Y",strtotime($thoigian)); ?>
                                     <li><strong>admin </strong> - <i class="fa fa-calendar"></i> {{$dateM}}</li>
-                                    <div class="td-module-comments"><a href="">0</a></div>
+                                    <div class="td-module-comments"><a href="">{{$tt->SoLuotXem}}</a></div>
                                 </ul>
                             </li>
                             @endforeach

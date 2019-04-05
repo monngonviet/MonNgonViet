@@ -51,10 +51,10 @@
                                 <ul class="latest-news sidebar-mnv-li">
                                         @foreach($data as $ttt)
                                     <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">{{$ttt->TieuDe}}</a>
+                                    <h3><a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">{{$ttt->TieuDe}}</a>
                                         </h3>
                                         <div class="image">
-                                            <a href="blog-detail.html"></a>
+                                            <a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html"></a>
                                             <img src="upload/tintuc/{{$ttt->Hinh}}" alt="" />
                                         </div>
                                         <ul class="top-info">
@@ -144,16 +144,15 @@
                     {{-- Tin tức nổi bật --}}
                     <div class="col-md-6 border-left-right ">
                         <div class="sidebar sidebar-mnv">
-
                             <h2 class="title-news">Tin tức nổi bật</h2>
                             <ul class="latest-news sidebar-mnv-li">
                                     @foreach($tinnoibat as $tt)
                                 <li class="col-md-12">
                                    
-                                <h3><a href="blog-detail.html">{{$tt->TieuDe}}</a>
+                                <h3><a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">{{$tt->TieuDe}}</a>
                                     </h3>
                                     <div class="image">
-                                        <a href="blog-detail.html"></a>
+                                        <a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"></a>
                                     <img src="upload/tintuc/{{$tt->Hinh}}" alt="" />
                                     </div>
 
@@ -165,10 +164,9 @@
                                     
                                 </li>
                                 @endforeach
-                               {{-- Làng nghề --}}
                             </ul>
                         </div>
-
+  {{-- Làng nghề --}}
                         <?php $i=0;  ?>
                         @foreach($theloaitc as $tt)
                         <?php 
@@ -185,10 +183,10 @@
                             <ul class="latest-news sidebar-mnv-li">
                                     @foreach($data as $ttt)
                                 <li class="col-md-12">
-                                <h3><a href="blog-detail.html">{{$ttt->TieuDe}}</a>
+                                <h3><a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">{{$ttt->TieuDe}}</a>
                                     </h3>
                                     <div class="image">
-                                        <a href="blog-detail.html"></a>
+                                        <a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html"></a>
                                         <img src="upload/tintuc/{{$ttt->Hinh}}" alt="" />
                                     </div>
                                     <ul class="top-info">
@@ -203,85 +201,16 @@
                         <?php $i++;?>
                         @endforeach
                         
-                        
-                        <div class="sidebar sidebar-mnv">
-                            <h2 class="title-news events">tin tức sự kiện</h2>
-                            <ul class="latest-news sidebar-mnv-li">
-
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">How to get your dream property for the best
-                                            price?</a>
-                                    </h3>
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                                                dignissimos facilis ea debitis. Odio labore facilis totam eaque nam.
-                                                Accusamus quisquam earum nobis sequi suscipit amet inventore quaerat
-                                                iusto saepe.</p>
-                                        </li>
-                                    </ul>
-
-
-                                </li>
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, illum?
-                                                Iste asperiores maxime molestiae distinctio at doloremque in, eum
-                                                hic
-                                                deleniti ea quas culpa optio quidem amet sed suscipit repudiandae!
-                                            </p>
-                                        </li>
-                                    </ul>
-
-                                </li>
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">House, location or price: What's the most
-                                            important
-                                            factor?</a></h3>
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quae
-                                                autem
-                                                exercitationem dolor cumque laudantium, ratione eum dolorem?
-                                                Quaerat, a
-                                                voluptas. Pariatur atque voluptas cum numquam magni qui repellendus
-                                                quisquam.</p>
-                                        </li>
-                                    </ul>
-
-
-                                </li>
-                            </ul>
-                        </div>
                         <div class="sidebar sidebar-mnv">
                             <h2 class="title-news popular">Phổ biến nhất</h2>
                             <ul class="latest-news sidebar-mnv-li">
-
+                                @foreach($phobien as $pb)
                                 <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">How to get your dream property for the best
-                                            price?</a>
+                                <h3><a href="tin-tuc/{{$pb->id}}/{{$pb->TieuDeKhongDau}}.html">{{$pb->TieuDe}}</a>
                                     </h3>
                                     <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
+                                        <a href="tin-tuc/{{$pb->id}}/{{$pb->TieuDeKhongDau}}.html"></a>
+                                        <img src="upload/tintuc/{{$pb->Hinh}}" alt="{{$pb->TieuDe}}" />
                                     </div>
 
                                     <ul class="top-info">
@@ -295,55 +224,20 @@
 
 
                                 </li>
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">7 tips to get the best mortgage.</a></h3>
-
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, illum?
-                                                Iste asperiores maxime molestiae distinctio at doloremque in, eum
-                                                hic
-                                                deleniti ea quas culpa optio quidem amet sed suscipit repudiandae!
-                                            </p>
-                                        </li>
-                                    </ul>
-
-                                </li>
-                                <li class="col-md-12">
-                                    <h3><a href="blog-detail.html">House, location or price: What's the most
-                                            important
-                                            factor?</a></h3>
-                                    <div class="image">
-                                        <a href="blog-detail.html"></a>
-                                        <img src="http://placehold.it/100x100" alt="" />
-                                    </div>
-
-                                    <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quae
-                                                autem
-                                                exercitationem dolor cumque laudantium, ratione eum dolorem?
-                                                Quaerat, a
-                                                voluptas. Pariatur atque voluptas cum numquam magni qui repellendus
-                                                quisquam.</p>
-                                        </li>
-                                    </ul>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
-                        <img src="assets/images/qc3.jpg" alt="">
+                        @foreach($quangcao as $qc)
+                      <a href="{{$qc->link3}}"><img src="upload/quangcao/{{$qc->Hinh3}}" alt=""></a>  
+                        @endforeach
                     </div>
                 </div>
                 
                 <div class="col-md-2">
-                    <img src="assets/images/qc1.jpg" alt="">
-                    <img src="assets/images/qc2.jpg" alt="">
-
+                    @foreach($quangcao as $qc)
+                   <a href="{{$qc->link1}}"><img src="upload/quangcao/{{$qc->Hinh1}}" alt=""></a> 
+                    <a href="{{$qc->link2}}"><img src="upload/quangcao/{{$qc->Hinh2}}" alt=""></a>
+                    @endforeach
                 </div>
             </div>
         </div>

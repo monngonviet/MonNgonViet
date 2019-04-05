@@ -37,6 +37,17 @@ class SlideController extends Controller
   //POST Thêm
   public function postThem(Request $request)
   {
+    $validatedData = $request->validate([
+      'Ten' => 'required|unique:Slide,Ten|min:3|max:100',
+      'NoiDung' => 'required',
+  ],
+  [
+    'Ten.require'=>'Bạn chưa nhập tên',
+    'Ten.unique'=>'Bạn nhập tên đã tồn tại',
+    'Ten.min'=>'Tên Slide phải có độ dài từ 3 đến 100 ký tự',
+    'Ten.max'=>'Tên Slide không được quá 100 ký tự',
+    'NoiDung.require' => 'Bạn chưa nhập nội dung',
+  ]);
     $slide=new Slide;
     $slide->Ten = $request->Ten;
     $slide->TenKhongDau=changeTitle($request->Ten);

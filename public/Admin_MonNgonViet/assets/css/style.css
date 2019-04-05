@@ -2651,4 +2651,7 @@ table.focus-on tbody tr.focused td{
     }
 }
 
+.dtr-data p{
+    white-space: normal;
+}
 

@@ -16,11 +16,12 @@
             </li>
 
             <li class="dropdown dropdown-mnv">
+                
                 @foreach($theloaitintuc as $tt)
-                <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
+                <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
                         class=""></b></a>
                     @endforeach
-
+               
             </li>
 
             <li class="dropdown dropdown-mnv">

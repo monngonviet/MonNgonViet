@@ -22,6 +22,8 @@ class QuangCaoController extends Controller
     }
     public function postThem(Request $request)
     {
+     
+
     $quangcao =new QuangCao;
     $quangcao->Ten= $request->Ten;
     $quangcao->NoiDung= $request->NoiDung;
@@ -61,6 +63,19 @@ class QuangCaoController extends Controller
 
     public function postSua(Request $request,$id)
     {
+      $validatedData = $request->validate([
+        'Hinh1' => 'dimensions:max_width=170,max_height=700',
+        'Hinh2' => 'dimensions:max_width=170,max_height=700',
+        'Hinh3' => 'dimensions:max_width=445,max_height=230',
+        'Hinh4' => 'dimensions:max_width=330,max_height=275',
+    ],
+    [
+      'Hinh1.dimensions'=>'Hình quảng cáo vị trí 1 không phù hợp',
+      'Hinh2.dimensions'=>'Hình quảng cáo vị trí 2 không phù hợp',
+      'Hinh3.dimensions'=>'Hình quảng cáo vị trí 3 không phù hợp',
+      'Hinh4.dimensions'=>'Hình quảng cáo vị trí 4 không phù hợp',
+      
+    ]);
       $quangcao= QuangCao::find($id);
       $quangcao->link1=$request->link1;
       $quangcao->link2=$request->link2;

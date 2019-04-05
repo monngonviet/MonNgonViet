@@ -29,10 +29,10 @@
                             >
                             <?php $i++;?> 
 
-                        <img src="upload/slide/{{$sl->Hinh}}" alt="Chania" width="460"
-                                    height="345">
+                       <a href="chi-tiet-slide/{{$sl->id}}/{{$sl->TenKhongDau}}.html"><img src="upload/slide/{{$sl->Hinh}}" alt="Chania" width="460"
+                        height="345"> </a> 
                                 <div class="carousel-caption text-slide-mnv">
-                                    <h2><a href="">{{$sl->Ten}}</a>
+                                <h2><a href="chi-tiet-slide/{{$sl->id}}/{{$sl->TenKhongDau}}.html">{{$sl->Ten}}</a>
                                     </h2>
                                     <?php
                                     $thoigian=$sl->NgayTao; 

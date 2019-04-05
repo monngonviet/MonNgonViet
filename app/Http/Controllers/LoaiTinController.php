@@ -10,6 +10,11 @@ use Illuminate\Routing\Controller;
 class LoaiTinController extends Controller
 {
     //
+    function __construct(){
+      $quangcao=QuangCao::all();
+      view()->share('quangcao',$quangcao);
+
+    }
     public function getDanhSach()
     {
       $loaitin = LoaiTin::all();
