@@ -17,7 +17,9 @@ use App\TinTuc;
     Route::post('admin/dangnhap','UserController@postdangnhapAdmin');
     Route::get('admin/dangxuat','UserController@getdangxuatpAdmin');
     Route::get('dangxuatuser','PageController@getdangxuatuser');
-    Route::post('dangkiuser','PageController@postdangkiuser');
+    Route::post('dang-ki-user','PageController@postdangkiuser');
+    Route::get('dang-ki-user','PageController@getdangkiuser');
+
     // Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
     Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
     Route::group(['prefix'=>'theloai'],function(){
@@ -139,10 +141,10 @@ use App\TinTuc;
   });
     });
     Route::get('lien-he.html','PageController@lienhe');
-    Route::post('lien-he.html','PageController@postlienhe');
-    Route::get('tin-tuc/{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
 
-    // Route::get('the-loai/{id}/{TenKhongDau}.html','PageController@danhsachtheloai');
+    Route::post('lien-he.html','PageController@postlienhe');
+
+    Route::get('tin-tuc/{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
 
     Route::get('loai-tin/{id}/{idTheLoai}/{TenKhongDau}.html','PageController@danhsachloaitin');
 
@@ -152,17 +154,21 @@ use App\TinTuc;
 
     Route::get('chi-tiet-slide/{id}/{TenKhongDau}.html','PageController@chitietslide');
 
-    // Route::get('/test','PageController@danhsachtheloai1');
-
-
     Route::get('trang-chu.html','PageController@trangchu');
+
     Route::get('loaitin/{id}/{TenKhongDau}.html','PageController@danhsachdiadiemdulich');
-    // Route::get('{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
 
     Route::get('dia-diem-an-uong/{TenKhongDau}/{id}.html','PageController@danhsachdiadiemanuong');
+
     Route::get('an-uong/{id}/{TieuDeKhongDau}','PageController@anuong');
+
     Route::get('dangnhap','PageController@getDangNhap');
+
     Route::post('dangnhap','PageController@postDangNhap');
+
     Route::post('timkiem','PageController@timkiem');
     // test
+    Route::any('{all}', function($uri){
+      return View::make('page.errors');
+      })->where('all', '.*');
    

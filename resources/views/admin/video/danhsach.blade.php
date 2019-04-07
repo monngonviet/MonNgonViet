@@ -39,7 +39,7 @@
                                                 <td> <?php echo $i; ?></td>
                                                 <td>{{$tt->TieuDe}}</td>
                                                 <td>   @if(isset($tt->LinkYoutube)) 
-                                    <iframe width="200" height="150" src="https://www.youtube.com/embed/{{$tt->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                                                  <iframe width="200" height="150" src="https://www.youtube.com/embed/{{$tt->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
                                                     @else
                                                     <video width="200"controls>
                                                             <source src="upload/video/{{$tt->Video}}" type="video/mp4">

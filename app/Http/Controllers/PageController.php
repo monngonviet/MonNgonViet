@@ -194,6 +194,7 @@ function danhsachtheloai($id)
    $lienhe->save();
    return redirect('trang-chu.html');
  }
+
  public function getDangNhap(){
    return view('page.login');
  }
@@ -221,12 +222,17 @@ function danhsachtheloai($id)
    Auth::logout();
     return redirect('trang-chu.html');
  }
+public function getdangkiuser()
+{
+  return view('page.dangki');
 
+}
  public function postdangkiuser(Request $request)
  {
    $validatedData = $request->validate([
       'email' => 'required|unique:Users,email|min:3|max:100',
       'sdt'=>'min:9|max:11',
+      'password'=>'confirmed',
   ],
   [
     'email.required'=>'Bạn chưa nhập tên',
@@ -235,6 +241,8 @@ function danhsachtheloai($id)
     'email.max'=>'Tên thể loại không được quá 100 ký tự',
     'sdt.min'=>'Số điện thoại không đúng',
     'sdt.max'=>'Số điện thoại không đúng',
+    'password.confirmed' =>'Nhập lại mật khẩu không đúng'
+
 
   ]);
    $user =new User;
@@ -250,8 +258,10 @@ function danhsachtheloai($id)
 
  function timkiem(Request $request)
  {
+  $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
+  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
    $tukhoa =$request->tukhoa;
-   $tintuc =TinTuc::where('TieuDe','like',"%$tukhoa%")->take(10)->paginate(10);
-   return view('page.timkiem',['tintuc'=>$tintuc,'tukhoa'=>$tukhoa]);
+    $tintuc =TinTuc::where('TieuDe','like',"%$tukhoa%")->take(10)->paginate(10);
+   return view('page.timkiem',['tintuc'=>$tintuc,'tukhoa'=>$tukhoa,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
  }
 }

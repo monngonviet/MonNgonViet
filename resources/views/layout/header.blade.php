@@ -13,31 +13,29 @@
 							</ul>
                             @endforeach
 							<ul id="top-buttons">
-
+									@if(Auth::User() != null)
 								<li>
-									<div class="language-switcher">
-										<span><i class="fa fa-globe"></i> English</span>
-										<ul>
-											<li><a href="#">Deutsch</a></li>
-											<li><a href="#">Espa&ntilde;ol</a></li>
-											<li><a href="#">Fran&ccedil;ais</a></li>
-											<li><a href="#">Portugu&ecirc;s</a></li>
-										</ul>
+									<div class="">
+										<span>Chào {{Auth::user()->name}}</span>
 									</div>
 								</li>
+
 								<li class="divider"></li>
-
-								<li><a href="#"><i class="fa fa-sign-in"></i> Login</a></li>
-								<li><a href="#"><i class="fa fa-pencil-square-o"></i> Register</a></li>
-
+								<li><a href="dangxuatuser"><i class="fa fa-sign-in"></i> Đăng xuất</a></li>
+								@else
+								<li><a href="dangnhap"><i class="fa fa-sign-in"></i> Đăng nhập</a></li>
+								<li><a href="dang-ki-user"><i class="fa fa-pencil-square-o"></i>Đăng kí</a></li>
+								@endif
+								
 								<li>
 									<div class="form-search-mnv">
-										<form>
-											<input class="sb-search-input search-mnv" placeholder="Search..."
-												type="text" value="" name="search" id="search">
-
-											<i class="fa fa-search sb-icon-search"> <input class="sb-search-submit"
-													type="submit" value=""></i>
+										<form action="timkiem" method="post">
+											<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+											<input class="sb-search-input search-mnv" placeholder="Tìm kiếm"
+												type="text" value="" name="tukhoa" id="search">
+												<i class="fa fa-search sb-icon-search">
+												 <input class="sb-search-submit"
+													type="submit" value="tukhoa"></i>
 										</form>
 									</div>
 								</li>

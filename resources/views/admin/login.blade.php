@@ -34,14 +34,14 @@
 		<div class="container-login100" style="background-image: url('admin_asset/images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				@if(count($errors)>0)
-					<div class="alert aler-danger">
+					<div class="alert alert-danger">
 						@foreach($errors->all() as $err)
 								{{$err}}<br>
 						@endforeach
 				@endif
 
 				@if(session('thongbao'))
-					<div class="alert aler-sucess">
+					<div class="alert alert-sucess">
 						{{session('thongbao')}}
 				@endif
 				<form class="login100-form validate-form" action="admin/dangnhap" method="POST">
