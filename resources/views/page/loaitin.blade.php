@@ -69,6 +69,7 @@
                         </article>
                     </div>
                 </div>
+                @if(count($loaitin->tintuc->TieuDe))
                 <div class="td-pb-span12">
                     <div class="td_block_wrap td_block_big_grid_1 td_uid_9_5c9e1575a521e_rand td-grid-style-5 td-hover-1 td-big-grids td-pb-border-top td_block_template_1"
                         data-td-block-uid="td_uid_9_5c9e1575a521e">
@@ -101,11 +102,14 @@
                                         </div>
                                         <div class="td-module-meta-info">
                                             <span class="td-post-author-name"><a
-                                                    href="https://monngonviet.com.vn/author/mnadmin/">mnadmin</a>
-                                                <span>-</span> </span> <span class="td-post-date"><time
+                                                    href="https://monngonviet.com.vn/author/mnadmin/">admin</a>
+                                                <span>-</span> </span>
+                                                <?php
+                                            $thoigian=$tt->NgayTao; 
+                                            $dateM=date("d-m-Y",strtotime($thoigian)); ?>
+                                                <span class="td-post-date"><time
                                                     class="entry-date updated td-module-date"
-                                                    datetime="2018-08-06T04:05:46+00:00">6 Tháng Tám,
-                                                    2018</time></span> </div>
+                                                datetime="2018-08-06T04:05:46+00:00">{{$dateM}}</time></span> </div>
                                     </div>
                                 </div>
                                 </div>

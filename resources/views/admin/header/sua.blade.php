@@ -34,7 +34,7 @@
                                             <p>
                                             <img src="upload/footer/{{$header->Hinh}}" width="90px" alt="">
                                             </p>
-                                            <input type="file" name="Hinh" required>
+                                            <input type="file" name="Hinh" >
                                         </div>
                                       
                                          <div class="form-group"><label>Đường dẫn trang</label>
@@ -44,7 +44,15 @@
                                         <div class="form-group"><label>Số điện thoại</label>
                                             <div><input data-parsley-type="alphanum" type="text" name="sdt" class="form-control"
                                                     required placeholder="Nhập tên số điện thoại" value="{{$header->sdt}}"></div>
-                                    </div>
+                                     </div>
+                                     <div class="form-group"><label>Số Fax</label>
+                                        <div><input data-parsley-type="alphanum" type="text" name="fax" class="form-control"
+                                                required placeholder="Nhập tên số điện thoại" value="{{$header->Fax}}"></div>
+                                 </div>
+                                 <div class="form-group"><label>Địa chỉ</label>
+                                    <div><input data-parsley-type="alphanum" type="text" name="diachi" class="form-control"
+                                            required placeholder="Nhập đường dẫn" value="{{$header->DiaChi}}"></div>
+                            </div>
                                     <div class="form-group"><label>Email</label>
                                         <div><input data-parsley-type="alphanum" type="text" name="email" class="form-control"
                                                 required placeholder="Nhập tên email" value="{{$header->email}}"></div>

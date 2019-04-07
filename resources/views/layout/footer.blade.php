@@ -101,29 +101,7 @@
                                 </li>
                             </ul>
                         </nav>
-                <!-- <ul class="">
-                    <li>
-                        Trang Chủ
-                    </li>
-                    <li>
-                        Tin tức - sự kiện
-                    </li>
-                    <li>
-                        Văn hoá ẩm thực
-                    </li>
-                    <li>
-                        Địa chỉ ẩm thực
-                    </li>
-                    <li>
-                        nghề bếp xưa & nay
-                    </li>
-                    <li>
-                        Làng nghề
-                    </li>
-                    <li>
-                        Hoạt động ẩm thực
-                    </li>
-                </ul> -->
+            
             </div>
             <br>
             <div class="row">
@@ -163,12 +141,9 @@
 
                         <!-- BEGIN SOCIAL NETWORKS -->
                         <ul class="social-networks">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            @foreach($footer as $f)
+                        <li><a href="{{$f->LinkFB}}"><i class="fa fa-facebook"></i></a></li>
+                            @endforeach
                         </ul>
                         <!-- END SOCIAL NETWORKS -->
 

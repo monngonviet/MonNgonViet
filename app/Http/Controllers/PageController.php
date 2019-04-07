@@ -13,7 +13,6 @@ use App\User;
 use App\Header;
 use App\Footer;
 use App\Video;
-
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -75,7 +74,6 @@ class PageController extends Controller
      view()->share('tinnoibat',$tinnoibat);
      view()->share('theloai',$theloai);
       view()->share('loaitin',$loaitin);
-
       view()->share('quangcao',$quangcao);
        view()->share('tintuc',$tintuc);
        view()->share('tatcatintuc',$tatcatintuc);
@@ -121,6 +119,7 @@ function danhsachloaitin($id, $idTheLoai)
 
  function chitiettintuc($id)
  {
+   $footer=Footer::all();
    $quangcao=QuangCao::all();
    $tintuc=TinTuc::find($id);
    $theloai=TheLoai::all();
@@ -128,24 +127,27 @@ function danhsachloaitin($id, $idTheLoai)
    $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
    $tinhluotxem=TinTuc::where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
   //  
-   return view('page.chitiettintuc',['tintucmoinhat'=>$tintucmoinhat,'tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai,'tinhluotxem'=>$tinhluotxem,'quangcao'=>$quangcao]);
+   return view('page.chitiettintuc',['tintucmoinhat'=>$tintucmoinhat,'tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai,'tinhluotxem'=>$tinhluotxem,'quangcao'=>$quangcao,'footer'=>$footer]);
  }
 
  function chitietvideo($id)
  {
+   $footer=Footer::all();
    $video=Video::find($id);
    $videomoinhat=Video::where('HienThi',1)->take(3)->latest()->get();
    $theloai=TheLoai::all();
-   return view('page.chitietvideo',['video'=>$video,'videomoinhat'=>$videomoinhat,'theloai'=>$theloai]);
+   return view('page.chitietvideo',['video'=>$video,'videomoinhat'=>$videomoinhat,'theloai'=>$theloai,'footer'=>$footer]);
  }
 
  function chitietslide($id)
  {
+  $footer=Footer::all();
+
   $theloai=TheLoai::all();
   $quangcao=QuangCao::all();
   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
   $slide=Slide::find($id);
-   return view ('page.chitietslide',['slide'=>$slide,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat]);
+   return view ('page.chitietslide',['slide'=>$slide,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat,'footer'=>$footer]);
  }
 //  function danhsachtheloai($id)
 //  {
@@ -182,14 +184,16 @@ function danhsachtheloai($id)
 
  public function lienhe()
  {
-   return view('page.lienhe');
+  $header= Header::all();
+
+   return view('page.lienhe',['header'=>$header]);
  }
  public function postlienhe(Request $request)
  {
    $lienhe = new LienHe;
-   $lienhe->Ten = $request->name;
-   $lienhe->Email = $request->email;
-   $lienhe->SoDienThoai=$request->sodienthoai;
+   $lienhe->Ten = $request->Name;
+   $lienhe->Email = $request->Email;
+   $lienhe->SoDienThoai=$request->sdt;
    $lienhe->LoiNhan=$request->LoiNhan;
    $lienhe->save();
    return redirect('trang-chu.html');

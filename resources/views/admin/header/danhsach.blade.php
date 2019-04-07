@@ -23,12 +23,13 @@
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
-                                        
-
                                                 <th>Hình Banner LoGo</th>
                                                 <th>Đường dẫn</th>
                                                 <th>Số điện thoại</th>
+                                                <th>Số Fax</th>
                                                 <th>Email</th>
+                                                <th>Đại chỉ</th>
+
                                                 <th>Thao tác</th>
                                             </tr> 
                                         </thead>
@@ -37,14 +38,12 @@
                                                 @foreach($header as $tt)
                                                 <tr>
                                                <td><?php echo $i?></td>
-
-                                                <td><img src="upload/footer/{{$tt->Hinh}}" alt="" width="150px"></td>
-                                              
+                                               <td><img src="upload/footer/{{$tt->Hinh}}" alt="" width="150px"></td>
                                                <td>{{$tt->Link}}</td>
                                                <td>{{$tt->sdt}}</td>
-
+                                               <td>{{$tt->Fax}}</td>
                                                <td>{{$tt->email}}</td>
-
+                                               <td  style="white-space: normal;">{{$tt->DiaChi}}</td>
                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/header/sua/{{$tt->id}}" style="
                                                 color: blue;">Sửa</a></td>
                                                 <?php $i++; ?>

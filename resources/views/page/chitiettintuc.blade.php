@@ -72,12 +72,10 @@
                                             <div class="col-md-6">
                                                 <div class="author-right">
                                                     <span><i class="fa fa-eye"></i>{{$tintuc->SoLuotXem}}</span>
-                                                    <span><i class="fa fa-comments"></i>100</span>
+                                                    {{-- <span><i class="fa fa-comments"></i>100</span> --}}
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </header>
                             </div>
@@ -88,8 +86,8 @@
                         <h5>Chia sẻ bài viết:</h5>
                         <br/>
                         <ul class="social-networks">
-                                <div class="fb-like" data-href="https://www.facebook.com/Th%C3%ADch-%C4%90%C3%A0-L%E1%BA%A1t-412471572820570/?modal=admin_todo_tour" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-                           
+                        <div class="fb-share-button" data-href="http://localhost:81/MonNgonViet/public/tin-tuc/{{$tintuc->id}}/{{$tintuc->TieuDeKhongDau}}.html" data-layout="button_count" data-size="small">
+                                    <a target="_blank" href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                         </ul>
 
                         <a class="print-button" href="javascript:window.print();">
@@ -103,33 +101,20 @@
                     <div class="td-post-content">
                         {!!$tintuc->NoiDung!!}
                     </div>
-
+                    @foreach($footer as $f)
+                <div class="fb-comments" data-href="{{$f->LinkFB}}/{{$tintuc->id}}" data-numposts="5"></div>
+                    @endforeach
                     <footer>
 
                         <div class="td-post-source-tags">
                         </div>
                         <hr>
                         <div class="share-wraper col-sm-12 clearfix">
-                            <h5>Share this Post:</h5>
-                            
+                            <h5>Chia sẻ trang Facebook</h5><br/> 
                             <ul class="social-networks">
-                            <div class="fb-like" data-href="https://www.facebook.com/Th%C3%ADch-%C4%90%C3%A0-L%E1%BA%A1t-412471572820570/?modal=admin_todo_tour" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-
-                                <li><a target="_blank"
-                                        href="http://www.facebook.com/sharer.php?s=100&amp;p%5Burl%5D=http%3A%2F%2Fwww.wiselythemes.com%2Fhtml%2Fcozy%2Fblog-detail.html%3Ffb%3Dtrue&amp;p%5Bimages%5D%5B0%5D=http%3A%2F%2Fwww.wiselythemes.com%2Fhtml%2Fcozy%2Fimages%2Fnews-img1.jpg&amp;p%5Btitle%5D=Cozy%20Blog%20Post"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li><a target="_blank"
-                                        href="https://twitter.com/intent/tweet?url=http://www.wiselythemes.com/html/cozy/blog-detail.html&amp;text=Cozy%20Blog%20Post"><i
-                                            class="fa fa-twitter"></i></a></li>
-                                <li><a target="_blank"
-                                        href="https://plus.google.com/share?url=http://www.wiselythemes.com/html/cozy/blog-detail.html"><i
-                                            class="fa fa-google"></i></a></li>
-                                <li><a target="_blank"
-                                        href="http://pinterest.com/pin/create/button/?url=http://www.wiselythemes.com/html/cozy/blog-detail.html&amp;description=Cozy%20Blog%20Post&amp;media=http%3A%2F%2Fwww.wiselythemes.com%2Fhtml%2Fcozy%2Fimages%2Fnews-img1.jpg"><i
-                                            class="fa fa-pinterest"></i></a></li>
-                                <li><a
-                                        href="mailto:?subject=Check%20out%20this%20blog%20post%20from%20Cozy%20Real%20Estate!&amp;body=http://www.wiselythemes.com/html/cozy/blog-detail.html"><i
-                                            class="fa fa-envelope"></i></a></li>
+                            @foreach($footer as $f)
+                            <div class="fb-like" data-href="{{$f->LinkFB}}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                            @endforeach
                             </ul>
 
                             <a class="print-button" href="javascript:window.print();">
@@ -192,4 +177,8 @@
             </div>
         </div>
     </div>
+@section('script')
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=2219634835025739&autoLogAppEvents=1"></script>
+@endsection
 @endsection

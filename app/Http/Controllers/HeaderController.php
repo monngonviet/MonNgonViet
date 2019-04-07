@@ -43,7 +43,8 @@ class HeaderController extends Controller
     $header->Link=$request->Link;
     $header->sdt=$request->sdt;
     $header->email=$request->email;
-
+    $header->Fax=$request->fax;
+    $header->DiaChi=$request->diachi;
 
     if($request->hasFile('Hinh'))
     {
