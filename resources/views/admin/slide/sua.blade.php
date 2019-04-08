@@ -10,7 +10,7 @@
                     <div class="col-lg-12">
                         <div class="card m-b-20">
                             <div class="card-body">
-                                <h4 class="mt-0 header-title">Sửa Slide</h4>
+                                <h4 class="mt-0 header-title">Sửa Tin Tức Nổi Bật</h4>
                                 @if(count($errors)>0)
                                 <div class="alert alert-danger">
                                   @foreach($errors->all() as $err)
@@ -36,10 +36,10 @@
                                             </p>
                                             <input type="file" name="Hinh">
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>Tóm tắt</label>
                                             <textarea id="TomTat"  class="form-control" rows="3" name="TomTat">{{$slide->TomTat}}</textarea>
-                                        </div>
+                                        </div> --}}
                                         {{-- <script>CKEDITOR.replace('TomTat');</script> --}}
                                         <div class="form-group">
                                                 <label>Nội Dung</label>

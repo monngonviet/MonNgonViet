@@ -23,25 +23,17 @@
                                         <thead>
                                             <tr>
                                                 <th>Tiêu Đề</th>
-                                                <th>Hình</th>
-                                                <th>Tóm Tắt</th>    
+                                         
                                                 <th>Nội Dung</th>           
-                                                <th>Ngày Tạo</th>
                                                 <th>Cập Nhật</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                              
                                             <tr >
-                                                <td>{{$tintuc->TieuDe}}</td>
-                                                <td><img src="upload/tintuc/{{$tintuc->Hinh}}" width="100px" height="70px" alt=""></td>
-                                                <td style="white-space: normal;">{!!$tintuc->TomTat!!}</td>
-                                                <td style="white-space: normal;">{!!$tintuc->NoiDung!!}</td>
-                                                <?php
-                                                $thoigian=$tintuc->NgayTao; 
-                                                $dateM=date("d-m-Y",strtotime($thoigian)); ?>
-                                                <td ><?php echo $dateM;?></td>  
-                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$tintuc->id}}">Sửa</a></td>
+                                                <td>{{$video->TieuDe}}</td>
+                                                <td style="white-space: normal;">{!!$video->NoiDung!!}</td>
+                                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/video/sua/{{$video->id}}">Sửa</a></td>
                                             </tr>
                                              
                                         </tbody>

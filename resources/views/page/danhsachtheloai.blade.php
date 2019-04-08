@@ -71,6 +71,12 @@
                             </div>
                         </div>
 
+                         @foreach($theloaitc as $tl)
+                                    <?php 
+                                    // $data=$tl->tintuc->where('HienThi',1)->sortbyDesc('created_at')->take(6);
+                                    $data12=$tl->tintuc->where('HienThi',1)->count()
+                                    ?>
+                        @if($data12>=5)
                         <div class="td-pb-span12">
                             <div class="td_block_wrap td_block_big_grid_1 td_uid_9_5c9e1575a521e_rand td-grid-style-5 td-hover-1 td-big-grids td-pb-border-top td_block_template_1"
                                 data-td-block-uid="td_uid_9_5c9e1575a521e">
@@ -79,7 +85,9 @@
                                         @foreach($theloaitc as $tl)
                                         <?php 
                                         $data=$tl->tintuc->where('HienThi',1)->sortbyDesc('created_at')->take(6);
+                                        $data1=count($data);
                                         ?>
+                                       
                                         @foreach($data as $tt)
                                         @if($i==0) 
                                         <div class="td-big-grid-wrapper">
@@ -87,22 +95,22 @@
                                         <div class="td-module-thumb"><a
                                                 href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"
                                                 rel="bookmark" class="td-image-wrap"
-                                                title="{{$tt->TieuDe}}"><img
+                                                title="{{$tt->SEOTitle}}"><img
                                                     width="534" height="448"
                                                     class="entry-thumb td-animation-stack-type0-2"
                                                     src="upload/tintuc/{{$tt->Hinh}}"
-                                                    alt="{{$tt->TieuDe}}"
-                                                    title=""></a>
+                                                    alt="{{$tt->SEOTitle}}"
+                                                    title="{{$tt->SEOTitle}}"></a>
                                         </div>
                                         <div class="td-meta-info-container">
                                             <div class="td-meta-align">
                                                 <div class="td-big-grid-meta">
-                                                    <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
+                                                    <a href=""
                                                         class="td-post-category">{{$tt->loaitin->Ten}}</a>
                                                     <h3 class="entry-title td-module-title"><a
-                                                            href="https://monngonviet.com.vn/2018/08/06/mua-chay-sap-den-tan-huong-thuc-don-duong-sinh-lanh-ngon-cua-kfc-nhe/"
+                                                            href=""
                                                             rel="bookmark"
-                                                            title="Mùa Chay Sắp đến..Tận hưởng thực đơn dưỡng sinh lành ngon của KFC nhé">{{$tt->TieuDe}}</a></h3>
+                                                            title="{{$tt->SEOTile}}">{{$tt->TieuDe}}</a></h3>
                                                 </div>
                                                 <div class="td-module-meta-info">
                                                     <span class="td-post-author-name"><a
@@ -121,7 +129,7 @@
                                                             <div class="td-module-thumb"><a
                                                                     href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html"
                                                                     rel="bookmark" class="td-image-wrap"
-                                                                    title="Cà ri chay – loanh quanh nhiều chuyện"><img width="265"
+                                                                    title="{{$tt->SEOTitle}}"><img width="265"
                                                                         height="198" class="entry-thumb td-animation-stack-type0-2"
                                                                         src=""
                                                                         srcset="upload/tintuc/{{$tt->Hinh}}"
@@ -130,7 +138,7 @@
                                                             <div class="td-meta-info-container">
                                                                 <div class="td-meta-align">
                                                                     <div class="td-big-grid-meta">
-                                                                        <a href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/"
+                                                                        <a href=""
                                                                             class="td-post-category">{{$tt->loaitin->Ten}}</a>
                                                                         <h3 class="entry-title td-module-title"><a
                                                                                 href="https://monngonviet.com.vn/2018/08/01/ca-ri-chay-loanh-quanh-nhieu-chuyen/"
@@ -143,6 +151,7 @@
                                                 @endif
                                                 <?php $i++;?>
                                                 @endforeach
+                                              
                                                 @endforeach
                                                 </div>
                                     </div>
@@ -150,7 +159,8 @@
                                 </div>
                             </div> <!-- ./block -->
                         </div>
-    
+                        @endif
+                        @endforeach
     
                         <div class="col-md-8">
                             <div id="listing-header" class="clearfix"></div>

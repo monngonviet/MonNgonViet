@@ -128,9 +128,9 @@
                     </article>
                 </div>
                 <div class="sidebar col-md-4">
-                    @foreach($quangcao as $qc)
-                   <a href="{{$qc->link4}}">
-                        <div class="details-left-img"><img src="upload/quangcao/{{$qc->Hinh4}}" alt=""></div>   
+                    @foreach($quangcao4 as $qc)
+                   <a href="{{$qc->link}}">
+                        <div class="details-left-img"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></div>   
                     </a> 
                     @endforeach
                     <div class="details-news-laster">
@@ -149,8 +149,7 @@
                                         $dateM=date("d-m-Y",strtotime($thoigian)); ?>
                                     <li><i class="fa fa-calendar"></i> {{$dateM}}</li>
                                 </ul>
-
-                                <h3><a href="tin-tuc/{{$tlq->id}}/{{$tlq->TieuDeKhongDau}}.html">{{$tlq->TieuDe}} </a></h3>
+                                <h3 class="des" data-maxlength="30"><a href="tin-tuc/{{$tlq->id}}/{{$tlq->TieuDeKhongDau}}.html">{{$tlq->TieuDe}} </a></h3>
                             </li>
                             @endforeach
                             
@@ -161,7 +160,7 @@
                         <ul class="latest-news">
                                 @foreach($tintucmoinhat as $tt)
                                 <li class="col-md-12">
-                                <h3><a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">{{$tt->TieuDe}}</a></h3>
+                                <h3 class="des" data-maxlength="35"><a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">{{$tt->TieuDe}}</a></h3>
                                     <ul class="top-info">
                                             <?php
                                             $thoigian=$tt->NgayTao; 
@@ -177,6 +176,17 @@
             </div>
         </div>
     </div>
+    <script>
+            $(".des a").text(function(index, currentText) {
+              var maxLength = $(this).parent().attr('data-maxlength');
+              if (currentText.length >= maxLength) {
+                return currentText.substr(0, maxLength) + "...xem tiếp";
+              } else {
+                return currentText
+              }
+            });
+          </script>
+          
 @section('script')
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=2219634835025739&autoLogAppEvents=1"></script>

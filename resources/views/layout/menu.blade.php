@@ -37,12 +37,11 @@
                     <li class="dropdown-submenu">
                      @foreach($theloaivanhoaamthuc1 as $tt)
 
-                        <a href="#">{{$tt->Ten}}</a>
+                        <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html">{{$tt->Ten}}</a>
                         <ul class="dropdown-menu">
                               @foreach($tt->loaitin as $lt)
-                            <li><a href="loai-tin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
+                            <li><a href="loai-tin/{{$lt->id}}/{{$lt->theloai->TenKhongDau}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
                               @endforeach
-                            
                         </ul>
                     @endforeach
 
@@ -89,7 +88,7 @@
 
             <li class="dropdown dropdown-mnv">
                     @foreach($theloaihoatdong as $tt)
-                    <a href="the-loai{{$tt->id}}/the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
+                    <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
                         class="caret"></b></a>
                 <ul class="dropdown-menu">
                 @foreach($tt->loaitin as $lt)

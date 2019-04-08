@@ -51,7 +51,7 @@ class SlideController extends Controller
     $slide=new Slide;
     $slide->Ten = $request->Ten;
     $slide->TenKhongDau=changeTitle($request->Ten);
-    $slide->TomTat=$request->TomTat;
+    // $slide->TomTat=$request->TomTat;
     $slide->NoiDung=$request->NoiDung;
     $slide->Status=$request->HienThi;
     $slide->NoiBat=$request->HienThi1;
@@ -97,7 +97,7 @@ class SlideController extends Controller
     $slide->Ten = $request->Ten;
     $slide->TenKhongDau=changeTitle($request->Ten);
     $slide->KeyWord=$request->KeyWord;
-    $slide->TomTat=$request->TomTat;
+    // $slide->TomTat=$request->TomTat;
     $slide->NoiDung=$request->NoiDung;
     $slide->Status=$request->HienThi;
     $slide->NoiBat=$request->HienThi1;

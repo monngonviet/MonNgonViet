@@ -10,19 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\TheLoai;
-use App\LoaiTin;
-use App\TinTuc;
+
     Route::get('admin/dangnhap','UserController@getdangnhapAdmin');
     Route::post('admin/dangnhap','UserController@postdangnhapAdmin');
     Route::get('admin/dangxuat','UserController@getdangxuatpAdmin');
     Route::get('dangxuatuser','PageController@getdangxuatuser');
+    Route::get('dangxuatadmin','PageController@getdangxuatadmin');
+    
     Route::post('dang-ki-user','PageController@postdangkiuser');
     Route::get('dang-ki-user','PageController@getdangkiuser');
-
     // Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
     Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
-    Route::group(['prefix'=>'theloai'],function(){
+     Route::group(['prefix'=>'theloai'],function(){
       //admin/theloai/danhsach
       Route::get('danhsach','TheLoaiController@getDanhSach');
       Route::get('sua/{id}','TheLoaiController@getSua');
@@ -110,15 +109,7 @@ use App\TinTuc;
         //ăn uống
        
   });
-  Route::group(['prefix'=>'anuong'],function(){
-    //admin/slide/danhsach
-    Route::get('danhsach','AnUongController@getDanhSach');
-    Route::get('sua/{id}','AnUongController@getSua');
-    Route::post('sua/{id}','AnUongController@postSua');
-    Route::get('them','AnUongController@getThem');
-    Route::post('them','AnUongController@postThem');
-    Route::get('xoa/{id}','AnUongController@getXoa');
-  });
+ 
   //LiênHệ
   Route::group(['prefix'=>'lienhe'],function(){
     //admin/slide/danhsach
@@ -131,8 +122,8 @@ use App\TinTuc;
   Route::get('danhsach','QuangCaoController@getDanhSach');
   Route::get('sua/{id}','QuangCaoController@getSua');
   Route::post('sua/{id}','QuangCaoController@postSua');
-  Route::get('them','QuangCaoController@getThem');
-  Route::post('them','QuangCaoController@postThem');
+  // Route::get('them','QuangCaoController@getThem');
+  // Route::post('them','QuangCaoController@postThem');
   Route::get('xoa/{id}','QuangCaoController@getXoa');
 
 });
@@ -147,6 +138,8 @@ use App\TinTuc;
     Route::get('tin-tuc/{id}/{TieuDeKhongDau}.html','PageController@chitiettintuc');
 
     Route::get('loai-tin/{id}/{idTheLoai}/{TenKhongDau}.html','PageController@danhsachloaitin');
+
+    Route::get('loai-tin-video','PageController@loaitinvideo');
 
     Route::get('the-loai/{id}/{TenKhongDau}.html','PageController@danhsachtheloai');
     

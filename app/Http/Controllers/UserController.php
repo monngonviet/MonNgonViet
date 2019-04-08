@@ -33,7 +33,6 @@ class UserController extends Controller
       'email.unique'=>'Email đã tồn tại',
       'email.min'=>'Tên thể loại phải có độ dài từ 3 đến 100 ký tự',
       'email.max'=>'Tên thể loại không được quá 100 ký tự',
-      
     ]);
     $user =new User;
     $user->name= $request->username;
@@ -59,8 +58,6 @@ class UserController extends Controller
     ],
     [
       'nhaplaimatkhau.same'=>'Nhập lại mật khẩu không đúng',
-      
-      
     ]);
       $user=User::find($id);
       $user->name= $request->username;
@@ -74,10 +71,17 @@ class UserController extends Controller
 
     public function getXoa($id)
     {
-      $user =User:: find($id);
-      $user->delete();
-
-      return redirect('admin/user/danhsach')->with('thongbao','Xóa Thành Công');
+      $user=User::where('quyen','=',0)->where('id',$id);
+      if($user){
+        $user->delete();
+          return redirect('admin/user/danhsach')->with('thongbao','Xóa thành công');
+      }
+      else
+      {
+      
+      return redirect('admin/user/danhsach')->with('thongbao','Không xóa được');
+      }
+    
     }
     public function getdangnhapAdmin()
     {
@@ -102,7 +106,7 @@ class UserController extends Controller
     }
     }
     public  function getdangxuatpAdmin(){
-      Auth::logout();
+       Auth::logout();
         return redirect('admin/dangnhap');
     }
 }

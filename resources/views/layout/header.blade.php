@@ -8,7 +8,8 @@
 						<div class="col-sm-12">
                             @foreach($header as $h)
 							<ul id="top-info">
-								<li>Số điện thoại: {{$h->sdt}}</li>
+								<li> 	<div id="clock">Loading...</div></li>
+								
 								<li>Email: <a href="mailto:{{$h->email}}"> {{$h->email}}</a></li>
 							</ul>
                             @endforeach
@@ -53,9 +54,10 @@
                                 @foreach($footer as $h)
 							<a href="trang-chu.html" class="nav-logo logo-mnv"><img
 									src="upload/footer/{{$h->HinhLoGo}}" alt="" /></a>
+									
 							<!-- BEGIN SEARCH -->
                             @endforeach
-
+							<img src="upload/footer/tinhhoa7.png" alt="">
 							<!-- END SEARCH -->
 
 							<!-- BEGIN MAIN MENU -->
@@ -64,7 +66,7 @@
                                 @foreach($header as $h)
                             <a href="{{$h->Link}}" class="banner-mnv"><img src="upload/footer/{{$h->Hinh}}"
 										alt="Cozy Logo" /></a>
-                                    @endforeach
+                                @endforeach
 							</nav>
 							<!-- END MAIN MENU -->
 						</div>
@@ -73,4 +75,5 @@
 	            @include('layout.menu')
 				</div>
 			</div>
+			
 		</header>

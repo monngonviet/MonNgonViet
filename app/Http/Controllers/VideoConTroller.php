@@ -44,33 +44,34 @@ class VideoController extends Controller
     $video->LinkYoutube=convertyoutube($request->LinkYoutube);
     $video->TieuDeKhongDau=changeTitle($request->TieuDe);
     $video->SEOTitle=$request->SEOTitle;
-    $video->TomTat=$request->TomTat;
+    // $video->TomTat=$request->TomTat;
     $video->NoiDung=$request->NoiDung;
     $video->NoiBat=$request->NoiBat;
     $video->HienThi=$request->HienThi;
     $video->SoLuotXem=0;
     $video->NgayTao=$request->NgayTao;
-    if($request->hasFile('Video'))
-    {
-      $file=  $request->file('Video');
+
+    // if($request->hasFile('Video'))
+    // {
+    //   $file=  $request->file('Video');
      
-      // if($duoi != 'jpg' && $duoi !='png'&& $duoi !='jpeg' )
-      // {
-      //   return redirect('admin/video/them')->with('loi','Bạn chỉ được tải hình');
-      // }
-      $name=  $file->getClientOriginalName();
-      $Video=  str_random(4)."_".$name;
-      while (file_exists("upload/video/".$Video))
-        {
-          $Video =str_random(4)."_". $name;
-        }
-        // code...
-        $file->move("upload/video", $Video);
-        $video->Video=$Video;
-    }
-    else {
-      $video->Video="";
-    }
+    //   // if($duoi != 'jpg' && $duoi !='png'&& $duoi !='jpeg' )
+    //   // {
+    //   //   return redirect('admin/video/them')->with('loi','Bạn chỉ được tải hình');
+    //   // }
+    //   $name=  $file->getClientOriginalName();
+    //   $Video=  str_random(4)."_".$name;
+    //   while (file_exists("upload/video/".$Video))
+    //     {
+    //       $Video =str_random(4)."_". $name;
+    //     }
+    //     // code...
+    //     $file->move("upload/video", $Video);
+    //     $video->Video=$Video;
+    // }
+    // else {
+    //   $video->Video="";
+    // }
     $video->save();
     return redirect('admin/video/danhsach')->with('thongbao','Thêm Thành Công');
   }
@@ -96,31 +97,31 @@ class VideoController extends Controller
     $video->TieuDeKhongDau=changeTitle($request->TieuDe);
     $video->LinkYoutube=convertyoutube($request->LinkYoutube);
     $video->SEOTitle=$request->SEOTitle;
-    $video->TomTat=$request->TomTat;
+    // $video->TomTat=$request->TomTat;
     $video->NoiDung=$request->NoiDung;
     $video->NoiBat=$request->NoiBat;
     $video->HienThi=$request->HienThi;
     $video->SoLuotXem=0;
     $video->NgaySua=$request->NgaySua;
-    if($request->hasFile('Video'))
-    {
-      $file=  $request->file('Video');
-      // $duoi=$file->getClientOriginalExtension();
-      // if($duoi != 'jpg' && $duoi !='png'&& $duoi !='jpeg' )
-      // {
-      //   return redirect('admin/video/sua')->with('loi','Bạn chỉ được tải hình');
-      // }
-      $name=  $file->getClientOriginalName();
-      $Video=  str_random(4)."_".$name;
-      while (file_exists("upload/video/".$Video))
-        {
-          $Video =str_random(4)."_". $name;
-        }
-        // code...
-        $file->move("upload/video", $Video);
-        unlink("upload/video/".$video->Video);
-        $video->Video=$Video;
-    }
+    // if($request->hasFile('Video'))
+    // {
+    //   $file=  $request->file('Video');
+    //   // $duoi=$file->getClientOriginalExtension();
+    //   // if($duoi != 'jpg' && $duoi !='png'&& $duoi !='jpeg' )
+    //   // {
+    //   //   return redirect('admin/video/sua')->with('loi','Bạn chỉ được tải hình');
+    //   // }
+    //   $name=  $file->getClientOriginalName();
+    //   $Video=  str_random(4)."_".$name;
+    //   while (file_exists("upload/video/".$Video))
+    //     {
+    //       $Video =str_random(4)."_". $name;
+    //     }
+    //     // code...
+    //     $file->move("upload/video", $Video);
+    //     unlink("upload/video/".$video->Video);
+    //     $video->Video=$Video;
+    // }
     $video->save();
    return redirect('admin/video/danhsach')->with('thongbao','Sửa Thành Công');
   }

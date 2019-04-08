@@ -69,12 +69,12 @@
                         </article>
                     </div>
                 </div>
-                @if(count($loaitin->tintuc->TieuDe))
+                @if($demtintuc>=5)
                 <div class="td-pb-span12">
                     <div class="td_block_wrap td_block_big_grid_1 td_uid_9_5c9e1575a521e_rand td-grid-style-5 td-hover-1 td-big-grids td-pb-border-top td_block_template_1"
                         data-td-block-uid="td_uid_9_5c9e1575a521e">
                         <div id="td_uid_9_5c9e1575a521e" class="td_block_inner">
-                               
+
                                 <?php $i=0;?>
                                 @foreach($tintucslide as $tt)
                                 @if($i==0) 
@@ -140,15 +140,20 @@
                                                     </div>
                                                 </div>
                                         @endif
+                                                
+
                                         <?php $i++;?>
+                            
                                         @endforeach
+                                       
                                         </div>
                             </div>
+
                             <div class="clearfix"></div>
                         </div>
                     </div> <!-- ./block -->
                 </div>
-
+                @endif
 
                 <div class="col-md-8">
                     <div id="listing-header" class="clearfix">

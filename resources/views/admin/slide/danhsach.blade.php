@@ -43,7 +43,7 @@
                                                 <td><img src="upload/slide/{{$tt->Hinh}}" width="100px" height="70px" alt=""></td>
                                                 <td>{{$tt->SoLuotXem}}</td>
                                                 <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/slide/sua/{{$tt->id}}" style="
-                                                    color: blue;">Sửa </a>| <a href="admin/slide/xoa/{{$tt->id}}" style="
+                                                    color: blue;">Cập nhật </a>| <a href="admin/slide/xoa/{{$tt->id}}" style="
                                                 color: red;
                                                 " onclick="return confirmAction()">Xóa</a></td>
                                                 <td class="center"><i class="mdi mdi-eye"></i> <a href="admin/slide/xem/{{$tt->id}}">Xem</a></td>

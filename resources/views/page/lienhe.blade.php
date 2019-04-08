@@ -31,24 +31,35 @@
 					<div class="main col-sm-4 col-sm-offset-8">
 						<h2 class="section-title">Liên hệ với chúng tôi</h2>
 						<p class="col-sm-12 center"><a href="#"></a></p>
+						@if(count($errors)>0)
+						<div class="alert alert-danger">
+						  @foreach($errors->all() as $err)
+							  {{$err}}<br>
+						  @endforeach
+					  @endif
+		
+					  @if(session('thongbao'))
+						<div class="alert alert-success">
+						  {{session('thongbao')}}
+					  @endif
 						<form action="lien-he.html" method="post">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 
 							<div class="col-sm-12">
 								<input type="text" name="Name" placeholder="Nhập tên của bạn"
-									class="form-control required fromName" />
+									class="form-control required fromName" required/>
 
 								<input type="email" name="Email" placeholder="Nhập Email của bạn"
-									class="form-control required fromEmail" />
+									class="form-control required fromEmail" required/>
 
 								<input type="text" name="sdt" placeholder="Số điện thoại"
-                                    class="form-control required subject" />
+                                    class="form-control required subject"required />
                                     
-								<textarea name="LoiNhan" rows="5" placeholder="Lời nhắn của bạn" class="form-control required"></textarea>
+								<textarea name="LoiNhan" rows="5" placeholder="Lời nhắn của bạn" class="form-control required" required></textarea>
 							</div>
 
 							<div class="center">
-								<button type="submit" onclick="alert('Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ gửi phản hồi qua mail nhanh nhất cho bạn')"  class="btn btn-default-color btn-lg"><i
+								<button type="submit" class="btn btn-default-color btn-lg"><i
 										class="fa fa-envelope"></i>Gửi</button>
 							</div>
 						</form>

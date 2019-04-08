@@ -17,7 +17,7 @@
                         <div class="col-12">
                             <div class="card m-b-20">
                                 <div class="card-body">
-                                    <h4 class="mt-0 header-title">Thể loại</h4>
+                                    <h4 class="mt-0 header-title">Tin Tức</h4>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
@@ -44,7 +44,7 @@
                                                 <td><img src="upload/tintuc/{{$tt->Hinh}}" width="100px" height="70px" alt=""></td>
                                                 <td class="center"><i class="mdi mdi-eye"></i> <a href="admin/tintuc/xem/{{$tt->id}}">Xem</a></td>
                                                 <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/tintuc/sua/{{$tt->id}}" style="
-                                                    color: blue;">Sửa </a>| <a  href="admin/tintuc/xoa/{{$tt->id}}" style="
+                                                    color: blue;">Cập nhật </a>| <a  href="admin/tintuc/xoa/{{$tt->id}}" style="
                                                 color: red;
                                                 " onclick="return confirmAction()" >Xóa</a></td>
                                                 <?php

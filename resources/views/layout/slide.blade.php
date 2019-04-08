@@ -15,7 +15,6 @@
                             <?php $i++;?> 
                             @endforeach
                         </ol>
-
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <?php $i=0;?> 
@@ -58,8 +57,8 @@
                 <div class="col-md-4">
                     @foreach($slideNoiBat as $sl)
                     <div class="card card-mnv">
-                        <img class="card-img-top" style="padding-bottom: 17px"
-                            src="upload/slide/{{$sl->Hinh}}" alt="Card image cap">
+                       <a href="chi-tiet-slide/{{$sl->id}}/{{$sl->TenKhongDau}}.html"> <img class="card-img-top" style="padding-bottom: 17px"
+                        src="upload/slide/{{$sl->Hinh}}" alt="{{$sl->Ten}}"> </a>
                     </div>
                     @endforeach
                    

@@ -34,10 +34,10 @@
                                                 <label>Hình ảnh</label>
                                                 <input type="file" name="Hinh"  required>
                                             </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                                 <label>Tóm tắt</label>
                                                 <textarea id="TomTat" class="form-control" rows="3" name="TomTat" required></textarea>
-                                            </div>
+                                            </div> --}}
                                             {{-- <script>CKEDITOR.replace('TomTat'  );</script> --}}
                                             <div class="form-group">
                                                     <label>Nội Dung</label>

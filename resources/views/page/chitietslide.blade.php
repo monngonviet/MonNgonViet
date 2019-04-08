@@ -122,9 +122,9 @@
                     </article>
                 </div>
                 <div class="sidebar col-md-4">
-                    @foreach($quangcao as $qc)
-                   <a href="{{$qc->link4}}">
-                        <div class="details-left-img"><img src="upload/quangcao/{{$qc->Hinh4}}" alt=""></div>   
+                    @foreach($quangcao4 as $qc)
+                   <a href="{{$qc->link}}">
+                        <div class="details-left-img"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></div>   
                     </a> 
                     @endforeach
 
@@ -151,21 +151,7 @@
                         </ul>
                     </div>
 
-                    {{-- <div class="details-news-read">
-                        <h2 class="section-title">Bài Viết Mới Nhất</h2>
-                        <ul class="latest-news">
-                                @foreach($tintucmoinhat as $tt)
-                                <li class="col-md-12">
-                                <h3><a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">{{$tt->TieuDe}}</a></h3>
-                                    <ul class="top-info">
-                                           
-                                        <li><strong>admin </strong> - <i class="fa fa-calendar"></i> {{$dateM}}</li>
-                                        <div class="td-module-comments"><a href="">{{$tt->SoLuotXem}}</a></div>
-                                    </ul>
-                                </li>
-                                @endforeach
-                            </ul>
-                    </div> --}}
+                   
                 </div>
             </div>
         </div>

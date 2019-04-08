@@ -25,50 +25,39 @@
                               @endif
                                 <form class="" action="admin/quangcao/sua/{{$quangcao->id}}" method="POST" enctype="multipart/form-data"  >
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                    <div class="form-group"><label>Tên</label>
+                                        <div><input data-parsley-type="alphanum" type="text" name="Ten" class="form-control"
+                                                required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->Ten}}"></div>
+                                    </div>
                                     <div class="form-group">
-                                        <label>Hình ảnh quảng cáo vị trí 1 (max_width=170,max_height=700)</label>
+                                        <label>Hình ảnh quảng cáo</label>
                                         <p>
-                                        <img src="upload/quangcao/{{$quangcao->Hinh1}}" width="150px" alt="">
+                                        <img src="upload/quangcao/{{$quangcao->Hinh}}" width="150px" alt="">
                                         </p>
                                         <input type="file" name="Hinh1">
                                     </div>
-                                    <div class="form-group"><label>Đường dẫn quảng cáo 1</label>
-                                        <div><input data-parsley-type="alphanum" type="text" name="link1" class="form-control"
-                                                required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link1}}"></div>
+                                    <div class="form-group"><label>Đường dẫn quảng cáo </label>
+                                        <div><input data-parsley-type="alphanum" type="text" name="link" class="form-control"
+                                                required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link}}"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Hình ảnh quảng cáo vị trí 2 (max_width=170,max_height=700)</label>
-                                        <p>
-                                        <img src="upload/quangcao/{{$quangcao->Hinh2}}" width="150px" alt="">
-                                        </p>
-                                        <input type="file" name="Hinh2">
-                                    </div>
-                                    <div class="form-group"><label>Đường dẫn quảng cáo 2</label>
-                                        <div><input data-parsley-type="alphanum" type="text" name="link2" class="form-control"
-                                                required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link2}}"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Hình ảnh quảng cáo vị trí 3 (max_width=445,max_height=230)</label>
-                                        <p>
-                                        <img src="upload/quangcao/{{$quangcao->Hinh3}}" width="150px" alt="">
-                                        </p>
-                                        <input type="file" name="Hinh3">
-                                    </div>
-                                    <div class="form-group"><label>Đường dẫn quảng cáo 3</label>
-                                        <div><input data-parsley-type="alphanum" type="text" name="link3" class="form-control"
-                                                required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link3}}"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Hình ảnh quảng cáo vị trí 4 (max_width=330,max_height=275</label>
-                                        <p>
-                                        <img src="upload/quangcao/{{$quangcao->Hinh4}}" width="150px" alt="">
-                                        </p>
-                                        <input type="file" name="Hinh4">
-                                    </div>
-                                    <div class="form-group"><label>Đường dẫn quảng cáo 4</label>
-                                        <div><input data-parsley-type="alphanum" type="text" name="link4" class="form-control"
-                                                required placeholder="Nhập đường dẫn quảng cáo" value="{{$quangcao->link4}}"></div>
-                                    </div>
+                                            <label>Trạng Thái</label><br/>
+                                             <label class="radio-inline">
+                                                  <input name="HienThi" value="1"
+                                                    @if($quangcao->HienThi==1)
+                                                  {{"checked"}}
+                                                 @endif
+                                                  checked="" type="radio">Hiển thị
+                                                 </label><br/>
+                                                 <label class="radio-inline">
+                                           <input name="HienThi" value="0"
+                                                    @if($quangcao->HienThi==0)
+                                             {{"checked"}}
+                                              @endif
+                                               type="radio">Ẩn
+                                            </label>
+                                                    </div>
+                                   
                                         <div class="form-group">
                                                 <div><button type="submit"
                                                         class="btn btn-primary waves-effect waves-light">Cập nhật</button>

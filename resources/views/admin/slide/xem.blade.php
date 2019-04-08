@@ -24,7 +24,7 @@
                                             <tr>
                                                 <th>Tiêu Đề</th>
                                                 <th>Hình</th>
-                                                <th>Tóm Tắt</th>    
+                                                 
                                                 <th>Nội Dung</th>           
                                                 <th>Ngày Đăng</th>
                                                 <th>Cập Nhật</th>
@@ -35,7 +35,7 @@
                                             <tr>
                                                 <td>{{$slide->Ten}}</td>
                                                 <td><img src="upload/slide/{{$slide->Hinh}}" width="100px" height="70px" alt=""></td>
-                                                <td style="white-space: normal;">{!!$slide->TomTat!!}</td>
+                                             
                                                 <td style="white-space: normal;">{!!$slide->NoiDung!!}</td>
                                                 <?php
                                                 $thoigian=$slide->NgayTao; 

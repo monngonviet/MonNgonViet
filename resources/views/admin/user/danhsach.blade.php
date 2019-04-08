@@ -18,17 +18,29 @@
                         <div class="col-12">
                             <div class="card m-b-20">
                                 <div class="card-body">
+                                       
                                     <h4 class="mt-0 header-title">Tài khoản User</h4>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
+                                                @if(count($errors)>0)
+                                                <div class="alert alert-danger">
+                                                  @foreach($errors->all() as $err)
+                                                      {{$err}}<br>
+                                                  @endforeach
+                                              @endif
+                                
+                                              @if(session('thongbao'))
+                                                <div class="alert alert-success">
+                                                  {{session('thongbao')}}
+                                              @endif
                                             <tr>
                                                 <th>STT</th>
                                                 <th>Tên</th>
                                                 <th>Email</th>
                                                 <th>PassWord</th>
                                                 <th>Số điện thoại</th>
-                                             <th>Cập nhật</th>
+                                                  <th>Cập nhật</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -42,8 +54,8 @@
                                                         </td>
                                                         <td>{{$tl->sdt}}
                                                         </td>
-                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/user/sua/{{$tl->id}}" style="
-                                                    color: blue;">Sửa</a></td>
+                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/user/xoa/{{$tl->id}}" style="
+                                                    color: blue;"  onclick="return confirmAction()">Xóa</a></td>
                                                 <?php $i++; ?>
                                             </tr>
                                             @endforeach
@@ -57,5 +69,9 @@
                 </div><!-- container-fluid -->
             </div><!-- content -->
         </div>
-    
+        <script type="text/javascript">
+            function confirmAction() {
+                 return confirm("Bạn có chắc là muốn xóa không?")
+               }
+          </script>
             @endsection

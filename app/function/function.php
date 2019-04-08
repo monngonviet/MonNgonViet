@@ -9,13 +9,11 @@
 // Chạy cmd : composer  dumpautoload
  function convertyoutube($link) {
 	if (strpos($link, 'youtube.com/watch?v=') == true) {
-
 		$url = $link;
 		parse_str(parse_url($url, PHP_URL_QUERY), $youtube_array);
 		$videoid = $youtube_array['v']; 
 			$embed =$videoid;
 				// $embed = "<iframe width='100' src='https://www.youtube.com/embed/".$videoid."' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-			
 				return $embed;
 	}
 }

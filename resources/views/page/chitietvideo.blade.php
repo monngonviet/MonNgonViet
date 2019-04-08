@@ -8,15 +8,12 @@
                 <div class="td-crumb-container">
                     <div class="entry-crumbs">
                         <span>
-                            <a title="" class="entry-crumb" href="https://monngonviet.com.vn/">Home
+                            <a title="" class="entry-crumb" href="trang-chu.html">Home
                             </a>
                         </span>
                         <i class="fa fa-angle-right"> </i>
                         <span>
-                            <a title="View all posts in Hoạt động &amp;amp; Cộng đồng" class="entry-crumb"
-                                href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/">Video</a></span> <i class="fa fa-angle-right"> </i><span><a
-                                title="View all posts in Ẩm thực thế giới" class="entry-crumb"
-                                href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/am-thuc-the-gioi/">{{$video->TieuDe}}</a></span> 
+                          Video</span> <i class="fa fa-angle-right"> </i><span>{{$video->TieuDe}}</span> 
                     </div>
                     <div class="clearfix"></div>
                     <article class="post" itemscope="" itemtype="https://schema.org/Article">
@@ -46,7 +43,6 @@
                                         </a>
                                     </li>
                                     <?php $i++;?>
-                              
                                      @endforeach
                      
                             </ul>
@@ -89,13 +85,11 @@
 
                 <div class="td-post-content">
 
-                    <div class="td-post-featured-image"><a
-                            href="https://monngonviet.com.vn/wp-content/uploads/2018/08/1.png" data-caption=""
-                            class="td-modal-image">
+                    <div class="td-post-featured-image">
                             <iframe width="560" height="500" src="https://www.youtube.com/embed/{{$video->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
                         <hr/>
-                        {!!$video->NoiDung!!}
                     </div>
+                    {!!$video->NoiDung!!}
                     @foreach($footer as $f)
                     <div class="fb-comments" data-href="https://www.facebook.com/SmartPhone-Thanh-Phong-520022775180436/{{$video->id}}" data-numposts="5"></div>
                     @endforeach
@@ -123,7 +117,13 @@
             </div>
 
             <div class="sidebar col-md-4">
-                <div class="details-left-img"><img src="assets/images/qc4.jpg" alt=""></div>
+
+                    @foreach($quangcao4 as $qc)
+                    <a href="{{$qc->link}}">
+                         <div class="details-left-img"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></div>   
+                     </a> 
+                     @endforeach
+
                 <div class="details-news-laster">
                     <h2 class="section-title">Video mới nhất</h2>
                     <ul class="latest-news">

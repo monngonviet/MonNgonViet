@@ -27,23 +27,19 @@
                                             <div><input data-parsley-type="alphanum" type="text" name="TieuDe" id="TieuDe" class="form-control"
                                                     required placeholder="Nhập tên tiêu đề" value="{{$video->TieuDe}}"></div>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>Video</label>
                                             <p>
                                             <img src="upload/video/{{$video->Video}}" width="200px" alt="">
                                             </p>
                                             <input type="file" name="Video">
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group"><label>Link Youtube</label>
-                                            <div><input data-parsley-type="alphanum" type="text" value="{{$video->LinkYoutube}}" name="LinkYoutube" class="form-control"
+                                            <div><input data-parsley-type="alphanum" type="text" value="https://www.youtube.com/watch?v={{$video->LinkYoutube}}" name="LinkYoutube" class="form-control"
                                              placeholder="Nhập tên từ khóa"></div>
                                          </div>
                                    
-                                        <div class="form-group">
-                                            <label>Tóm tắt</label>
-                                            <textarea id="TomTat"  class="form-control" rows="3" name="TomTat">{{$video->TomTat}}</textarea>
-                                        </div>
-                                        <script>CKEDITOR.replace('TomTat');</script>
+                                
 
                                         <div class="form-group">
                                                 <label>Nội Dung</label>

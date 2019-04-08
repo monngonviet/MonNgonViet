@@ -30,22 +30,20 @@
                                             <div><input data-parsley-type="alphanum" type="text" name="TieuDe" id="TieuDe" class="form-control"
                                                     required placeholder="Nhập tên tiêu đề"></div>
                                         </div>
-                                        <div  
+
+                                        {{-- <div  
                                         class="form-group">
                                                 <label>Video</label>
                                                 <input type="file" name="Video">
-                                            </div>
+                                            </div> --}}
                                      
                                             <div class="form-group"><label>Link Youtube</label>
                                                 <div><input data-parsley-type="alphanum" type="text" name="LinkYoutube" id="LinkYoutube" class="form-control"
-                                                         placeholder="Nhập tên từ khóa" ></div>
+                                                         placeholder="Nhập tên Link Youtube" required ></div>
                                    
 
-                                        <div class="form-group">
-                                                <label>Tóm tắt</label>
-                                                <textarea id="TomTat" class="form-control" rows="3" name="TomTat"></textarea>
-                                            </div>
-                                            <script>CKEDITOR.replace('TomTat');</script>
+                          
+                                         
 
                                             <div class="form-group">
                                                     <label>Nội Dung</label>
@@ -63,10 +61,10 @@
                                                 <div class="form-group">
                                                         <label>Nổi Bật</label><br/>
                                                         <label class="radio-inline">
-                                                            <input name="NoiBat" value="1" checked="" type="radio">Có
+                                                            <input name="NoiBat" value="0" checked="" type="radio">Không
                                                         </label><br/>
                                                         <label class="radio-inline">
-                                                            <input name="NoiBat" value="0" type="radio">Không
+                                                            <input name="NoiBat" value="1" type="radio">Có
                                                         </label>
                                                     </div>
 

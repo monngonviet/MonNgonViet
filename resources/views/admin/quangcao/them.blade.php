@@ -12,7 +12,7 @@
                     <div class="col-lg-12">
                         <div class="card m-b-20">
                             <div class="card-body">
-                                <h4 class="mt-0 header-title">Thêm thể loại</h4>
+                                <h4 class="mt-0 header-title">Thêm quảng cáo</h4>
                                 @if(count($errors)>0)
                                 <div class="alert alert-danger">
                                   @foreach($errors->all() as $err)
@@ -24,9 +24,18 @@
                                 <div class="alert alert-success">
                                   {{session('thongbao')}}
                               @endif
-                                <form class="" action="admin/theloai/them" method="POST">
+                                <form class="" action="admin/quangcao/them" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                                        <div class="form-group"><label>Tên</label>
+
+                                    <div class="form-group">
+                                            <label>Hình ảnh</label>
+                                            <input type="file" name="Hinh" required>
+                                        </div>
+                                        <div class="form-group"><label>Link</label>
+                                            <div><input data-parsley-type="alphanum" type="text" name="link" class="form-control"
+                                                    required placeholder="Nhập tên thể loại"></div>
+                                        </div>
+                                        <div class="form-group"><label>tên</label>
                                             <div><input data-parsley-type="alphanum" type="text" name="Ten" class="form-control"
                                                     required placeholder="Nhập tên thể loại"></div>
                                         </div>
@@ -34,12 +43,13 @@
                                         <div class="form-group">
                                                 <label>Trạng thái</label><br/>
                                                 <label class="radio-inline">
-                                                    <input name="Status" value="1" checked="" type="radio">Hiển thị
+                                                    <input name="HienThi" value="1" checked="" type="radio">Hiển thị
                                                 </label><br/>
                                                 <label class="radio-inline">
-                                                    <input name="Status" value="0" type="radio">Ẩn
+                                                    <input name="HienThi" value="0" type="radio">Ẩn
                                                 </label>
                                             </div>
+
                                         <div class="form-group">
                                                 <div><button type="submit"
                                                         class="btn btn-primary waves-effect waves-light">Thêm</button>

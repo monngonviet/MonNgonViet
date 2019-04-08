@@ -17,35 +17,32 @@
                         <div class="col-12">
                             <div class="card m-b-20">
                                 <div class="card-body">
-                                    <h4 class="mt-0 header-title">Danh sach quảng cáo</h4>
+                                    <h4 class="mt-0 header-title">Danh sách quảng cáo</h4>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>Hình vị trí 1 </th>
-                                                <th>Hình vị trí 2 </th>
-                                                <th>Hình vị trí 3 </th>
-                                                <th>Hình vị trí 4 </th>
+                                                <th>Tên</th>
+                                                <th>Hình quảng cáo</th>
+                                                <th>Link</th>
+                                                <th>Trạng thái</th>
                                                 <th>Thao tác</th>
-                                                <th>Đường dẫn hình vị trí 1</th>
-                                                <th>Đường dẫn hình vị trí 2</th>
-                                                <th>Đường dẫn hình vị trí 3</th>
-                                                <th>Đường dẫn hình vị trí 4</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 @foreach($quangcao as $tt)
                                             <tr>
-                                               <td><img src="upload/quangcao/{{$tt->Hinh1}}" width="185px" height="150px" alt=""></td>
-                                               <td><img src="upload/quangcao/{{$tt->Hinh2}}" width="185px" height="150px" alt=""></td>
-                                               <td><img src="upload/quangcao/{{$tt->Hinh3}}"width="185px" height="150px" alt=""></td>
-                                               <td><img src="upload/quangcao/{{$tt->Hinh4}}" width="185px" height="150px"alt=""></td>
-                                               <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/quangcao/sua/{{$tt->id}}" style="
-                                                color: blue;">Sửa </a></td>
-                                               <td>{{$tt->link1}}</td>
-                                               <td>{{$tt->link2}}</td>
-                                               <td>{{$tt->link3}}</td>
-                                               <td>{{$tt->link4}}</td>
+                                                <td>{{$tt->Ten}}</td>
+                                               <td><img src="upload/quangcao/{{$tt->Hinh}}" width="185px" height="150px" alt=""></td>
+                                                <td>{{$tt->link}}</td>
+                                                <td>@if($tt->HienThi==0)
+                                                        {{"Ẩn"}}
+                                                        @else
+                                                        {{"Hiển thị"}}
+                                                        @endif
+                                                        </td> 
+                                                        <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/quangcao/sua/{{$tt->id}}" style="
+                                                            color: blue;">Cập nhật</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>

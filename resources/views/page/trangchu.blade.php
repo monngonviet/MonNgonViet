@@ -40,14 +40,14 @@
                             <?php 
                             $data=$tt->tintuc->where('HienThi',1)->sortbyDesc('createa_at')->take(3);
                             ?>
-                            <div class="sidebar sidebar-mnv">
-                            <h2
-                            @if($i==0) 
-                            class="title-news culinary-culture"
-                            @else
-                            class="title-news community"
-                            @endif
-                            >{{$tt->Ten}}</h2>
+                            <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
+                                    <h2
+                                    @if($i==0) 
+                                    class="title-news culinary-culture"
+                                    @else
+                                    class="title-news community"
+                                    @endif
+                                    >{{$tt->Ten}}</h2></a>
                                 <ul class="latest-news sidebar-mnv-li">
                                         @foreach($data as $ttt)
                                     <li class="col-md-12">
@@ -71,18 +71,18 @@
                             
                             {{-- video --}}
                             <div class="sidebar sidebar-mnv">
-                                    <h2 class="title-news video">video</h2>
+                            <a href="loai-tin-video"><h2 class="title-news video">video</h2></a>
                                     <?php $i=0; ?>
                                     @foreach($videonoibat as $vd)
 									<div class="card">
-                                            @if(isset($vd->LinkYoutube)) 
-                                    <iframe width="415" height="300" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                                            @if($i==0) 
+                                            
+                                            <iframe width="415" height="300" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
                                             @else
-                                            <video width="200"controls>
-                                                    <source src="upload/video/{{$vd->Video}}" type="video/mp4">
-                                                  </video>
+                                            <iframe width="415" height="300" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+
                                             @endif
-										<div class="card-body">
+                                        <div class="card-body">
                                         <h3><a href="chi-tiet-video/{{$vd->id}}/{{$vd->TieuDeKhongDau}}.html">{{$vd->TieuDe}}</a>
                                             </h3>
                                             <div
@@ -106,7 +106,7 @@
                                             @endif>
 												<div class="col-md-4 col-sm-6 col-xs-12">
                                                         @if(isset($vd->LinkYoutube))
-                                             <iframe width="150" height="150" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                                             <iframe width="100" height="100" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
 
                                                         {{-- {!!$vd->LinkYoutube!!} --}}
                                                       {{-- @else
@@ -114,20 +114,15 @@
                                                               <source src="upload/video/{{$vd->Video}}" type="video/mp4">
                                                             </video> --}}
                                                         @endif
-													<a href="chi-tiet-video/{{$vd->id}}/{{$vd->TieuDeKhongDau}}.html">{{$vd->TieuDe}}</a>
+                                                        <div class="des" data-maxlength="50">
+                                                            <a href="chi-tiet-video/{{$vd->id}}/{{$vd->TieuDeKhongDau}}.html">{{$vd->TieuDe}}</a>
+                                                        </div>
+													
 												</div>
                                             </div>
                                             <?php $i++;?> 
                                             @endforeach
-											{{-- <div class="item">
-												<div class="col-md-4 col-sm-6 col-xs-12">
-													<a href="#">
-														<img src="http://placehold.it/100x100" class="img-responsive">
-													</a>
-													<a href="">Lorem ipsum dolor sit amet consectetur adipisicing
-														elit.</a>
-												</div>
-											</div> --}}
+										
 									
 										</div>
 										<a class="left carousel-control" href="#myCarousel1" data-slide="prev"><i
@@ -173,13 +168,13 @@
                         $data=$tt->tintuc->where('HienThi',1)->sortbyDesc('createa_at')->take(3);
                         ?>
                         <div class="sidebar sidebar-mnv">
-                        <h2
+                       <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html"> <h2
                         @if($i==0) 
                         class="title-news villages"
                         @else
                         class="title-news times"
                         @endif
-                        >{{$tt->Ten}}</h2>
+                        >{{$tt->Ten}}</h2></a> 
                             <ul class="latest-news sidebar-mnv-li">
                                     @foreach($data as $ttt)
                                 <li class="col-md-12">
@@ -214,11 +209,8 @@
                                     </div>
 
                                     <ul class="top-info">
-                                        <li>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                                                dignissimos facilis ea debitis. Odio labore facilis totam eaque nam.
-                                                Accusamus quisquam earum nobis sequi suscipit amet inventore quaerat
-                                                iusto saepe.</p>
+                                        <li class="des" data-maxlength="100">
+                                            <p>{!!$pb->TomTat!!}</p>
                                         </li>
                                     </ul>
 
@@ -227,22 +219,33 @@
                                 @endforeach
                             </ul>
                         </div>
-                        @foreach($quangcao as $qc)
-                      <a href="{{$qc->link3}}"><img src="upload/quangcao/{{$qc->Hinh3}}" alt=""></a>  
+                        @foreach($quangcao3 as $qc)
+                      <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a>  
                         @endforeach
                     </div>
                 </div>
                 
                 <div class="col-md-2">
-                    @foreach($quangcao as $qc)
-                   <a href="{{$qc->link1}}"><img src="upload/quangcao/{{$qc->Hinh1}}" alt=""></a> 
-                    <a href="{{$qc->link2}}"><img src="upload/quangcao/{{$qc->Hinh2}}" alt=""></a>
+                    @foreach($quangcao1 as $qc)
+                   <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a> 
                     @endforeach
+                    @foreach($quangcao2 as $qc)
+                    <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a> 
+                     @endforeach
                 </div>
             </div>
         </div>
     </div>
-
+    <script>
+            $(".des a").text(function(index, currentText) {
+              var maxLength = $(this).parent().attr('data-maxlength');
+              if (currentText.length >= maxLength) {
+                return currentText.substr(0, maxLength) + "...xem tiếp";
+              } else {
+                return currentText
+              }
+            });
+          </script>
     @endsection
           @section('script')
           <script>
