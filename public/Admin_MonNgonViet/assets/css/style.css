@@ -3210,6 +3210,7 @@ table.focus-on tbody tr.focused td {
 table.dataTable>tbody>tr.child ul li span {
     white-space: normal;
 }
+
 span.dtr-data {
     white-space: normal;
     word-break: break-word;
@@ -3219,13 +3220,18 @@ span.dtr-data h3 {
     white-space: normal;
     word-break: break-word;
 }
+
 span.dtr-data p {
     white-space: normal;
     word-break: break-word;
 }
 
 span.dtr-data img {
-   width: 100%;
+    width: 100%;
+}
+
+span.dtr-data p img {
+    width: 100%!important;
 }
 
 .dtr-data p {
