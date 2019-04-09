@@ -14,7 +14,7 @@
                             <i class="fa fa-angle-right"></i>
                             <span>
                                Tìm kiếm </span>
-                                    <i class="fa fa-angle-right"> {{$tukhoa}} </i>
+                                    <i class="fa fa-angle-right">{{$tukhoa}} </i>
                                     <span
                                       title="{{$tukhoa}}" class="entry-crumb">
                                             </span>

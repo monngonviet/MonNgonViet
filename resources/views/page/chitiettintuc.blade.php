@@ -7,7 +7,7 @@
                     <div class="td-crumb-container">
                         <div class="entry-crumbs">
                             <span>
-                                <a title="" class="entry-crumb" href="https://monngonviet.com.vn/">Trang chủ
+                                <a title="Trang chủ Món Ngon Việt" class="entry-crumb" href="trang-chu.html">Trang chủ
                                 </a>
                             </span>
                             <i class="fa fa-angle-right"> </i>
@@ -15,9 +15,9 @@
                             <span>
                                 
                                 <a title="{{$tintuc->loaitin->Ten}}" class="entry-crumb"
-                            href="loai-tin/{{$tintuc->loaitin->id}}/{{$tintuc->loaitin->TenKhongDau}}">{{$tintuc->loaitin->Ten}}</a></span> <i class="fa fa-angle-right"> </i><span><a
-                                    title="View all posts in Ẩm thực thế giới" class="entry-crumb"
-                                    href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/am-thuc-the-gioi/"></a>{{$tintuc->TieuDe}}</span> <i class=""> </i> <span
+                                >{{$tintuc->loaitin->Ten}}</a></span> <i class="fa fa-angle-right"> </i><span><a
+                                    title="{{$tintuc->loaitin->Ten}}" class="entry-crumb"
+                                    ></a>{{$tintuc->TieuDe}}</span> <span
                                 class="">
                             </span>
                             
@@ -86,7 +86,7 @@
                         <h5>Chia sẻ bài viết:</h5>
                         <br/>
                         <ul class="social-networks">
-                        <div class="fb-share-button" data-href="http://localhost:81/MonNgonViet/public/tin-tuc/{{$tintuc->id}}/{{$tintuc->TieuDeKhongDau}}.html" data-layout="button_count" data-size="small">
+                        <div class="fb-share-button" data-href="https:/monngonviet.com.vn/tin-tuc/{{$tintuc->id}}/{{$tintuc->TieuDeKhongDau}}.html" data-layout="button_count" data-size="small">
                                     <a target="_blank" href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                         </ul>
 

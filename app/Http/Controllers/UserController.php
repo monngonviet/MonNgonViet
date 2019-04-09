@@ -71,14 +71,14 @@ class UserController extends Controller
 
     public function getXoa($id)
     {
-      $user=User::where('email','=','thanhphong9718@gmail.com')->where('id',$id);
+      $user=User::where('quyen','=',0)->where('id',$id);
       if($user){
-          return redirect('admin/user/danhsach')->with('thongbao','Không xóa được');
+        $user->delete();
+          return redirect('admin/user/danhsach')->with('thongbao','Xóa thành công');
       }
       else
       {
-        $user->delete();
-      return redirect('admin/user/danhsach')->with('thongbao',' xóa được');
+      return redirect('admin/user/danhsach')->with('thongbao','Không xóa được');
       }
     
     }

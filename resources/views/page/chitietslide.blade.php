@@ -80,7 +80,7 @@
                     <div class="share-wraper col-sm-12 clearfix">
                         <h5>Chia sẻ bài viết:</h5>
                         <ul class="social-networks">
-                                <div class="fb-share-button" data-href="http://localhost:81/MonNgonViet/public/chi-tiet-slide/{{$slide->id}}/{{$slide->TenKhongDau}}.html" data-layout="button_count" data-size="small">
+                                <div class="fb-share-button" data-href="https:/monngonviet.com.vn/chi-tiet-slide/{{$slide->id}}/{{$slide->TenKhongDau}}.html" data-layout="button_count" data-size="small">
                                     <a target="_blank" href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                         </ul>
 

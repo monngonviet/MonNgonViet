@@ -1,5 +1,6 @@
 @extends('layout.index1')
 @section('content')
+
 	<div class="content contacts">
 			@foreach($header as $h)
 
@@ -57,7 +58,9 @@
                                     
 								<textarea name="LoiNhan" rows="5" placeholder="Lời nhắn của bạn" class="form-control required" required></textarea>
 							</div>
-
+							<div class="col-sm-12">
+							<div class="g-recaptcha" id="feedback-recaptcha" data-sitekey="6LcaApkUAAAAAEm9eg-qgiPhpjfuksxBR-K37oYe" ></div>
+							</div>
 							<div class="center">
 								<button type="submit" class="btn btn-default-color btn-lg"><i
 										class="fa fa-envelope"></i>Gửi</button>

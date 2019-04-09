@@ -5,27 +5,22 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
-
 <head>
 	<meta charset="utf-8" />
-
 	<!-- Page Title -->
 	<title>Món ngon việt</title>
-
 	<meta name="keywords" content="real estate, responsive, retina ready, modern html5 template, bootstrap, css3" />
 	<meta name="description" content="Cozy - Responsive Real Estate HTML5 Template" />
 	<meta name="author" content="Wisely Themes - www.wiselythemes.com" />
-
 	<!-- Mobile Meta Tag -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <base href="{{asset('')}}">
+  <base href="{{asset('')}}">
 	<!-- <link rel="shortcut icon" type="image/x-icon" href="assets/assets/images/fav_touch_icons/favicon.ico" /> -->
 	<!-- Fav and touch icons -->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/fav_touch_icons/favicon.ico" />
 	<link rel="apple-touch-icon" href="assets/images/fav_touch_icons/apple-touch-icon.png" />
 	<link rel="apple-touch-icon" sizes="72x72" href="assets/images/fav_touch_icons/apple-touch-icon-72x72.png" />
 	<link rel="apple-touch-icon" sizes="114x114" href="assets/images/fav_touch_icons/apple-touch-icon-114x114.png" />
-
 	<!-- IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> 
@@ -47,7 +42,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="jquery.shorten.1.0.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-
 </head>
 <body>
 	<!-- BEGIN WRAPPER -->
