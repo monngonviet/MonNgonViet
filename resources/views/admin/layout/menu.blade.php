@@ -58,7 +58,7 @@
                         
                         <ul class="submenu">
                             <li><a href="admin/theloai/danhsach">Danh sách thể loại</a></li>
-                            <li><a href="admin/theloai/them">Thêm thể loại</a></li>
+                            {{-- <li><a href="admin/theloai/them">Thêm thể loại</a></li> --}}
                         </ul>
                            {{-- Loại tin --}}
 

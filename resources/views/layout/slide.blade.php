@@ -28,8 +28,10 @@
                             >
                             <?php $i++;?> 
 
-                       <a href="chi-tiet-slide/{{$sl->id}}/{{$sl->TenKhongDau}}.html"><img src="upload/slide/{{$sl->Hinh}}" alt="Chania" width="460"
-                        height="345"> </a> 
+                        <a href="chi-tiet-slide/{{$sl->id}}/{{$sl->TenKhongDau}}.html"><img src="upload/slide/{{$sl->Hinh}}" alt="{{$sl->Ten}}" style="
+                            height: 437px;
+                            width: 680px;
+                         "> </a> 
                                 <div class="carousel-caption text-slide-mnv">
                                 <h2><a href="chi-tiet-slide/{{$sl->id}}/{{$sl->TenKhongDau}}.html">{{$sl->Ten}}</a>
                                     </h2>
