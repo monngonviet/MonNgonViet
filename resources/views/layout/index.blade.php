@@ -9,9 +9,9 @@
 	<meta charset="utf-8" />
 	<!-- Page Title -->
 	<title>Món ngon việt</title>
-	<meta name="keywords" content="real estate, responsive, retina ready, modern html5 template, bootstrap, css3" />
-	<meta name="description" content="Cozy - Responsive Real Estate HTML5 Template" />
-	<meta name="author" content="Wisely Themes - www.wiselythemes.com" />
+	<meta name="keywords" content="Món ngon việt" />
+	<meta name="description" content="Món ngon việt" />
+	<meta name="author" content="Món ngon việt" />
 	<!-- Mobile Meta Tag -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <base href="{{asset('')}}">

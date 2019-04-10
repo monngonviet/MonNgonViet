@@ -8,7 +8,7 @@
                 <div class="td-crumb-container">
                     <div class="entry-crumbs">
                         <span>
-                            <a title="" class="entry-crumb" href="trang-chu.html">Home
+                            <a title="Trang chủ món ngon Việt" class="entry-crumb" href="trang-chu.html">Home
                             </a>
                         </span>
                         <i class="fa fa-angle-right"> </i>
@@ -74,7 +74,7 @@
                 <div class="share-wraper col-sm-12 clearfix">
                     <h5>Chia sẻ bài viết:</h5>
                     <ul class="social-networks">
-                            <div class="fb-share-button" data-href="http://localhost:81/MonNgonViet/public/chi-tiet-slide/{{$video->id}}/{{$video->TieuDeKhongDau}}.html" data-layout="button_count" data-size="small">
+                            <div class="fb-share-button" data-href="https:/monngonviet.com.vn/chi-tiet-slide/{{$video->id}}/{{$video->TieuDeKhongDau}}.html" data-layout="button_count" data-size="small">
                                 <a target="_blank" href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                     </ul>
 
@@ -130,7 +130,7 @@
                         @foreach($videomoinhat as $vd)
                         <li class="col-md-12">
                             <div class="image">
-                                <a href="blog-detail.html"></a>
+                                <a href="chi-tiet-video/{{$vd->id}}/{{$vd->TieuDeKhongDau}}.html"></a>
                             <iframe width="90" height="100" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
                             </div>
                             <ul class="top-info">

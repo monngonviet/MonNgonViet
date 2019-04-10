@@ -11,13 +11,13 @@
                             <div class="td-crumb-container">
                                 <div class="entry-crumbs">
                                     <span>
-                                        <a title="" class="entry-crumb" href="https://monngonviet.com.vn/">Home
+                                        <a title="Trang chủ món ngon Việt" class="entry-crumb" href="trang-chu.html">Trang chủ
                                         </a>
                                     </span>
                                     <i class="fa fa-angle-right"> </i>
                                     <span>
                                         <a title="{{$theloai->SEOTitle}}" class="entry-crumb"
-                                            href="https://monngonviet.com.vn/category/hoat-dong-cong-dong/">{{$theloai->Ten}}</a></span>
+                                            >{{$theloai->Ten}}</a></span>
                                     </span>
                                 </div>
                                 <div class="clearfix"></div>
@@ -112,13 +112,15 @@
                                                             rel="bookmark"
                                                             title="{{$tt->SEOTile}}">{{$tt->TieuDe}}</a></h3>
                                                 </div>
+                                                <?php
+                                                $thoigian=$tt->NgayTao; 
+                                                $dateM=date("d-m-Y",strtotime($thoigian)); ?>
                                                 <div class="td-module-meta-info">
                                                     <span class="td-post-author-name"><a
-                                                            href="https://monngonviet.com.vn/author/mnadmin/">mnadmin</a>
+                                                            >Admin</a>
                                                         <span>-</span> </span> <span class="td-post-date"><time
                                                             class="entry-date updated td-module-date"
-                                                            datetime="2018-08-06T04:05:46+00:00">6 Tháng Tám,
-                                                            2018</time></span> </div>
+                                                        >{{$dateM}}</time></span> </div>
                                             </div>
                                         </div>
                                         </div>
@@ -138,10 +140,10 @@
                                                             <div class="td-meta-info-container">
                                                                 <div class="td-meta-align">
                                                                     <div class="td-big-grid-meta">
-                                                                        <a href=""
+                                                                        <a 
                                                                             class="td-post-category">{{$tt->loaitin->Ten}}</a>
                                                                         <h3 class="entry-title td-module-title"><a
-                                                                                href="https://monngonviet.com.vn/2018/08/01/ca-ri-chay-loanh-quanh-nhieu-chuyen/"
+                                                                                
                                                                                 rel="bookmark"
                                                                                 title="{{$tt->SEOTitle}}">{{$tt->TieuDe}}</a></h3>
                                                                     </div>
@@ -223,7 +225,7 @@
                                     @foreach($tinnoibat as $tnb)
                                     <li class="col-md-12">
                                         <div class="image">
-                                            <a href="blog-detail.html"></a>
+                                            <a href="tin-tuc/{{$tnb->id}}/{{$tnb->TieuDeKhongDau}}.html"></a>
                                         <img src="upload/tintuc/{{$tnb->Hinh}}" alt="{{$tnb->TieuDe}}">
                                         </div>
     

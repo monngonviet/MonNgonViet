@@ -61,8 +61,7 @@ class TheLoaiController extends Controller
      $theloai ->Ten =$request->Ten;
      $theloai->TenKhongDau=changeTitle($request->Ten);
      $theloai->SEOTitle= $request->Ten;
-      $theloai->Status= $request->Status;
-
+     $theloai->Status= $request->Status;
      $theloai->save();
      return redirect('admin/theloai/danhsach')->with('thongbao','Sửa Thành Công');
     }

@@ -95,7 +95,7 @@
                         </a>
                     </div>
                     <div>
-                        <img src="upload/tintuc/{{$tintuc->Hinh}}" alt="{{$tintuc->TieuDe}}" style="width: 100%;">
+                        <img src="upload/tintuc/{{$tintuc->Hinh}}" alt="{{$tintuc->SEOTitle}}" style="width: 100%;">
                     </div>
                     <br/>
                     <div class="td-post-content">

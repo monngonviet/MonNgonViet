@@ -7,16 +7,16 @@
                     <div class="td-crumb-container">
                         <div class="entry-crumbs">
                             <span>
-                                <a title="Trang chủ Món Ngon Việt" class="entry-crumb" href="trang-chu.html">Trang chủ
+                                <a title="Trang chủ món ngon Việt" class="entry-crumb" href="trang-chu.html">Trang chủ
                                 </a>
                             </span>
                             <i class="fa fa-angle-right"> </i>
                             <span>
-                                <a title="{{$slide->Ten}}" class="entry-crumb"
-                            href="">Slide</a></span> <i class="fa fa-angle-right"> </i><span><a
-                                    title="{{$slide->Ten}}" class="entry-crumb"
-                                   ></a>{{$slide->Ten}}</span> <i class=""> </i> <span
-                                class="">
+                                <a title="" class="entry-crumb"
+                            >Nổi bật</a></span> <i class="fa fa-angle-right"> </i><span><a
+                                    title="{{$tintucnoibat->TieuDe}}" class="entry-crumb"
+                                   ></a>{{$tintucnoibat->TieuDe}}</span>  <span
+                               >
                             </span>
                             
                         </div>
@@ -54,20 +54,20 @@
                                     
                                 </ul>
                                 <header class="td-post-title">
-                                <h1 class="entry-title">{{$slide->Ten}}</h1>
+                                <h1 class="entry-title">{{$tintucnoibat->TieuDe}}</h1>
                                     <div class="row">
                                         <div class="text-author">
                                             <div class="col-md-6">
                                                 <div class="author-left">
                                                         <?php
-                                                        $thoigian=$slide->NgayTao; 
+                                                        $thoigian=$tintucnoibat->NgayTao; 
                                                         $dateM=date("d-m-Y",strtotime($thoigian)); ?>
                                                 Đăng bởi <a href="">Admin</a> - <time>{{$dateM}}</time>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="author-right">
-                                                    <span><i class="fa fa-eye"></i>{{$slide->SoLuotXem}}</span>
+                                                    <span><i class="fa fa-eye"></i>{{$tintucnoibat->SoLuotXem}}</span>
                                                     {{-- <span><i class="fa fa-comments"></i>100</span> --}}
                                                 </div>
                                             </div>
@@ -80,7 +80,7 @@
                     <div class="share-wraper col-sm-12 clearfix">
                         <h5>Chia sẻ bài viết:</h5>
                         <ul class="social-networks">
-                                <div class="fb-share-button" data-href="https:/monngonviet.com.vn/chi-tiet-slide/{{$slide->id}}/{{$slide->TenKhongDau}}.html" data-layout="button_count" data-size="small">
+                                <div class="fb-share-button" data-href="https:/monngonviet.com.vn/chi-tiet-tin-tuc-noi-bat/{{$tintucnoibat->TieuDeKhongDau}}/{{$tintucnoibat->id}}/.html" data-layout="button_count" data-size="small">
                                     <a target="_blank" href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                         </ul>
 
@@ -90,16 +90,16 @@
                     </div>
 
                     <div>
-                        <img src="upload/slide/{{$slide->Hinh}}" alt="{{$slide->KeyWord}}" style="
+                        <img src="upload/tintucnoibat/{{$tintucnoibat->Hinh}}" alt="{{$tintucnoibat->SEOTitle}}" style="
                         width: 100%;
                     ">
                     </div>
                     <br/>
                     <div class="td-post-content">
-                        {!!$slide->NoiDung!!}
+                        {!!$tintucnoibat->NoiDung!!}
                     </div>
                     @foreach($footer as $f)
-                    <div class="fb-comments" data-href="https://www.facebook.com/SmartPhone-Thanh-Phong-520022775180436/{{$slide->id}}" data-numposts="5"></div>
+                    <div class="fb-comments" data-href="{{$f->LinkFB}}/{{$tintucnoibat->id}}" data-numposts="5"></div>
                     @endforeach
                     <footer>
 

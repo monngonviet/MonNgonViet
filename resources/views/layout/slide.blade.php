@@ -59,8 +59,8 @@
                 <div class="col-md-4">
                     @foreach($slideNoiBat as $sl)
                     <div class="card card-mnv">
-                       <a href="chi-tiet-slide/{{$sl->id}}/{{$sl->TenKhongDau}}.html"> <img class="card-img-top" style="padding-bottom: 17px"
-                        src="upload/slide/{{$sl->Hinh}}" alt="{{$sl->Ten}}"> </a>
+                       <a href="tin-tuc-noi-bat/{{$sl->id}}/{{$sl->TieuDeKhongDau}}.html"> <img class="card-img-top" style="padding-bottom: 17px"
+                        src="upload/tintucnoibat/{{$sl->Hinh}}" alt="{{$sl->TieuDe}}"> </a>
                     </div>
                     @endforeach
                    

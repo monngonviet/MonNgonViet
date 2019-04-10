@@ -13,10 +13,14 @@ use App\User;
 use App\Header;
 use App\Footer;
 use App\Video;
+
+
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\TinTucNoiBat;
+
 class PageController extends Controller
 {
   function __construct(){
@@ -36,13 +40,17 @@ class PageController extends Controller
     $header=Header::all();
     $footer=Footer::all();
     $slide1=Slide::where('Status',1)->get();
-    $slideNoiBat=Slide::where('NoiBat',1)->take(2)->latest()->get();
+
+    $slideNoiBat=TinTucNoiBat::where('HienThi',1)->take(2)->latest()->get();
+
     $tatcatintuc=TinTuc::where('HienThi',1)->latest()->paginate(3);
+
     // $tintuclangnghe =DB::table('TinTuc')
     // ->join('LoaiTin', 'TinTuc.idLoaiTin', '=',24)
     // ->join('TheLoai', 'LoaiTin.idTheLoai', '=', 6)
     // ->select('TinTuc.idLoaiTin','TinTuc.TieuDe','TinTuc.Hinh','TinTuc.TomTat',)
     // ->get();
+    
      $theloai=TheLoai::all();
      $loaitin=LoaiTin::all();
      $tintuc=TinTuc::all();
@@ -152,9 +160,22 @@ function loaitinvideo()
   $quangcao=QuangCao::all();
   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
   $slide=Slide::find($id);
+  $tinhluotxem=Slide::where('id', $id)->update(['SoLuotXem' => $slide->SoLuotXem+1]);
 
-  return view ('page.chitietslide',['slide'=>$slide,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat,'footer'=>$footer]);
+  return view ('page.chitietslide',['tinhluotxem'=>$tinhluotxem,'slide'=>$slide,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat,'footer'=>$footer]);
  }
+function chitiettinnoibat($id )
+{
+  $tintucnoibat=TinTucNoiBat::find($id);
+
+  $tinhluotxem=TinTucNoiBat::where('id', $id)->update(['SoLuotXem' => $tintucnoibat->SoLuotXem+1]);
+
+  $footer=Footer::all();
+  $theloai=TheLoai::all();
+  $quangcao=QuangCao::all();
+  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+  return view('page.chitiettinnoibat',['tintucnoibat'=>$tintucnoibat,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat,'footer'=>$footer,'tinhluotxem'=>$tinhluotxem]);
+}
 
 //    DB::table('TinTuc','TheLoai','LoaiTin')
 //    ->join('LoaiTin','LoaiTin.id','idLoaiTin')

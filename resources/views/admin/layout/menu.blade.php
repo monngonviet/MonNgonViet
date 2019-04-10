@@ -129,14 +129,7 @@
         </ul>
         </li>
                {{-- Hinh ke slide --}}
-               <li><a href="javascript:void(0);" class="waves-effect"><i
-                class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Tin Tức Nổi Bật <span
-                    class="float-right menu-arrow"><i
-                        class="mdi mdi-chevron-right"></i></span></span></a>
-            <ul class="submenu">
-            <li><a href="admin/slide/danhsachnoibat">Danh sách tin tức nổi bật</a></li>
-        </ul>
-        </li>
+       
         {{--  --}}
           
             <li><a href="javascript:void(0);" class="waves-effect"><i
@@ -145,7 +138,7 @@
                         class="mdi mdi-chevron-right"></i></span></span></a>
             <ul class="submenu">
             <li><a href="admin/user/danhsach">Danh sách Tài Khoản</a></li>
-            <li><a href="admin/user/them">them</a></li>
+            <li><a href="admin/user/them">Thêm</a></li>
         </ul>
         </li>
         {{-- Video --}}
@@ -157,9 +150,20 @@
         <ul class="submenu">
         <li><a href="admin/video/danhsach">Danh sách Video</a></li>
         <li><a href="admin/video/them">Thêm Video</a></li>
-    </ul>
+        </ul>
     </li>
+    {{--  --}}
+    <li><a href="javascript:void(0);" class="waves-effect"><i
+        class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý tin nổi bật<span
+            class="float-right menu-arrow"><i
+                class="mdi mdi-chevron-right"></i></span></span></a>
+    <ul class="submenu">
+    <li><a href="admin/tintucnoibat/danhsach">Danh sách tin nổi bật</a></li>
+    <li><a href="admin/tintucnoibat/them">Thêm tin tức</a></li>
+</ul>
+</li>
             </div>
+
             <!-- Sidebar -->
             <div class="clearfix"></div>
         </div><!-- Sidebar -left -->

@@ -20,8 +20,8 @@
     Route::post('dang-ki-user','PageController@postdangkiuser');
     Route::get('dang-ki-user','PageController@getdangkiuser');
     // Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
-    Route::group(['prefix'=>'admin'],function(){
-     Route::group(['prefix'=>'theloai'],function(){
+      Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
+      Route::group(['prefix'=>'theloai'],function(){
       //admin/theloai/danhsach
       Route::get('danhsach','TheLoaiController@getDanhSach');
       Route::get('sua/{id}','TheLoaiController@getSua');
@@ -29,13 +29,13 @@
       // Route::get('them','TheLoaiController@getThem');
       // Route::post('them','TheLoaiController@postThem');
       Route::get('xoa/{id}','TheLoaiController@getXoa');
-    });
+     });
     //
       Route::group(['prefix'=>'comment'],function(){
         //admin/slide/danhsach
       Route::get('danhsach','CommentController@getDanhSach');
       Route::get('xoa/{id}','CommentController@getXoa');
-  });
+     });
     //Loại Tin
       Route::group(['prefix'=>'loaitin'],function(){
       //admin/theloai/danhsach
@@ -55,6 +55,16 @@
       Route::get('them','FooterController@getThem');
       Route::post('them','FooterController@postThem');
       Route::get('xoa/{id}','FooterController@getXoa');
+    });
+    // Tin tin noi bat
+    Route::group(['prefix'=>'tintucnoibat'],function(){
+      //admin/theloai/danhsach
+      Route::get('danhsach','TinTucNoiBatController@getDanhSach');
+      Route::get('sua/{id}','TinTucNoiBatController@getSua');
+      Route::post('sua/{id}','TinTucNoiBatController@postSua');
+      Route::get('them','TinTucNoiBatController@getThem');
+      Route::post('them','TinTucNoiBatController@postThem');
+      Route::get('xoa/{id}','TinTucNoiBatController@getXoa');
     });
     // Header
      Route::group(['prefix'=>'header'],function(){
@@ -151,7 +161,6 @@
 
     Route::get('loaitin/{id}/{TenKhongDau}.html','PageController@danhsachdiadiemdulich');
 
-    Route::get('dia-diem-an-uong/{TenKhongDau}/{id}.html','PageController@danhsachdiadiemanuong');
 
     Route::get('an-uong/{id}/{TieuDeKhongDau}','PageController@anuong');
 
@@ -160,6 +169,9 @@
     Route::post('dangnhap','PageController@postDangNhap');
 
     Route::post('timkiem','PageController@timkiem');
+
+    Route::get('tin-tuc-noi-bat/{id}/{TieuDeKhongDau}.html','PageController@chitiettinnoibat');
+
     // test
     Route::any('{all}', function($uri){
       return View::make('page.errors');

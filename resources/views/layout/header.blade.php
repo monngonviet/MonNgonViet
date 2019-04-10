@@ -30,7 +30,6 @@
                             <li><a href="dang-ki-user"><i class="fa fa-pencil-square-o"></i>Đăng kí</a></li>
                             @endif
                             <li><a href="lien-he.html"><i class="fa fa-home"></i>Liên hệ</a></li>
-
                             <li>
                                 <div class="form-search-mnv">
                                     <form action="timkiem" method="post">
