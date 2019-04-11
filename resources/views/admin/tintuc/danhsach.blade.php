@@ -570,7 +570,7 @@
             @endsection
             <script type="text/javascript">
                 function confirmAction() {
-                     return confirm("Bạn có chắc là muốn xóa không?")
+                     return confirm("Bạn có chắc muốn xóa không?")
                    }
               </script>
   
