@@ -16,7 +16,7 @@
     Route::get('admin/dangxuat','UserController@getdangxuatpAdmin');
     Route::get('dangxuatuser','PageController@getdangxuatuser');
     Route::get('dangxuatadmin','PageController@getdangxuatadmin');
-    
+
     Route::post('dang-ki-user','PageController@postdangkiuser');
     Route::get('dang-ki-user','PageController@getdangkiuser');
     // Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
@@ -117,9 +117,9 @@
       Route::post('them','SlideController@postThem');
       Route::get('xoa/{id}','SlideController@getXoa');
         //ăn uống
-       
+
   });
- 
+
   //LiênHệ
   Route::group(['prefix'=>'lienhe'],function(){
     //admin/slide/danhsach
@@ -152,12 +152,13 @@
     Route::get('loai-tin-video','PageController@loaitinvideo');
 
     Route::get('the-loai/{id}/{TenKhongDau}.html','PageController@danhsachtheloai');
-    
+
     Route::get('chi-tiet-video/{id}/{TieuDeKhongDau}.html','PageController@chitietvideo');
 
     Route::get('chi-tiet-slide/{id}/{TenKhongDau}.html','PageController@chitietslide');
 
     Route::get('trang-chu.html','PageController@trangchu');
+    Route::get('/','PageController@trangchu');
 
     Route::get('loaitin/{id}/{TenKhongDau}.html','PageController@danhsachdiadiemdulich');
 
@@ -176,4 +177,3 @@
     Route::any('{all}', function($uri){
       return View::make('page.errors');
       })->where('all', '.*');
-   
