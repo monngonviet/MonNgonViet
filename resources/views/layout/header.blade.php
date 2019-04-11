@@ -55,9 +55,10 @@
                             <a href="trang-chu.html" class="nav-logo logo-mnv"><img src="upload/footer/{{$h->HinhLoGo}}" alt="" /></a>@endforeach
                         </div>
                         <div class="col-md-11">
-                            <div class="col-md-2 padding-header">
-                                <img  src="upload/footer/tinhhoa7.png" alt="">
-                            </div>
+                            <a href="trang-chu.html"><div class="col-md-2 padding-header">
+                                    <img  src="upload/footer/tinhhoa7.png" alt="">
+                                </div></a>
+                         
                             <div class="col-md-10">
                                 <nav class="navbar padding-header-qc">
                                     <!-- <button id="nav-mobile-btn"><i class="fa fa-bars"></i></button> -->
