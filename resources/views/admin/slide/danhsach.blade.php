@@ -29,7 +29,6 @@
                                                 <th>Thao tác</th>
                                                 <th>Xem</th>
                                                 <th>Ngày Đăng</th>
-                                                <th>Nổi bật</th> 
                                                 <th>Hiển thị</th> 
                                                                         
                                             </tr>
@@ -51,12 +50,7 @@
                                                 $thoigian=$tt->NgayTao; 
                                                 $dateM=date("d-m-Y",strtotime($thoigian)); ?>
                                                 <td ><?php echo $dateM;?></td>   
-                                                <td>@if($tt->NoiBat==0)
-                                                    {{"Ẩn"}}
-                                                    @else
-                                                    {{"Hiển thị"}}
-                                                    @endif
-                                                    </td>  
+                                             
                                                     <td>@if($tt->Status==0)
                                                             {{"Ẩn"}}
                                                             @else

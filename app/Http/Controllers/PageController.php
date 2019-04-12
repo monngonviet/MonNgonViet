@@ -32,7 +32,7 @@ class PageController extends Controller
     $theloainghebep=TheLoai::where('id',5)->get();
     $theloailangnghe=TheLoai::where('id',6)->get();
     $theloaitc=TheLoai::where('id','=',6)->orwhere('id','=',5)->orwhere('id','=',9)->get();
-    $theloaitc1=TheLoai::where('id','=',3)->orwhere('id','=',7)->orderBy('id','asc')->get();
+    $theloaitc1=TheLoai::where('id','=',3)->orwhere('id','=',7)->orwhere('id','=',4)->orderBy('id','asc')->get();
     $videonoibat=Video::where('NoiBat',1)->take(1)->latest()->get();
     $video=Video::where('HienThi',1)->take(6)->latest()->get();
     $theloaihoatdong=TheLoai::where('id',7)->get();
@@ -40,6 +40,10 @@ class PageController extends Controller
     $header=Header::all();
     $footer=Footer::all();
     $slide1=Slide::where('Status',1)->get();
+
+    $khonggian=LoaiTin::where('id',8)->take(1)->get();
+    $khonggian1=LoaiTin::where('id',35)->take(1)->get();
+
 
     $slideNoiBat=TinTucNoiBat::where('HienThi',1)->take(2)->latest()->get();
 
@@ -96,6 +100,10 @@ class PageController extends Controller
      view()->share('video',$video);
      view()->share('phobien',$phobien);
      view()->share('danhsachloaitin',$danhsachloaitin);
+     view()->share('khonggian',$khonggian);
+     view()->share('khonggian1',$khonggian1);
+
+
    
      view()->share('user',$user);
      view()->share('tintucslide',$tintucslide);

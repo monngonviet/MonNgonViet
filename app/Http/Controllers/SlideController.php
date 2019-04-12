@@ -54,7 +54,6 @@ class SlideController extends Controller
     // $slide->TomTat=$request->TomTat;
     $slide->NoiDung=$request->NoiDung;
     $slide->Status=$request->HienThi;
-    $slide->NoiBat=$request->HienThi1;
     $slide->SoLuotXem=0;
     $slide->NgayTao=$request->NgayTao;
     $slide->SEONoiDung=$request->TomTat;
@@ -100,7 +99,6 @@ class SlideController extends Controller
     // $slide->TomTat=$request->TomTat;
     $slide->NoiDung=$request->NoiDung;
     $slide->Status=$request->HienThi;
-    $slide->NoiBat=$request->HienThi1;
 
     $slide->SoLuotXem=0;
     
@@ -131,8 +129,8 @@ class SlideController extends Controller
 
   public function getXoa($id)
   {
-    $slide =Slide::where('NoiBat','=',0)->where('id',$id)->delete();
-    // $slide->delete();
+    $slide =Slide::find($id);
+    $slide->delete();
     return redirect('admin/slide/danhsach')->with('thongbao','Xóa Thành Công');
   }
 

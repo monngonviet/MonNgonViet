@@ -39,8 +39,9 @@
                                                 <th>Tên</th>
                                                 <th>Email</th>
                                                 <th>PassWord</th>
+                                                <th>Loại tài khoản</th>
                                                 <th>Số điện thoại</th>
-                                                  <th>Cập nhật</th>
+                                                <th>Cập nhật</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -51,9 +52,16 @@
                                                 <td>{{$tl->name}}</td>
                                                 <td>{{$tl->email}}</td>
                                                 <td>{{$tl->password}}
+                                                    <td>@if($tl->quyen==1)
+                                                        {{"Quản lý"}}
+                                                        @else
+                                                        {{"Người dùng"}}
+                                                        @endif
+                                                        </td>
                                                         </td>
                                                         <td>{{$tl->sdt}}
                                                         </td>
+                                                      
                                                 <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/user/xoa/{{$tl->id}}" style="
                                                     color: blue;"  onclick="return confirmAction()">Xóa</a></td>
                                                 <?php $i++; ?>

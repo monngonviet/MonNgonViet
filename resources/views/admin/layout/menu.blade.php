@@ -10,12 +10,15 @@
                     </div>
         <nav class="navbar-custom">
             <ul class="navbar-right d-flex list-inline float-right mb-0">
-                <li class="dropdown notification-list d-none d-sm-block">
-                    <form role="search" class="app-search">
+                
+                        {{-- <div class="">
+                                <span>Chào {{Auth::user()->name}}</span>
+                            </div> --}}
+                    {{-- <form role="search" class="app-search">
                         <div class="form-group mb-0"><input type="text" class="form-control" placeholder="Search..">
                             <button type="submit"><i class="fa fa-search"></i></button></div>
-                    </form>
-                </li>
+                    </form> --}}
+           
         
                         <!-- item-->
                        
@@ -24,7 +27,7 @@
                     <div class="dropdown notification-list nav-pro-img"><a
                             class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown"
                             href="#" role="button" aria-haspopup="false" aria-expanded="false"><img
-                                src="Admin_MonNgonViet/assets/images/users/user-4.jpg" alt="user" class="rounded-circle"></a>
+                                src="upload/footer/H8GT_logo-mon-ngon-viet (1).png" alt="user" class="rounded-circle"></a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown">
                             <!-- item-->
                             <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="dangxuatadmin"><i
@@ -138,7 +141,7 @@
                         class="mdi mdi-chevron-right"></i></span></span></a>
             <ul class="submenu">
             <li><a href="admin/user/danhsach">Danh sách Tài Khoản</a></li>
-            <li><a href="admin/user/them">Thêm</a></li>
+            {{-- <li><a href="admin/user/them">Thêm</a></li> --}}
         </ul>
         </li>
         {{-- Video --}}
@@ -154,7 +157,7 @@
     </li>
     {{--  --}}
     <li><a href="javascript:void(0);" class="waves-effect"><i
-        class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý tin nổi bật<span
+        class="mdi mdi-format-list-bulleted-type"></i><span>Quản Lý Tin Nổi Bật<span
             class="float-right menu-arrow"><i
                 class="mdi mdi-chevron-right"></i></span></span></a>
     <ul class="submenu">

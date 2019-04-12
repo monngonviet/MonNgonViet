@@ -68,7 +68,32 @@
                             </div>
                             <?php $i++;?>
                             @endforeach
+                            {{-- Không gian --}}
+                            <?php $i=0;  ?>
+                            @foreach($khonggian as $tt)
                             
+                            <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
+                                    <h2  class="title-news community">{{$tt->Ten}} </h2>
+                                <ul class="latest-news sidebar-mnv-li">
+                                        @foreach($tt->tintuc as $ttt)
+                                    <li class="col-md-12">
+                                    <h3><a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">{{$ttt->TieuDe}}</a>
+                                        </h3>
+                                        <div class="image">
+                                            <a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html"></a>
+                                            <img src="upload/tintuc/{{$ttt->Hinh}}" alt="" />
+                                        </div>
+                                        <ul class="top-info">
+                                            <div class="des" data-maxlength="100">
+                                                <p>{!!$ttt->TomTat!!}</p>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                     @endforeach
+                                </ul>
+                            </div>
+                            <?php $i++;?>
+                            @endforeach
                             {{-- video --}}
                             <div class="sidebar sidebar-mnv">
                             <a href="loai-tin-video"><h2 class="title-news video">video</h2></a>
@@ -195,7 +220,33 @@
                         </div>
                         <?php $i++;?>
                         @endforeach
-                        
+                        {{-- Món ngon vùng miền --}}
+                        <?php $i=0;  ?>
+                            @foreach($khonggian1 as $tt)
+                            
+                            <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
+                                    <h2  class="title-news community">{{$tt->Ten}} </h2>
+                                <ul class="latest-news sidebar-mnv-li">
+                                        @foreach($tt->tintuc as $ttt)
+                                    <li class="col-md-12">
+                                    <h3><a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">{{$ttt->TieuDe}}</a>
+                                        </h3>
+                                        <div class="image">
+                                            <a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html"></a>
+                                            <img src="upload/tintuc/{{$ttt->Hinh}}" alt="" />
+                                        </div>
+                                        <ul class="top-info">
+                                            <div class="des" data-maxlength="100">
+                                                <p>{!!$ttt->TomTat!!}</p>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                     @endforeach
+                                </ul>
+                            </div>
+                            <?php $i++;?>
+                            @endforeach
+                        {{-- Phổ biến --}}
                         <div class="sidebar sidebar-mnv">
                             <h2 class="title-news popular">Phổ biến nhất</h2>
                             <ul class="latest-news sidebar-mnv-li">

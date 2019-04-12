@@ -20,7 +20,7 @@
     Route::post('dang-ki-user','PageController@postdangkiuser');
     Route::get('dang-ki-user','PageController@getdangkiuser');
     // Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
-      Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
+      Route::group(['prefix'=>'admin'],function(){
       Route::group(['prefix'=>'theloai'],function(){
       //admin/theloai/danhsach
       Route::get('danhsach','TheLoaiController@getDanhSach');
@@ -101,8 +101,8 @@
       Route::get('danhsach','UserController@getDanhSach');
       Route::get('sua/{id}','UserController@getSua');
       Route::post('sua/{id}','UserController@postSua');
-      Route::get('them','UserController@getThem');
-      Route::post('them','UserController@postThem');
+      // Route::get('them','UserController@getThem');
+      // Route::post('them','UserController@postThem');
       Route::get('xoa/{id}','UserController@getXoa');
   });
     //Slide
@@ -161,7 +161,6 @@
     Route::get('/','PageController@trangchu');
 
     Route::get('loaitin/{id}/{TenKhongDau}.html','PageController@danhsachdiadiemdulich');
-
 
     Route::get('an-uong/{id}/{TieuDeKhongDau}','PageController@anuong');
 

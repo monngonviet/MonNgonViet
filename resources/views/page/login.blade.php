@@ -69,9 +69,9 @@
 					</div>
 					<div class="flex-sb-m w-full p-t-3 p-b-24">
 						<div class="contact100-form-checkbox">
-							<a href="" class="txt1">
+							{{-- <a href="" class="txt1">
 									Quên mặt khẩu
-							</a>
+							</a> --}}
 						</div>
 						<div>
 							<a href="dang-ki-user" class="txt1">

@@ -66,15 +66,7 @@
                                                                 <input name="HienThi" value="0" type="radio">Không
                                                             </label>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label>Nổi bật</label><br/>
-                                                            <label class="radio-inline">
-                                                                <input name="HienThi1" value="0" checked="" type="radio">Không
-                                                            </label><br/>
-                                                            <label class="radio-inline">
-                                                                <input name="HienThi1" value="1" type="radio">Có
-                                                            </label>
-                                                        </div>
+                                                    
                                                 <div class="form-group"><label>Từ Khóa</label>
                                              <div><input data-parsley-type="alphanum" type="text" name="KeyWord" id="SEOTitle" class="form-control"
                                                     required placeholder="Nhập tên từ khóa"></div>

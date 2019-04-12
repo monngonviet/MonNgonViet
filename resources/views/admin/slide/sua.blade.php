@@ -70,23 +70,7 @@
                                                    type="radio">Ẩn
                                                 </label>
                                                         </div>
-                                                        <div class="form-group">
-                                                <label>Nổi bật</label><br/>
-                                                 <label class="radio-inline">
-                                                      <input name="HienThi1" value="1"
-                                                        @if($slide->NoiBat==1)
-                                                      {{"checked"}}
-                                                     @endif
-                                                      checked="" type="radio">Hiển thị
-                                                     </label><br/>
-                                                     <label class="radio-inline">
-                                               <input name="HienThi1" value="0"
-                                                        @if($slide->NoiBat==0)
-                                                 {{"checked"}}
-                                                  @endif
-                                                   type="radio">Ẩn
-                                                </label>
-                                                        </div>
+                                                      
                                          <div class="form-group"><label>Từ khóa</label>
                                                 <div><input data-parsley-type="alphanum" type="text" name="KeyWord" class="form-control"
                                                         required placeholder="Nhập tên tiêu đề" value="{{$slide->KeyWord}}"></div>
