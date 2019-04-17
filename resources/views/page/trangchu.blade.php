@@ -78,6 +78,7 @@
                                     <h2  class="title-news culinary-culture">{{$tt->Ten}} </h2>
                                 <ul class="latest-news sidebar-mnv-li">
                                         @foreach($tt->tintuc as $ttt)
+                                        @if($ttt->HienThi==1)
                                     <li class="col-md-12">
                                     <h3><a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">{{$ttt->TieuDe}}</a>
                                         </h3>
@@ -91,6 +92,7 @@
                                             </div>
                                         </ul>
                                     </li>
+                                    @endif
                                      @endforeach
                                 </ul>
                             </div>
@@ -231,7 +233,8 @@
                             <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
                                     <h2  class="title-news community">{{$tt->Ten}} </h2>
                                 <ul class="latest-news sidebar-mnv-li">
-                                        @foreach($tt->tintuc as $ttt)
+                                    @foreach($tt->tintuc as $ttt)
+                                    @if($ttt->HienThi==1)
                                     <li class="col-md-12">
                                     <h3><a href="tin-tuc/{{$ttt->id}}/{{$ttt->TieuDeKhongDau}}.html">{{$ttt->TieuDe}}</a>
                                         </h3>
@@ -245,6 +248,7 @@
                                             </div>
                                         </ul>
                                     </li>
+                                    @endif
                                      @endforeach
                                 </ul>
                             </div>
