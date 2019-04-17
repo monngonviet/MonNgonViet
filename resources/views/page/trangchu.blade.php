@@ -44,8 +44,10 @@
                                     <h2
                                     @if($i==0) 
                                     class="title-news culinary-culture"
-                                    @else
+                                    @elseif($i==1)
                                     class="title-news community"
+                                    @elseif($i==2)
+                                    class="title-news villages"
                                     @endif
                                     >{{$tt->Ten}}</h2></a>
                                 <ul class="latest-news sidebar-mnv-li">
@@ -73,7 +75,7 @@
                             @foreach($khonggian as $tt)
                             
                             <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
-                                    <h2  class="title-news community">{{$tt->Ten}} </h2>
+                                    <h2  class="title-news culinary-culture">{{$tt->Ten}} </h2>
                                 <ul class="latest-news sidebar-mnv-li">
                                         @foreach($tt->tintuc as $ttt)
                                     <li class="col-md-12">
@@ -186,7 +188,7 @@
                                 @endforeach
                             </ul>
                         </div>
-  {{-- Làng nghề --}}
+                        {{-- Làng nghề --}} 
                         <?php $i=0;  ?>
                         @foreach($theloaitc as $tt)
                         <?php 
@@ -196,8 +198,10 @@
                        <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html"> <h2
                         @if($i==0) 
                         class="title-news villages"
-                        @else
+                        @elseif($i==1)
                         class="title-news times"
+                        @elseif($i==2)
+                        class="title-news events"
                         @endif
                         >{{$tt->Ten}}</h2></a> 
                             <ul class="latest-news sidebar-mnv-li">

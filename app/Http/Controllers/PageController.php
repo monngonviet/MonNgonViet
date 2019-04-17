@@ -62,7 +62,7 @@ class PageController extends Controller
      $quangcao2=QuangCao::where('id','=',5)->where('HienThi',1)->get();
      $quangcao3=QuangCao::where('id','=',6)->where('HienThi',1)->get();
      $quangcao4=QuangCao::where('id','=',7)->where('HienThi',1)->get();
-    $Carbon= Carbon::now(); 
+     $Carbon= Carbon::now(); 
      $user = User::all();
     //  $soluotxem = DB::table('TinTuc')->max('SoLuotXem');
      $phobien=TinTuc::orderBy('SoLuotXem','DESC')->take(3)->get();

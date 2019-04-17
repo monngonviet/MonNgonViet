@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Header extends Model
 {
     //
-      protected $table ="Header";
+      protected $table ="header";
 }

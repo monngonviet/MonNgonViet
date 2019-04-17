@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class TinTucNoiBat extends Model
 {
     //
-      protected $table ="TinTucNoiBat";
+      protected $table ="tintucnoibat";
 }
