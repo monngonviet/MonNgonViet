@@ -20,7 +20,7 @@ Route::get('dangxuatadmin', 'PageController@getdangxuatadmin');
 Route::post('dang-ki-user', 'PageController@postdangkiuser');
 Route::get('dang-ki-user', 'PageController@getdangkiuser');
 // Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
-Route::group(['prefix' => 'admin', 'middleware' => 'adminlogin'], function () {
+Route::group(['prefix' => 'admin','middleware'=>'adminlogin'], function () {
     Route::group(['prefix' => 'theloai'], function () {
         //admin/theloai/danhsach
         Route::get('danhsach', 'TheLoaiController@getDanhSach');
@@ -75,16 +75,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminlogin'], function () {
     });
     //Tin tức
     Route::group(['prefix' => 'tintuc'], function () {
-
         Route::get('danhsach', 'TinTuc1Controller@getDanhSach');
+        Route::get('danhsachchoduyet', 'TinTuc1Controller@getDanhSachChoDuyet');
+
         Route::get('sua/{id}', 'TinTuc1Controller@getSua');
         Route::get('xem/{id}', 'TinTuc1Controller@getXem');
         Route::post('sua/{id}', 'TinTuc1Controller@postSua');
         Route::get('them', 'TinTuc1Controller@getThem');
         Route::post('them', 'TinTuc1Controller@postThem');
         Route::get('xoa/{id}', 'TinTuc1Controller@getXoa');
-
-    });
+        });
     //Video
     Route::group(['prefix' => 'video'], function () {
         //admin/tintuc/danhsach
@@ -102,8 +102,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminlogin'], function () {
         Route::get('danhsach', 'UserController@getDanhSach');
         Route::get('sua/{id}', 'UserController@getSua');
         Route::post('sua/{id}', 'UserController@postSua');
-        // Route::get('them','UserController@getThem');
-        // Route::post('them','UserController@postThem');
+        Route::get('them','UserController@getThem');
+        Route::post('them','UserController@postThem');
         Route::get('xoa/{id}', 'UserController@getXoa');
     });
     //Slide
@@ -172,6 +172,15 @@ Route::post('dangnhap', 'PageController@postDangNhap');
 Route::post('timkiem', 'PageController@timkiem');
 
 Route::get('tin-tuc-noi-bat/{id}/{TieuDeKhongDau}.html', 'PageController@chitiettinnoibat');
+
+Route::get('tin-tuc-noi-bat/{id}/{TieuDeKhongDau}.html', 'PageController@chitiettinnoibat');
+
+
+    Route::get('danhsachduyet','PageController@getdanhsachduyet');
+    Route::get('dang-tin.html', 'PageController@dangtintuc');
+    Route::post('dang-tin.html', 'PageController@postdangtintuc');
+
+
 
 // test
 Route::any('{all}', function ($uri) {

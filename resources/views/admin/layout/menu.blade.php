@@ -80,7 +80,9 @@
                                         class="mdi mdi-chevron-right"></i></span></span></a>
                             <ul class="submenu">
                             <li><a href="admin/tintuc/danhsach">Danh sách tin tức</a></li>
+                            <li><a href="admin/tintuc/danhsachchoduyet">Danh sách chờ duyệt</a></li>
                             <li><a href="admin/tintuc/them">Thêm tin tức</a></li>
+
                         </ul>
 
                 </li>
@@ -141,7 +143,7 @@
                         class="mdi mdi-chevron-right"></i></span></span></a>
             <ul class="submenu">
             <li><a href="admin/user/danhsach">Danh sách Tài Khoản</a></li>
-            {{-- <li><a href="admin/user/them">Thêm</a></li> --}}
+            <li><a href="admin/user/them">Thêm</a></li>
         </ul>
         </li>
         {{-- Video --}}

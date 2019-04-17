@@ -6,30 +6,28 @@
             <div class="container background-mnv">
                 <div class="row">
                     <div class="col-sm-12">
-                        @foreach($header as $h)
+              
                         <ul id="top-info">
                             <li>
                                 <div id="clock">Loading...</div>
                             </li>
-
-                            <li>Email: <a href="mailto:{{$h->email}}"> {{$h->email}}</a></li>
-                        </ul>
-                        @endforeach
-                        <ul id="top-buttons">
                             @if(Auth::User() != null)
+                            <li>Chào {{Auth::user()->name}}</li>
+                        </ul>
+           
+                        <ul id="top-buttons">
                             <li>
                                 <div class="">
-                                    <span>Chào {{Auth::user()->name}}</span>
                                 </div>
                             </li>
-
                             <li class="divider"></li>
                             <li><a href="dangxuatuser"><i class="fa fa-sign-in"></i> Đăng xuất</a></li>
+                            <li><a href="dang-tin.html"><i class="fa fa-home"></i>Đăng tin tức</a></li>
                             @else
                             <li><a href="dangnhap"><i class="fa fa-sign-in"></i> Đăng nhập</a></li>
                             <li><a href="dang-ki-user"><i class="fa fa-pencil-square-o"></i>Đăng kí</a></li>
                             @endif
-                            <li><a href="lien-he.html"><i class="fa fa-home"></i>Liên hệ</a></li>
+                          
                             <li>
                                 <div class="form-search-mnv">
                                     <form action="timkiem" method="post">

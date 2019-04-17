@@ -169,7 +169,6 @@ function loaitinvideo()
   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
   $slide=Slide::find($id);
   $tinhluotxem=Slide::where('id', $id)->update(['SoLuotXem' => $slide->SoLuotXem+1]);
-
   return view ('page.chitietslide',['tinhluotxem'=>$tinhluotxem,'slide'=>$slide,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat,'footer'=>$footer]);
  }
 function chitiettinnoibat($id )
@@ -197,13 +196,10 @@ function danhsachtheloai($id)
   $theloaitc=TheLoai::where('id',$id)->orderBy('id','DESC')->get();
   $theloaitc1=TheLoai::where('id',$id)->orderBy('id','DESC')->inRandomOrder()->take(5)->get();
   $theloai=TheLoai::find($id);
- 
-
   $loaitin=LoaiTin::where('idTheLoai',$id)->count();
   $theloai1=TheLoai::all();
   $soluotxem = DB::table('TinTuc')->max('SoLuotXem');
   $tinnoibat=TinTuc::where('HienThi',1)->orderBy('SoLuotXem','DESC')->take(5)->get();
-
   return view('page.danhsachtheloai',['loaitin'=>$loaitin,'theloai'=>$theloai,'theloai1'=>$theloai1,'theloaitc'=>$theloaitc,'tinnoibat'=>$tinnoibat]);
 }
 
@@ -236,6 +232,67 @@ function danhsachtheloai($id)
 
    return redirect('lien-he.html')->with('thongbao','Cảm ơn bạn đã liên hệ với chúng tôi, chúng tôi sẽ phản hồi lời nhắn của bạn sớm nhất');
  }
+//User đăng tin  
+  public function dangtintuc()
+  {
+    return view('page.themuser');
+  }
+
+  public function postdangtintuc(Request $request)
+  {
+    $validatedData = $request->validate([
+      'TieuDe' => 'required|unique:tintuc,TieuDe|min:3|max:100',
+      'NoiDung' => 'required',
+    ],
+    [
+      'TieuDe.require'=>'Bạn chưa nhập tên',
+      'TieuDe.unique'=>"Tên Tiêu Đề đã tồn tại",
+      'TieuDe.min'=>'Tên tiêu đề phải có độ dài từ 3 đến 100 ký tự',
+      'TieuDe.max'=>'Tên tiêu đề không được quá 100 ký tự',
+      'NoiDung.require'=>'Bạn chưa nhập nội dung bài viết',
+    
+    ]);
+      $tintuc=new TinTuc;
+      $tintuc->TieuDe = $request->TieuDe;
+      $tintuc->TieuDeKhongDau=changeTitle($request->TieuDe);
+      $tintuc->SEOTitle=$request->SEOTitle;
+      $tintuc->idLoaiTin=$request->LoaiTin;
+      $tintuc->TomTat=$request->TomTat;
+      $tintuc->NoiDung=$request->NoiDung;
+      $tintuc->NoiBat=$request->NoiBat;
+      $tintuc->HienThi=$request->HienThi;
+      $tintuc->SoLuotXem=0;
+      $tintuc->NgayTao=$request->NgayTao;
+      $tintuc->NgaySua=$request->NgayTao;
+      $tintuc->SEOTomTat=$request->TomTat;
+      if($request->hasFile('Hinh'))
+      {
+        $file=  $request->file('Hinh');
+        $duoi=$file->getClientOriginalExtension();
+     
+        $name=  $file->getClientOriginalName();
+        $Hinh=  str_random(4)."_".$name;
+        while (file_exists("upload/tintuc/".$Hinh))
+          {
+            $Hinh =str_random(4)."_". $name;
+          }
+          // code...
+          $file->move("upload/tintuc", $Hinh);
+          $tintuc->Hinh=$Hinh;
+      }
+      else {
+        $tintuc->Hinh="";
+      }
+      $tintuc->save();
+      return redirect('danhsachduyet')->with('thongbao','Thêm Thành Công');
+   
+  }
+  public function getdanhsachduyet()
+  {
+    $tintuc=TinTuc::where('HienThi',0)->get();
+    return view ('page.danhsachduyet',['tintuc'=> $tintuc]
+  );
+  }
 
  public function getDangNhap(){
    return view('page.login');
