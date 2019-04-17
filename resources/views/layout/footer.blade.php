@@ -138,7 +138,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         &copy; 2019 monngonviet - Đã đăng ký Bản quyền. Được phát triển bởi <a
-                            href="http://nagateam.html-5.me/" target="_blank">Naga Team</a>
+                            href="http://nagateam.html-5.me/" style="color:#0c7310" target="_blank">Naga Team</a>
 
                         <!-- BEGIN SOCIAL NETWORKS -->
                         <ul class="social-networks">

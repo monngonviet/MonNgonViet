@@ -513,10 +513,10 @@ dt {
 
 .submenu li a {
     padding: 8px 20px 8px 10px;
-    color: #8699ad;
+    color: #d1d5da;
     display: block;
     -webkit-transition: all .5s;
-    transition: all .5s
+    transition: all .5s;
 }
 
 .submenu li a:focus {
@@ -534,7 +534,7 @@ dt {
 
 .submenu li.active>a {
     color: #fff;
-    background-color: #2b3a4a
+    background-color: #167f04;
 }
 
 .topbar {
@@ -546,13 +546,13 @@ dt {
 }
 
 .topbar .topbar-left {
-    background: #2b3a4a;
+    background: #167f04;
     float: left;
     text-align: center;
     height: 70px;
     position: relative;
     width: 240px;
-    z-index: 1
+    z-index: 1;
 }
 
 .topbar .topbar-left .logo {
@@ -597,12 +597,12 @@ dt {
 .side-menu {
     width: 240px;
     z-index: 10;
-    background: #2b3a4a;
+    background: #167f04;
     bottom: 0;
     margin-top: 0;
     padding-bottom: 30px;
     position: fixed;
-    top: 70px
+    top: 70px;
 }
 
 .side-menu .waves-effect .waves-ripple {
@@ -635,13 +635,13 @@ dt {
 }
 
 #sidebar-menu>ul>li>a {
-    color: #8699ad;
+    color: #e6e6e6;
     display: block;
     padding: 13px 20px;
     font-size: 13.3px;
     position: relative;
     -webkit-transition: all .5s;
-    transition: all .5s
+    transition: all .5s;
 }
 
 #sidebar-menu>ul>li>a:active, #sidebar-menu>ul>li>a:focus, #sidebar-menu>ul>li>a:hover {
@@ -677,7 +677,7 @@ dt {
 
 #sidebar-menu>ul>li>a.active {
     color: #fff!important;
-    background-color: #263442
+    background-color: #167f04;
 }
 
 .menu-title {
@@ -686,7 +686,7 @@ dt {
     font-size: 10px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #b4bfcc
+    color: #f3f3f3;
 }
 
 .enlarged .slimScrollDiv {
