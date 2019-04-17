@@ -65,7 +65,7 @@ class PageController extends Controller
      $Carbon= Carbon::now(); 
      $user = User::all();
     //  $soluotxem = DB::table('TinTuc')->max('SoLuotXem');
-     $phobien=TinTuc::orderBy('SoLuotXem','DESC')->take(3)->get();
+     $phobien=TinTuc::where('HienThi',1)->orderBy('SoLuotXem','DESC')->take(3)->get();
     
      $tinnoibat=TinTuc::where('NoiBat',1)->take(3)->latest()->get();
      $tintucslide=TinTuc::orderBy('id','DESC')->take(10)->get();
@@ -121,10 +121,10 @@ function danhsachloaitin($id, $idTheLoai)
   $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
   $loaitin=LoaiTin::find($id);
   $theloai1=TheLoai::where( 'TenKhongDau',$idTheLoai)->get();
-  $tintucds=TinTuc::where('idLoaiTin',$id)->orderBy('id','DESC')->paginate(7);
-  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
-  $tintucslide=TinTuc::where('idLoaiTin',$id)->inRandomOrder()->take(5)->get();
-  $demtintuc=TinTuc::where('idLoaiTin',$id)->count();
+  $tintucds=TinTuc::where('idLoaiTin',$id)->where('HienThi',1)->orderBy('id','DESC')->paginate(7);
+  $tintucmoinhat=TinTuc::where('HienThi',1)->orderBy('id','DESC')->take(6)->get();
+  $tintucslide=TinTuc::where('idLoaiTin',$id)->where('HienThi',1)->inRandomOrder()->take(5)->get();
+  $demtintuc=TinTuc::where('idLoaiTin',$id)->where('HienThi',1)->count();
   return view('page.loaitin',['demtintuc'=>$demtintuc,'tintucslide'=>$tintucslide,'loaitin'=>$loaitin,'theloai1'=>$theloai1,'tintucds'=>$tintucds,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
 }
 
@@ -143,8 +143,8 @@ function loaitinvideo()
    $quangcao=QuangCao::all();
    $tintuc=TinTuc::find($id);
    $theloai=TheLoai::all();
-   $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(3)->get();
-   $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+   $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->where('HienThi',1)->take(3)->get();
+   $tintucmoinhat=TinTuc::where('HienThi',1)->orderBy('id','DESC')->take(6)->get();
    $tinhluotxem=TinTuc::where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
   //  
    return view('page.chitiettintuc',['tintucmoinhat'=>$tintucmoinhat,'tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'theloai'=>$theloai,'tinhluotxem'=>$tinhluotxem,'quangcao'=>$quangcao,'footer'=>$footer]);
@@ -166,7 +166,7 @@ function loaitinvideo()
   $footer=Footer::all();
   $theloai=TheLoai::all();
   $quangcao=QuangCao::all();
-  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+  $tintucmoinhat=TinTuc::where('HienThi',1)->orderBy('id','DESC')->take(6)->get();
   $slide=Slide::find($id);
   $tinhluotxem=Slide::where('id', $id)->update(['SoLuotXem' => $slide->SoLuotXem+1]);
   return view ('page.chitietslide',['tinhluotxem'=>$tinhluotxem,'slide'=>$slide,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat,'footer'=>$footer]);
@@ -180,7 +180,7 @@ function chitiettinnoibat($id )
   $footer=Footer::all();
   $theloai=TheLoai::all();
   $quangcao=QuangCao::all();
-  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+  $tintucmoinhat=TinTuc::where('HienThi',1)->orderBy('id','DESC')->take(6)->get();
   return view('page.chitiettinnoibat',['tintucnoibat'=>$tintucnoibat,'theloai'=>$theloai,'quangcao'=>$quangcao,'tintucmoinhat'=>$tintucmoinhat,'footer'=>$footer,'tinhluotxem'=>$tinhluotxem]);
 }
 
@@ -358,10 +358,9 @@ public function getdangkiuser()
  function timkiem(Request $request)
  {
   $tintucnoibat=TinTuc::where('NoiBat',1)->take(3)->get();
-  $tintucmoinhat=TinTuc::orderBy('id','DESC')->take(6)->get();
+  $tintucmoinhat=TinTuc::where('HienThi',1)->orderBy('id','DESC')->take(6)->get();
   $tukhoa =$request->tukhoa;
-  $tintuc =TinTuc::where('TieuDe','like',"%$tukhoa%")->take(10)->paginate(10);
-
+  $tintuc =TinTuc::where('TieuDe','like',"%$tukhoa%")->where('HienThi',1)->take(10)->paginate(10);
   return view('page.timkiem',['tintuc'=>$tintuc,'tukhoa'=>$tukhoa,'tintucnoibat'=>$tintucnoibat,'tintucmoinhat'=>$tintucmoinhat]);
  }
 }
