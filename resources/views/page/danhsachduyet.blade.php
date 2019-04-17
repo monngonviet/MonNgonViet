@@ -1,4 +1,4 @@
-@extends('admin.layout.index')
+@extends('admin.layout.index1')
 @section('content')
     <!-- Begin page -->
  
@@ -25,10 +25,7 @@
                                                 <th>STT</th>
                                                 <th>Tiêu Đề</th>
                                                 <th>Hình</th>
-                                                <th>Xem</th>
-                                                <th>Thao tác</th>
                                                 <th>Ngày Đăng</th>
-                                                <th>Nổi bật</th>
                                                 <th>Loại Tin</th>
                                                 <th>Thể Loại</th>
                                                 <th>Trạng thái</th> 
@@ -42,21 +39,12 @@
                                                 <td> <?php echo $i; ?></td>
                                                 <td>{{$tt->TieuDe}}</td>
                                                 <td><img src="upload/tintuc/{{$tt->Hinh}}" width="100px" height="70px" alt=""></td>
-                                                <td class="center"><i class="mdi mdi-eye"></i> <a href="admin/tintuc/xem/{{$tt->id}}">Xem</a></td>
-                                                <td class="center"><i class="mdi mdi-table-edit"></i> <a href="admin/tintuc/sua/{{$tt->id}}" style="
-                                                    color: blue;">Cập nhật </a>| <a  href="admin/tintuc/xoa/{{$tt->id}}" style="
-                                                color: red;
-                                                " onclick="return confirmAction()" >Xóa</a></td>
+                                            
                                                 <?php
                                                 $thoigian=$tt->NgayTao; 
                                                 $dateM=date("d-m-Y",strtotime($thoigian)); ?>
                                                 <td ><?php echo $dateM;?></td>  
-                                                <td>@if($tt->NoiBat==0)
-                                                    {{"Ẩn"}}
-                                                    @else
-                                                    {{"Hiển thị"}}
-                                                    @endif
-                                                    </td>   
+                                                 
                                                 <td>{{$tt->loaitin->Ten}}</td>
                                               
                                                 <td>{{$tt->loaitin->theloai->Ten}}</td>
@@ -79,6 +67,7 @@
                             </div>
                         </div><!-- end col -->
                     </div><!-- end row -->
+                  
                 </div><!-- container-fluid -->
             </div><!-- content -->
         </div>

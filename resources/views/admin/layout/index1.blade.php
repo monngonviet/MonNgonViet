@@ -25,7 +25,7 @@
 <body>
 {{-- thanhotren --}}
 <div id="wrapper">
-@include('admin.layout.menu')
+@include('admin.layout.menu1')
 @yield('content')
 </div>
 

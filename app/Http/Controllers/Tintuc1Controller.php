@@ -12,10 +12,17 @@ class TinTuc1Controller extends Controller
 {
   public function getDanhSach()
   {
-    $tintuc=TinTuc::orderBy('id','DESC')->get();
+    $tintuc=TinTuc::where('HienThi',1)->orderBy('id','DESC')->get();
     return view ('admin.tintuc.danhsach',['tintuc'=> $tintuc]
   );
   }
+  public function getDanhSachChoDuyet()
+  {
+    $tintuc=TinTuc::where('HienThi',0)->orderBy('id','DESC')->get();
+    return view ('admin.tintuc.danhsachduyet',['tintuc'=> $tintuc]
+  );
+  }
+
   public function getXem($id)
   {
     $tintuc=TinTuc::find($id);
@@ -32,7 +39,7 @@ class TinTuc1Controller extends Controller
   public function postThem(Request $request)
   {
     $validatedData = $request->validate([
-    'TieuDe' => 'required|unique:TinTuc,TieuDe|min:3|max:100',
+    'TieuDe' => 'required|unique:tintuc,TieuDe|min:3|max:100',
     'NoiDung' => 'required',
   ],
   [
@@ -80,6 +87,7 @@ class TinTuc1Controller extends Controller
     $tintuc->save();
     return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm Thành Công');
   }
+ 
 
   public function getSua($id)
   {
