@@ -23,7 +23,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="assets/images/fav_touch_icons/apple-touch-icon-114x114.png" />
 	<!-- IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
-	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> 
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 	<!-- Google Web Font -->
@@ -50,7 +50,7 @@
 @include('layout.slide')
 @yield('content')
 @include('layout.footer')
-        
+
 		<!-- END FOOTER -->
 
 	</div>
@@ -75,7 +75,7 @@
 	<!-- <script type="text/javascript">
 		(function($){
 			"use strict";
-			
+
 			$(document).ready(function(){
 				//Create agencies map with markers and populate dropdown agencies list.
 				Cozy.agencyMap(agencies, "map_agency");
@@ -105,7 +105,7 @@ type="text/javascript"> function refrClock() {
 
 		var year = d.getFullYear();
 
-		var days = new Array("Chủ nhật", "Thứ hai", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7");
+		var days = new Array("Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy");
 
 		var months = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"); var am_pm;
 
@@ -119,7 +119,9 @@ type="text/javascript"> function refrClock() {
 
 		if (h < 10) { h = "0" + h }
 
-		document.getElementById("clock").innerHTML = days[day] + " Ngày " + date + "/" + months[month] + "/" + year + " | " + " " + h + ":" + m + ":" + s + " " + AM_PM; setTimeout("refrClock()", 1000);
+		// document.getElementById("clock").innerHTML = days[day] + " | " + date + "/" + months[month] + "/" + year + " | " + " " + h + ":" + m + ":" + s + " " + AM_PM; setTimeout("refrClock()", 1000);
+		document.getElementById("clock").innerHTML = days[day] + " | " + date + "/" + months[month] + "/" + year + " (GMT +7) " ;
+
 	} refrClock(); </script>
 </body>
 

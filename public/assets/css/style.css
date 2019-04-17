@@ -9623,3 +9623,7 @@ li.dropdown.dropdown-mnv ul li a {
 .col-md-6.border-left-right a img {
     width: 100%;
 }
+ul.latest-news.sidebar-mnv-li li div img {
+    height: 71px;
+    width: auto;
+}

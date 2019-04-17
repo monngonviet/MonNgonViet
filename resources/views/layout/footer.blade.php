@@ -1,7 +1,7 @@
 <footer id="footer">
         <div id="footer-top" class="container">
             <div class="row">
-            
+
                         <nav class="navbar new-nav-mnv">
                             <ul class="nav navbar-nav menu-footer-border">
                                 <li class="dropdown dropdown-mnv menu-footer">
@@ -11,35 +11,35 @@
                                             @endforeach
                                     <ul class="dropdown-menu">
                                     @foreach($loaitintrangchu as $tc)
-                                        
+
                                         <li><a href="loai-tin/{{$tc->id}}/{{$tc->theloai->TenKhongDau}}/{{$tc->TenKhongDau}}.html">{{$tc->Ten}}</a></li>
                                         @endforeach
-                    
+
                                     </ul>
                                 </li>
-                    
+
                                 <li class="dropdown dropdown-mnv">
-                                    
+
                                     @foreach($theloaitintuc as $tt)
                                     <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
                                             class=""></b></a>
                                         @endforeach
-                                   
+
                                 </li>
-                    
+
                                 <li class="dropdown dropdown-mnv">
                                     @foreach($theloaivanhoaamthuc as $tt)
                                 <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
                                             class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                     @foreach($tt->loaitin as $lt)
-                    
+
                                         <li><a href="loai-tin/{{$lt->id}}/{{$lt->theloai->TenKhongDau}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a></li>
                                         @endforeach
-                                       
+
                                         <li class="dropdown-submenu">
                                          @foreach($theloaivanhoaamthuc1 as $tt)
-                    
+
                                             <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html">{{$tt->Ten}}</a>
                                             <ul class="dropdown-menu">
                                                   @foreach($tt->loaitin as $lt)
@@ -47,12 +47,12 @@
                                                   @endforeach
                                             </ul>
                                         @endforeach
-                    
+
                                         </li>
                                         @endforeach
                                     </ul>
                                 </li>
-                    
+
                                 <li class="dropdown dropdown-mnv">
                                         @foreach($theloaidiachi as $tt)
                                     <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
@@ -63,7 +63,7 @@
                                     @endforeach
                                     </ul>
                                     @endforeach
-                    
+
                                 </li>
                                 <li class="dropdown dropdown-mnv">
                                         @foreach($theloainghebep as $tt)
@@ -76,7 +76,7 @@
                                 </ul>
                                     @endforeach
                                 </li>
-                                
+
                                 <li class="dropdown dropdown-mnv">
                                         @foreach($theloailangnghe as $tt)
                                     <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
@@ -88,7 +88,7 @@
                                      </ul>
                                     @endforeach
                                 </li>
-                    
+
                                 <li class="dropdown dropdown-mnv">
                                         @foreach($theloaihoatdong as $tt)
                                         <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html" data-toggle="" data-hover="dropdown">{{$tt->Ten}}<b
@@ -102,7 +102,7 @@
                                 </li>
                             </ul>
                         </nav>
-            
+
             </div>
             <br>
             <div class="row">
@@ -115,7 +115,7 @@
                 <div class="block col-sm-6">
                         @foreach($footer as $h)
                     {!!$h->NoiDung!!}
-                   
+
                 </div>
 
                 <div class="block col-sm-3">
@@ -138,7 +138,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         &copy; 2019 monngonviet - Đã đăng ký Bản quyền. Được phát triển bởi <a
-                            href="https://www.facebook.com/dongphamcom" target="_blank">Phạm Đông</a>
+                            href="http://nagateam.html-5.me/" target="_blank">Naga Team</a>
 
                         <!-- BEGIN SOCIAL NETWORKS -->
                         <ul class="social-networks">
