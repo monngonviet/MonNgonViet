@@ -9632,7 +9632,9 @@ ul.latest-news.sidebar-mnv-li li div img {
 #slide-content-mobile {
     display: none;
 }
-
+.text-nav{
+    display: none;
+}
 @media screen and (max-width: 800px) {
     ul.latest-news.sidebar-mnv-li li div img {
         height: auto;
@@ -9686,5 +9688,7 @@ ul.latest-news.sidebar-mnv-li li div img {
         width: 100%;
         height: auto;
     }
-
+    .text-nav{
+        display: flex;
+    }
 }
