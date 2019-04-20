@@ -34,6 +34,7 @@
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<!-- Template CSS -->
 	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/_card.scss" rel="stylesheet" />
 
 	<!-- Modernizr -->
 	<script src="assets/js/modernizr-2.8.1.min.js"></script>

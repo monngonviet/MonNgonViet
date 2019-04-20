@@ -9623,7 +9623,68 @@ li.dropdown.dropdown-mnv ul li a {
 .col-md-6.border-left-right a img {
     width: 100%;
 }
+
 ul.latest-news.sidebar-mnv-li li div img {
     height: 71px;
     width: auto;
+}
+
+#slide-content-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    ul.latest-news.sidebar-mnv-li li div img {
+        height: auto;
+        width: auto;
+    }
+    #menu-desktop {
+        display: none;
+    }
+    .sb-icon-search, .sb-search-submit {
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin-right: 8px!important;
+        top: 0;
+        padding-top: 100px;
+        right: 10px;
+        margin: 0px;
+        line-height: 30px;
+    }
+    .navbar {
+        float: left;
+        margin: 0 10px;
+        min-height: 0;
+        border: none;
+    }
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+        width: 100%;
+        margin: 20px 0;
+        background-color: #49af3f;
+    }
+    #nav-mobile-btn {
+        float: left;
+        margin-top: 0!important;
+    }
+    .text-nav {
+        padding: 0 22%;
+        color: #fff!important;
+        font-size: 20px;
+    }
+    .td-post-content p a img {
+        width: 100%;
+        height: auto;
+    }
+    #slide-content {
+        display: none;
+    }
+    #slide-content-mobile {
+        display: inline;
+    }
+    .card.img-fluid img {
+        width: 100%;
+        height: auto;
+    }
+
 }

@@ -37,12 +37,12 @@
                             {{-- Van Hoa Am Thuc --}}
                             <?php $i=0;  ?>
                             @foreach($theloaitc1 as $tt)
-                            <?php 
+                            <?php
                             $data=$tt->tintuc->where('HienThi',1)->sortbyDesc('createa_at')->take(3);
                             ?>
                             <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
                                     <h2
-                                    @if($i==0) 
+                                    @if($i==0)
                                     class="title-news culinary-culture"
                                     @elseif($i==1)
                                     class="title-news community"
@@ -73,7 +73,7 @@
                             {{-- Không gian --}}
                             <?php $i=0;  ?>
                             @foreach($khonggian as $tt)
-                            
+
                             <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
                                     <h2  class="title-news culinary-culture">{{$tt->Ten}} </h2>
                                 <ul class="latest-news sidebar-mnv-li">
@@ -104,8 +104,8 @@
                                     <?php $i=0; ?>
                                     @foreach($videonoibat as $vd)
 									<div class="card">
-                                            @if($i==0) 
-                                            
+                                            @if($i==0)
+
                                             <iframe width="415" height="300" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
                                             @else
                                             <iframe width="415" height="300" src="https://www.youtube.com/embed/{{$vd->LinkYoutube}}" frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
@@ -125,7 +125,7 @@
 									<div class="carousel slide" data-ride="carousel" data-type="multi"
 										data-interval="3000" id="myCarousel1">
 										<div class="carousel-inner">
-                                            <?php $i=0;?> 
+                                            <?php $i=0;?>
                                             @foreach($video as $vd)
                                             <div
                                             @if($i==0)
@@ -146,13 +146,13 @@
                                                         <div class="des" data-maxlength="50">
                                                             <a href="chi-tiet-video/{{$vd->id}}/{{$vd->TieuDeKhongDau}}.html">{{$vd->TieuDe}}</a>
                                                         </div>
-													
+
 												</div>
                                             </div>
-                                            <?php $i++;?> 
+                                            <?php $i++;?>
                                             @endforeach
-										
-									
+
+
 										</div>
 										<a class="left carousel-control" href="#myCarousel1" data-slide="prev"><i
 												class="glyphicon glyphicon-chevron-left"></i></a>
@@ -172,7 +172,7 @@
                             <ul class="latest-news sidebar-mnv-li">
                                     @foreach($tinnoibat as $tt)
                                 <li class="col-md-12">
-                                   
+
                                 <h3><a href="tin-tuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">{{$tt->TieuDe}}</a>
                                     </h3>
                                     <div class="image">
@@ -185,27 +185,27 @@
                                                 <p>{!!$tt->TomTat!!}</p>
                                             </div>
                                         </ul></a>
-                                    
+
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
-                        {{-- Làng nghề --}} 
+                        {{-- Làng nghề --}}
                         <?php $i=0;  ?>
                         @foreach($theloaitc as $tt)
-                        <?php 
+                        <?php
                         $data=$tt->tintuc->where('HienThi',1)->sortbyDesc('createa_at')->take(3);
                         ?>
                         <div class="sidebar sidebar-mnv">
                        <a href="the-loai/{{$tt->id}}/{{$tt->TenKhongDau}}.html"> <h2
-                        @if($i==0) 
+                        @if($i==0)
                         class="title-news villages"
                         @elseif($i==1)
                         class="title-news times"
                         @elseif($i==2)
                         class="title-news events"
                         @endif
-                        >{{$tt->Ten}}</h2></a> 
+                        >{{$tt->Ten}}</h2></a>
                             <ul class="latest-news sidebar-mnv-li">
                                     @foreach($data as $ttt)
                                 <li class="col-md-12">
@@ -229,7 +229,7 @@
                         {{-- Món ngon vùng miền --}}
                         <?php $i=0;  ?>
                             @foreach($khonggian1 as $tt)
-                            
+
                             <a href="loai-tin/{{$tt->id}}/{{$tt->theloai->TenKhongDau}}/{{$tt->TenKhongDau}}.html"><div class="sidebar sidebar-mnv">
                                     <h2  class="title-news community">{{$tt->Ten}} </h2>
                                 <ul class="latest-news sidebar-mnv-li">
@@ -279,17 +279,17 @@
                             </ul>
                         </div>
                         @foreach($quangcao3 as $qc)
-                      <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a>  
+                      <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a>
                         @endforeach
                     </div>
                 </div>
-                
+
                 <div class="col-md-2">
                     @foreach($quangcao1 as $qc)
-                   <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a> 
+                   <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a>
                     @endforeach
                     @foreach($quangcao2 as $qc)
-                    <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a> 
+                    <a href="{{$qc->link}}"><img src="upload/quangcao/{{$qc->Hinh}}" alt=""></a>
                      @endforeach
                 </div>
             </div>
@@ -318,4 +318,4 @@
                 });
               </script>
           @endsection
- 
+
